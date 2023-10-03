@@ -75,3 +75,80 @@ C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\refint\Onl
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.pdb
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.genruntimeconfig.cache
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\ref\Online Shop.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\appsettings.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\app.db
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.staticwebassets.runtime.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.exe
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.deps.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.runtimeconfig.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Online Shop.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Humanizer.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.Data.Sqlite.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\SQLitePCLRaw.core.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\browser-wasm\nativeassets\net7.0\e_sqlite3.a
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.csproj.AssemblyReference.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.AssemblyInfoInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.AssemblyInfo.cs
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.csproj.CoreCompileInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.RazorAssemblyInfo.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.RazorAssemblyInfo.cs
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets\msbuild.Online Shop.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets\msbuild.build.Online Shop.props
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Online Shop.props
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Online Shop.props
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\scopedcss\bundle\Online Shop.styles.css
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\scopedcss\projectbundle\Online Shop.bundle.scp.css
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.csproj.CopyComplete
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\refint\Online Shop.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\Online Shop.genruntimeconfig.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\obj\Debug\net7.0\ref\Online Shop.dll
