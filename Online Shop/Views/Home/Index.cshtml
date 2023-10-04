@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    ViewData["FirstSlide"] = "Slides/1080p-Full-HD-Images.jpg";
-    ViewData["SecondSlide"] = "Slides/138728.jpg";
-    ViewData["ThirdSlide"] = "Slides/20544381.jpg";
+    ViewData["FirstSlide"] = "Slides/pictureSlide.png";
+    ViewData["SecondSlide"] = "Slides/pictureSlide.png";
+    ViewData["ThirdSlide"] = "Slides/pictureSlide.png";
 }
 
 <style>
 .carousel-inner img {
-    height: 75%;
+    height: 100%;
     width: auto; /* This ensures that the width is adjusted proportionally to maintain the image's aspect ratio */
 }    
 </style>
@@ -17,9 +17,9 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="container" style="position: relative">
+<div class="containerContent" style="position: relative; display: grid; justify-content: center"  >
     
-    <div id="carouselExampleIndicators" class="carousel slide h-75" data-ride="carousel">
+    <div style="height: 30vh; width: fit-content;" id="carouselExampleIndicators" class="carousel slide h-75%" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+qN9S9l1gRElvOTnp0Oevs1Z7C+Luv3YIIpWDFp+UJk=",
+  "Hash": "ngY44zZxABthrpRObYbHfuT3JdsMDSd5HiJn3fW1W54=",
   "Source": "Online Shop",
   "BasePath": "_content/Online Shop",
   "Mode": "Default",
@@ -2157,6 +2157,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Slides\\20544381.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Slides\\pictureSlide.png",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "Slides/pictureSlide.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Slides\\pictureSlide.png"
     }
   ]
 }
