@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj": {}
+    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj": {
+    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
-        "projectName": "Online Shop",
-        "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
+        "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+        "projectName": "OnlineShopDAL",
+        "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
         "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\obj\\",
+        "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Users\\rasim\\.dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,25 +39,21 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.11, )"
             },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.11, )"
             },
-            "Microsoft.AspNetCore.Identity.UI": {
+            "Microsoft.EntityFrameworkCore.Analyzers": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.11, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[7.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.11, )"
             }
           },
           "imports": [
@@ -73,9 +68,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

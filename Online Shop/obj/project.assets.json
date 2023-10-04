@@ -1748,11 +1748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
+      "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
       "projectName": "Online Shop",
-      "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
+      "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
       "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\obj\\",
+      "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1762,7 +1762,7 @@
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\rasim\\.dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1821,7 +1821,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\rasim\\.dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
