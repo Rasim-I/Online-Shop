@@ -38,3 +38,18 @@ body {
 main{
   flex: 1 1 auto;
 }
+
+.searchForm{
+  padding-top: 2vh;
+
+}
+
+.liSearchNav{
+  margin-left: auto;
+}
+
+.ulAuth{
+  position: relative;
+  left: 10vh;
+  padding-top: 2vh;
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj": {}
+    "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj": {
+    "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
+        "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
         "projectName": "Online Shop",
-        "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
+        "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
         "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\obj\\",
+        "outputPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,13 +21,20 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Users\\rasim\\.dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
+                "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj"
+              },
+              "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj": {
+                "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -52,6 +59,14 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -59,6 +74,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.10, )"
             }
           },
           "imports": [
@@ -80,8 +99,96 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\rasim\\.dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+        "projectName": "OnlineShopDAL",
+        "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+        "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj",
+        "projectName": "OnlineShopLogic",
+        "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
       }
     }
   }

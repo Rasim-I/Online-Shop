@@ -1,19 +1,56 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Online_Shop.Areas.Identity.Data;
 using OnlineShop.Data;
+using OnlineShopDAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+var authConnectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection") ??
+                           throw new InvalidOperationException("Connection string 'AuthDbConnection' not found.");
+
+builder.Services.AddDbContext<OnlineShopContext>(options =>
+    options
+        .UseLazyLoadingProxies()
+        .UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<AuthDbContext>(options =>
+    options.UseSqlServer(authConnectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<AuthDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 4;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+});
+
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
+});
+
+
+builder.Services.AddTransient<OnlineShopContext>();
+builder.Services.AddTransient<AuthDbContext>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+
 
 var app = builder.Build();
 
@@ -34,6 +71,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

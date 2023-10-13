@@ -7,7 +7,7 @@ namespace OnlineShopLogic.Models
     public class Review
     {
         private Guid _id;
-        private Customer _customer;
+        private Guid _customerId;
         private Item _item;
         private string _text;
         private Stars _stars;
@@ -16,7 +16,7 @@ namespace OnlineShopLogic.Models
 
         public Guid Id => _id;
 
-        public Customer Customer => _customer;
+        public Guid CustomerId => _customerId;
 
         public Item Item => _item;
 
@@ -32,10 +32,10 @@ namespace OnlineShopLogic.Models
             set => _photos = value;
         }
 
-        public Review(Customer customer, Item item, string text, Stars stars, DateTime reviewDate)
+        public Review(Guid customerId, Item item, string text, Stars stars, DateTime reviewDate)
         {
             _id = Guid.NewGuid();
-            _customer = customer;
+            _customerId = customerId;
             _item = item;
             _text = text;
             _stars = stars;

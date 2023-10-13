@@ -1,0 +1,34 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
+using OnlineShopLogic.Models.Enums;
+
+namespace Online_Shop.Areas.Identity.Data;
+
+public class ApplicationUser : IdentityUser
+{
+    [PersonalData]
+    [Column(TypeName = "nvarchar(30)")]
+    public string Name { get; set; }
+    
+    [PersonalData]
+    [Column(TypeName = "nvarchar(30)")]
+    public string Surname { get; set; }
+    
+    [PersonalData]
+    [Column(TypeName = "nvarchar(30)")]
+    public string SecondName { get; set; }
+    
+    [PersonalData]
+    [Column(TypeName = "date")]
+    public DateTime RegistrationDate { get; set; }
+    
+    [PersonalData]
+    [Column(TypeName = "date")]
+    public DateTime BirthDate { get; set; }
+    
+    [PersonalData]
+    [EnumDataType(typeof(Gender))]
+    public Gender Gender { get; set; }
+    
+}

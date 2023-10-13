@@ -7,13 +7,13 @@ namespace OnlineShopLogic.Models
     public class Cart
     {
         private Guid _id;
-        private Customer _customer;
+        private Guid _customerId;
         private int _price;
         private Dictionary<Item, int> _items;
 
         public Guid Id => _id;
 
-        public Customer Customer => _customer;
+        public Guid Customer => _customerId;
 
         public int Price => _price;
 
@@ -49,10 +49,10 @@ namespace OnlineShopLogic.Models
             return false;
         }
 
-        public Cart(Customer customer)
+        public Cart(Guid customerId)
         {
             _id = Guid.NewGuid();
-            _customer = customer;
+            _customerId = customerId;
             _items = new Dictionary<Item, int>();
         }
         

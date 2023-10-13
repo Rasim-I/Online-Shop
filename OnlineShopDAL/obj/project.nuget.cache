@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6M3y44GoEShs1/vdYb4WD8bGyApwAJf9OUcrbzQ71BleqyoS5hYEfPx7E16vA2HIn6UjUW5NeBtoD6k6bhd0JQ==",
+  "dgSpecHash": "/r4V1jOKR2yayzv0qbifYrr6P9Yg6fTSz5J/OtMAnmAa6CW7ACwqLysXFEFYT3fBd5BCerEZalUHOiaG0SYcvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+  "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rasim\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.11\\microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",

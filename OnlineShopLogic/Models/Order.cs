@@ -7,14 +7,14 @@ namespace OnlineShopLogic.Models
     public class Order
     {
         private Guid _id;
-        private Customer _customer;
+        private Guid _customerId;
         private Dictionary<Item, int> _items;
         private DateTime _orderDate;
         private Status _status;
 
         public Guid Id => _id;
 
-        public Customer Customer => _customer;
+        public Guid CustomerId => _customerId;
 
         public Dictionary<Item, int> Items
         {
@@ -30,10 +30,10 @@ namespace OnlineShopLogic.Models
             set => _status = value;
         }
 
-        public Order(Customer customer)
+        public Order(Guid customerId)
         {
             _id = Guid.NewGuid();
-            _customer = customer;
+            _customerId = customerId;
             _orderDate = DateTime.Now;
             _status = Status.Created;
             _items = new Dictionary<Item, int>();

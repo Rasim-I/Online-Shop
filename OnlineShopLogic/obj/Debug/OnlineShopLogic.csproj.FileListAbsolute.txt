@@ -1,0 +1,6 @@
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\bin\Debug\OnlineShopLogic.dll
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\bin\Debug\OnlineShopLogic.pdb
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\OnlineShopLogic.csproj.AssemblyReference.cache
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\OnlineShopLogic.csproj.CoreCompileInputs.cache
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\OnlineShopLogic.dll
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\OnlineShopLogic.pdb
