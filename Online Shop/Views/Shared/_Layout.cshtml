@@ -25,7 +25,8 @@
     <title>@ViewData["Title"] - OnlineShop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/OnlineShop.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/test.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/@(nameof(OnlineShop)).styles.css" asp-append-version="true"/>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -39,26 +40,25 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
+                
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OnlineShop</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                    <ul class="navbar-nav flex-grow-1 ulNavContainer">
+                        
+                        <li class="nav-item liNavHome navFlex-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        
+                        <li class="nav-item liNavPrivacy navFlex-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-    
-                        
-                        <div class="btn-group">
-                            <button type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
-                                Catalog <img src="@ViewData["CatalogIcon"]" alt="Catalog Icon"/>
+
+                        <div class="btn-group divNavDropdown navFlex-item">
+                            <button style="display: flex; align-items: center"  type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
+                                <label style="display: inline">Catalog</label> 
+                                <img style="display: inline" src="@ViewData["CatalogIcon"]" alt="Catalog Icon"/>
                             </button>
-                            
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another Action</a>
@@ -67,13 +67,10 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Separated link</a>
                             </div>
-                            
                         </div>
-    
-    
-    
+
                         <!--class offset-2 col-md-md-5 justify-content-center align-items-center/end/start -->
-                        <li class="nav-item col-lg-4 col-md-3 col-sm-3 offset-lg-2 offset-md-1 offset-sm-0 liSearchNav" >
+                        <li class="nav-item col-lg-4 col-md-3 col-sm-3 offset-lg-2 offset-md-1 offset-sm-0 liNavSearch navFlex-item">
                             <form class="form-inline searchForm">
                                 <div class="input-group">
                                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -83,24 +80,34 @@
                                 </div>
                             </form>
                         </li>
-    
+
                     </ul>
-    
-                    
-                    
+
+
+
                     <partial name="_LoginPartial"/>
-    
+
                 </div>
             </div>
         </nav>
     </header>
+    
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
+    
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+        @if (IsSectionDefined("Footer"))
+        {
+            @RenderSection("Footer");
+        }
+        else
+        {
+            <div class="container">
+                &copy; 2023 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        }
+
     </footer>
 </div>
 

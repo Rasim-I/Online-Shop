@@ -1,0 +1,87 @@
+﻿.test-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Grid */
+.grid-wrapper{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 200px 200px 200px 200px; /* or repeat(4, 200px) */
+    grid-gap: 2rem;
+    background: red;
+    padding: 1rem;
+}
+.grid-item{
+    background: white;
+}
+.grid-item-1{
+    background: green;
+    grid-column: 1 / span 2;
+    grid-row: 1 / 3;
+}
+.grid-item-3{
+    background: pink;
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+}
+.grid-item-5{
+    background: orange;
+    grid-column: 1 / 3; /* it didn't have enough space, so it transitioned to next row */
+    grid-row: 3; /* in this case, even if it doesn't have space it will be on row 3, because it will displace item 4 to next row */
+    /* grid-row: 3 / 4  when you give certain things a declaration where they are gonna be, everything else flows around */
+}
+.grid-item-4{
+    background: yellow;
+    grid-column: 2; /* 1 /-1 */
+    grid-row: 5;
+}
+/* Grid */
+
+
+/* Flex */
+.flex-wrapper{
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; //to change the main axis */
+    height: 70vh;
+    justify-content: center; /* or flex-end, flex-start, space-between, space-around. This is for main axis. */
+    align-items: center; /* same as justify-content but for secondary axis. If you change flex direction, align-items
+   will be for other axis, for secondary*/
+    flex-wrap: wrap; /* to move elements to he next row if not enough space */
+    /* flex-direction + flex-wrap = flex-flow. flex-flow row wrap; */
+    /* align-content defines distance between rows and align-items defines how elements will be aligned in container generally.
+     when it is only one row, align-content will not do anything*/
+}
+.flex-item{
+    padding: 40px;
+    font-size: 25px;
+    border: 1px solid black;
+    height: fit-content;
+    width: fit-content;
+    /* flex-basis: 33%;  or in pixels. Sets the size relative to the main axis */
+    flex-grow: 1;
+}
+.flex-item-1{
+    order: 2; /* to change position */
+    align-self: center; /* Same as for container, but for each individual element */
+    /*flex-shrink: 2;  defines how fast element will shrink when space is compressing */
+    margin-right: 0;
+}
+.flex-item-2{
+    flex-grow: 2; /* defines how much space will the element take */
+
+}
+.flex-item-3{
+    margin-right: 20%;
+}
+
+
+
+/* Flex */
+

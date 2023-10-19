@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\test.css",
+      "PackagePath": "staticwebassets\\css\\test.css"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

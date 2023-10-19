@@ -41,15 +41,70 @@ main{
 
 .searchForm{
   padding-top: 2vh;
+  margin-left: 20%;
 
-}
-
-.liSearchNav{
-  margin-left: auto;
 }
 
 .ulAuth{
-  position: relative;
-  left: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.liAuth{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liAuth .form-inline{
   padding-top: 2vh;
 }
+
+.ulNavContainer{
+  /*
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 300px 200px 200px;
+  grid-gap: 2rem;
+  background: red;
+  padding: 1rem;
+   */
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+.navFlex-item{
+  height: fit-content;
+}
+
+.liNavHome{
+  /*
+  background: green;
+  grid-column-start: 1;
+  grid-column-end: 4; //if there are more grid columns. Like here:  1 | 2 | 3 | 4
+  grid-column: 1 / 4 -or- 1 / span all -or- 1 / -1 -or- 1 / span 4
+  
+  grid-row-start: 1;
+  grid-row-end: 4;
+   */
+  
+  
+}
+
+.liNavPrivacy{
+  
+}
+
+.divNavDropdown{
+
+}
+
+.lihNavSearch{
+  margin-left: auto;
+}
+
+

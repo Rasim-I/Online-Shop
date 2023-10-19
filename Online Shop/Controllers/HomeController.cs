@@ -20,6 +20,12 @@ public class HomeController : Controller
         return View();
     }
 
+    [Route("/test")]
+    public IActionResult Test()
+    {
+        return View("TestCss");
+    }
+
     /*
     public async Task<IActionResult> Index(int page = 1)
     {
@@ -93,7 +99,7 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
-        return View();
+        return View("TestCss");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
