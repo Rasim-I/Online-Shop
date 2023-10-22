@@ -75,7 +75,13 @@
 }
 .flex-item-2{
     flex-grow: 2; /* defines how much space will the element take */
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-item-2 img{
+    width: 6vh;
+    height: auto;
 }
 .flex-item-3{
     margin-right: 20%;
@@ -84,4 +90,6 @@
 
 
 /* Flex */
+
+
 

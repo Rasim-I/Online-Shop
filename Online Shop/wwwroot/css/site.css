@@ -41,25 +41,24 @@ main{
 
 /* Navigation */
 .searchForm{
-  padding-top: 2vh;
-  margin-left: 20%;
+  margin-top: auto;
+  margin-bottom: auto;
 
 }
 
 .ulAuth{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+
 }
 
 .liAuth{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .liAuth .form-inline{
-  padding-top: 2vh;
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: fit-content;
 }
 
 .ulNavContainer{
@@ -73,13 +72,33 @@ main{
    */
   
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
   
+  
 }
-
+.catalogIcon{
+  width: 3vh;
+  height: auto;
+}
+.catalog-btn{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.catalog-label{
+}
 .navFlex-item{
   height: fit-content;
+  width: fit-content;
+}
+.divNavDropdown{
+  width: 17vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .liNavHome{
@@ -100,12 +119,8 @@ main{
   
 }
 
-.divNavDropdown{
-
-}
-
 .lihNavSearch{
-  margin-left: auto;
+
 }
 /* Navigation */
 

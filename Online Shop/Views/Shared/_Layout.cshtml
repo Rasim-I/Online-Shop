@@ -46,6 +46,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 ulNavContainer">
                         
+                        <!-- 
                         <li class="nav-item liNavHome navFlex-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -53,11 +54,11 @@
                         <li class="nav-item liNavPrivacy navFlex-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        -->
 
                         <div class="btn-group divNavDropdown navFlex-item">
-                            <button style="display: flex; align-items: center"  type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
-                                <label style="display: inline">Catalog</label> 
-                                <img style="display: inline" src="@ViewData["CatalogIcon"]" alt="Catalog Icon"/>
+                            <button type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
+                                Catalog <img class="catalogIcon" src="@ViewData["CatalogIcon"]" alt="Catalog Icon"/>
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Action</a>

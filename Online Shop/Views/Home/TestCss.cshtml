@@ -3,6 +3,7 @@
 
 @{
     <link rel="stylesheet" href="~/@(nameof(OnlineShop)).styles.css" />
+
 }
 
 
@@ -19,10 +20,25 @@
     <br/><br/>
     <div class="flex-wrapper">
         <div class="flex-item flex-item-1">Item 1</div>
-        <div class="flex-item flex-item-2">Item 2</div>
+        <div class="flex-item flex-item-2">Item 2 <img src="https://webstockreview.net/images/512x512-png-images-5.png"/> </div>
         <div class="flex-item flex-item-3">Item 3</div>
     </div>
     
 </div>
 
 <br/><br/>
+
+<div class="btn-group divDropdown navFlex-itemTest">
+    <button style="display: flex; align-items: center"  type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
+        <label>Catalog</label> 
+        <img src="Icons/2976215.png"/>
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another Action</a>
+        <a class="dropdown-item" href="#">Another Action</a>
+        <a class="dropdown-item" href="#">Another Action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+</div>
