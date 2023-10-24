@@ -79,8 +79,16 @@ main{
   
 }
 .ulNavContainerSearch{
+  list-style: none;
+  padding-inline-start: 0;
   
-  margin: 0;
+
+  flex: 0 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .catalogIcon{
@@ -113,11 +121,13 @@ main{
   
 }
 
-.lihNavSearch{
-
+.liNavSearch{
+  flex-grow: 1;
 }
-.divFormSearch{
 
+
+.divFormSearch{
+  flex-grow: 1;
   min-width: 400px;
 }
 /* Navigation */
