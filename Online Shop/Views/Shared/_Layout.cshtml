@@ -27,12 +27,12 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/test.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/@(nameof(OnlineShop)).styles.css" asp-append-version="true"/>
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
 </head>
 <body>
 
@@ -40,12 +40,12 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                
+
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OnlineShop</a>
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 ulNavContainer">
-                        
+                    <ul class="navbar-nav ulNavContainer">
+
                         <!-- 
                         <li class="nav-item liNavHome navFlex-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -71,9 +71,15 @@
                         </div>
 
                         <!--class offset-2 col-md-md-5 justify-content-center align-items-center/end/start -->
-                        <li class="nav-item col-lg-4 col-md-3 col-sm-3 offset-lg-2 offset-md-1 offset-sm-0 liNavSearch navFlex-item">
+
+
+                    </ul>
+
+                    <ul navbar-nav ulNavContainerSearch>
+
+                        <li class="nav-item liNavSearch navFlex-item">
                             <form class="form-inline searchForm">
-                                <div class="input-group">
+                                <div class="input-group divFormSearch">
                                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -85,22 +91,22 @@
                     </ul>
 
 
-
                     <partial name="_LoginPartial"/>
 
                 </div>
             </div>
         </nav>
     </header>
-    
+
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
-    
+
     <footer class="border-top footer text-muted">
         @if (IsSectionDefined("Footer"))
         {
-            @RenderSection("Footer");
+            @RenderSection("Footer")
+            ;
         }
         else
         {

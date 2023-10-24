@@ -75,9 +75,14 @@ main{
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  
+
   
 }
+.ulNavContainerSearch{
+  
+  margin: 0;
+}
+
 .catalogIcon{
   width: 3vh;
   height: auto;
@@ -91,28 +96,17 @@ main{
 .catalog-label{
 }
 .navFlex-item{
-  height: fit-content;
-  width: fit-content;
+
 }
 .divNavDropdown{
-  width: 17vh;
+  width: 14vh;
+  height: fit-content;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  min-width: 115px;
+
 }
 
 .liNavHome{
-  /*
-  background: green;
-  grid-column-start: 1;
-  grid-column-end: 4; //if there are more grid columns. Like here:  1 | 2 | 3 | 4
-  grid-column: 1 / 4 -or- 1 / span all -or- 1 / -1 -or- 1 / span 4
-  
-  grid-row-start: 1;
-  grid-row-end: 4;
-   */
-  
-  
 }
 
 .liNavPrivacy{
@@ -121,6 +115,10 @@ main{
 
 .lihNavSearch{
 
+}
+.divFormSearch{
+
+  min-width: 400px;
 }
 /* Navigation */
 
