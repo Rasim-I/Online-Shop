@@ -17,7 +17,60 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        Guid categoryId = Guid.NewGuid();
+        List<ItemWebModel> items = new List<ItemWebModel>
+        {
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            }
+        };
+
+        CategoryWebModel category1 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Electronics" };
+        CategoryWebModel category2 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Sport" };
+        CategoryWebModel category3 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Decorations" };
+        List<CategoryWebModel> categories = new List<CategoryWebModel>();
+        categories.Add(category1);
+        categories.Add(category2);
+        categories.Add(category3);
+        ViewBag.Categories = categories;
+        return View(items);
     }
 
     [Route("/test")]

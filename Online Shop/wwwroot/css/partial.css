@@ -1,0 +1,32 @@
+﻿
+#recommendationItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    flex-wrap: wrap;
+
+}
+.recommendedItem{
+    display: inline-block;
+    border: 1px solid black;
+    margin: 2% 2% 1% 2%;
+    width: 15%;
+    height: 42%;
+}
+
+
+#recentItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+.recentItem{
+    display: inline-block;
+    border: 1px solid black;
+    margin: 2% 2% 1% 2%;
+    width: 15%;
+    height: 87%;
+}

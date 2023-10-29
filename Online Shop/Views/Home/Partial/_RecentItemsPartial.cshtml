@@ -1,10 +1,15 @@
-﻿@page
-@model Online_Shop.Views.Home.Partial._RecentItemsPartial
+﻿@model List<ItemWebModel>
 
 @{
     Layout = null;
 }
 
 <div id="recentItems" class="grid-itemMain">
-    Recent Items
+     @foreach (var item in Model)
+        {
+            <div class="recentItem">
+                @item.Name
+                @item.Description
+            </div>
+        }
 </div>

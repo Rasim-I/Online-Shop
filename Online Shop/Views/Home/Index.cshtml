@@ -1,9 +1,11 @@
-﻿@{
+﻿@model List<ItemWebModel>
+@{
     ViewData["Title"] = "Home Page";
     ViewData["FirstSlide"] = "Slides/pictureSlide.png";
     ViewData["SecondSlide"] = "Slides/pictureSlide.png";
     ViewData["ThirdSlide"] = "Slides/pictureSlide.png";
 }
+
 
 <style>
 .carousel-inner img {
@@ -45,11 +47,11 @@
     <div id="categoryMenu" class="grid-itemMain">
         
     </div>
+    
 
-    @await Html.PartialAsync("Partial/_RecommendationItemPartial")
+    @await Html.PartialAsync("Partial/_RecommendationItemPartial", Model)
     
-    @await Html.PartialAsync("Partial/_RecentItemsPartial")
-    
+    @await Html.PartialAsync("Partial/_RecentItemsPartial", Model)
 
     
 

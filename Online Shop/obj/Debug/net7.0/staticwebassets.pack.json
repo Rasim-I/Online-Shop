@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\Slides\\pictureSlide.png"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\partial.css",
+      "PackagePath": "staticwebassets\\css\\partial.css"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

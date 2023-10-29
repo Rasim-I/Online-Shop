@@ -137,7 +137,7 @@ main{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(19, 1fr);
-  grid-template-rows: 40vh 40vh 40vh ;
+  grid-template-rows: 40vh 40vh 20vh 32vh ;
   grid-gap: 2rem;
   background: gainsboro;
   padding: 1rem;
@@ -159,12 +159,12 @@ main{
 #recommendationItems{
   background: #bfe2e9;
   grid-column: 5 / 19;
-  grid-row: 2 / 3;
+  grid-row: 2 / 4;
 }
 #recentItems{
   background: #86b7fe;
   grid-column: 5 / 19;
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
 }
 
 

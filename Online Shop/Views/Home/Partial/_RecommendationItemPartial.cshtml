@@ -1,10 +1,14 @@
-﻿@page
-@model Online_Shop.Views.Home.Partial._RecommendationItemPartial
-
+﻿@model List<ItemWebModel>
 @{
     Layout = null;
 }
 
-    <div id="recommendationItems" class="grid-itemMain">
-        Recommended Items
-    </div>
+<div id="recommendationItems" class="grid-itemMain">
+    @foreach (var item in Model)
+    {
+        <div class="recommendedItem">
+            @item.Name
+            @item.Description
+        </div>
+    }
+</div>

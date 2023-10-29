@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K3yUHeIIk73DPjOmx6jG07X7EpD8NFIzXq43fD+RrUM=",
+  "Hash": "Lffu/nmr9QJkZ0C7Buya+piXnti6hxjKr2781I/V8BM=",
   "Source": "Online Shop",
   "BasePath": "_content/Online Shop",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Online Shop.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\partial.css",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "css/partial.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\partial.css"
     },
     {
       "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\site.css",
