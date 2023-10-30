@@ -4,15 +4,17 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<div id="categoryMenu" class="grid-itemMain">
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+    @foreach (var item in Model)
+    {
+        <form class="categoryItemForm" asp-controller="Item" asp-action="ItemCategory" asp-route-id="@item.Name" method="get">
+            <button type="submit" class="categoryItemBtn">
+                <div class="categoryItem">
+                    @item.Name
+                </div>
+            </button>
+        </form>
+    }
+
 </div>
-</body>
-</html>
