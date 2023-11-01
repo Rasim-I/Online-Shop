@@ -1,18 +1,30 @@
-﻿
+﻿@model List<ItemWebModel>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      jjjj
+<div class="containerItemCategory">
+    
+    <div class="containerItemCharacteristics">
+        
+    </div>
+    
+    <div class="categoryPath">
+        <a href="">Category</a>
+        <a href="">SubCategory</a>
+    </div>
+    
+    <div class="containerItems">
+        
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                @item.Name
+                @item.Description
+            </div>
+        }
+        
+    </div>
+    
 </div>
-</body>
-</html>

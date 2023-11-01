@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["CatalogIcon"] = "Icons/2976215.png";
+﻿@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@{
+    ViewData["CatalogIcon"] = "~/Icons/2976215.png";
 }
 
 <style>
@@ -24,7 +25,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - OnlineShop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="css/ItemCategory.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/test.css" asp-append-version="true"/>
     <link rel="stylesheet" href="css/partial.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/@(nameof(OnlineShop)).styles.css" asp-append-version="true"/>
@@ -59,7 +61,7 @@
 
                         <div class="btn-group divNavDropdown navFlex-item">
                             <button type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
-                                Catalog <img class="catalogIcon" src="@ViewData["CatalogIcon"]" alt="Catalog Icon"/>
+                                Catalog <img class="catalogIcon" src="~/@Configuration["Images:CatalogIconPath"]" alt="Catalog Icon"/>
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Action</a>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Models;
 
 namespace OnlineShop.Controllers;
 
@@ -13,8 +14,54 @@ public class ItemController : Controller
     }
 
     [HttpGet]
-    public IActionResult ItemCategory([FromQuery] string categoryId)
+    public IActionResult ItemCategory([FromQuery] string category)
     {
-        return View();
+        Guid categoryId = Guid.NewGuid();
+        List<ItemWebModel> items = new List<ItemWebModel>
+        {
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            }
+        };
+        
+        
+        return View(items);
     }
 }

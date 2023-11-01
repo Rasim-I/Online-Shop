@@ -1,0 +1,17 @@
+﻿
+
+
+.containerItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.item{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1%;
+    width: 20%;
+    height: 35%;
+}

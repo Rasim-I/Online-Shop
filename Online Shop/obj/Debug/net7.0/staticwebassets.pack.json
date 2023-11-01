@@ -25,12 +25,16 @@
       "PackagePath": "staticwebassets\\Slides\\pictureSlide.png"
     },
     {
-      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\partial.css",
-      "PackagePath": "staticwebassets\\css\\partial.css"
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\HomePage.css",
+      "PackagePath": "staticwebassets\\css\\HomePage.css"
     },
     {
-      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\ItemCategory.css",
+      "PackagePath": "staticwebassets\\css\\ItemCategory.css"
+    },
+    {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\partial.css",
+      "PackagePath": "staticwebassets\\css\\partial.css"
     },
     {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\test.css",
