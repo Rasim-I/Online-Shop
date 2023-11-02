@@ -60,8 +60,8 @@ public class ItemController : Controller
                 CategoryId = categoryId
             }
         };
-        
-        
+
+        ViewBag.Category = category;
         return View(items);
     }
 }

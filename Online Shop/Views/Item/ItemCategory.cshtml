@@ -4,19 +4,22 @@
     ViewData["Title"] = "";
 }
 
-<div class="containerItemCategory">
-    
-    <div class="containerItemCharacteristics">
-        
+<div id="containerItemCategory">
+
+    <div id="categoryPath" class="gridItemItemCategory">
+        <h2>@Context.Request.Query["category"]</h2>
+        <div id="CategoryPathLinks">
+            <a href="">Category</a>
+            <a href="">SubCategory</a>
+        </div>
     </div>
-    
-    <div class="categoryPath">
-        <a href="">Category</a>
-        <a href="">SubCategory</a>
+
+    <div id="containerItemCharacteristics" class="gridItemItemCategory">
+
     </div>
-    
-    <div class="containerItems">
-        
+
+    <div id="containerItems" class="gridItemItemCategory">
+
         @foreach (var item in Model)
         {
             <div class="item">
@@ -24,7 +27,6 @@
                 @item.Description
             </div>
         }
-        
     </div>
-    
+
 </div>
