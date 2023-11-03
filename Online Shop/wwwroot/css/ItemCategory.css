@@ -16,9 +16,13 @@
 
 
 #categoryPath{
+    padding: 2vh;
     grid-column: 2 / 19;
     grid-row: 1 / 2;
     background: #bfe2e9;
+}
+#categoryPath h2{
+
 }
 
 #containerItemCharacteristics{
@@ -36,12 +40,23 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    overflow: auto;
 }
 .item{
     display: inline-block;
     border: 1px solid black;
-    border-radius: 20px;
     margin: 1%;
     width: 20%;
-    height: 42%;
+    height: 55%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.item img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.item:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

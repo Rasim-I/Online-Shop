@@ -7,8 +7,8 @@
 <div id="containerItemCategory">
 
     <div id="categoryPath" class="gridItemItemCategory">
-        <h2>@Context.Request.Query["category"]</h2>
-        <div id="CategoryPathLinks">
+        <h2>@ViewBag.Category</h2>  <!-- it must be Category object. Also it is the last of SubCategories -->
+        <div id="CategoryPathLinks"> <!-- display generalized category. category -> category.SubCategory -> category.Subcategory.Subcategory  -->
             <a href="">Category</a>
             <a href="">SubCategory</a>
         </div>
@@ -23,6 +23,7 @@
         @foreach (var item in Model)
         {
             <div class="item">
+                <img src="~/Item_Images/Black.png" alt="@item.Name"/>
                 @item.Name
                 @item.Description
             </div>

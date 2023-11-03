@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g1JwvSVXoIADSzdi5uEGd/BxG/tTf5Nfo2G+jMECm14=",
+  "Hash": "qnkBxxWLuDJ39WNNif1KK3hWtBrpeHpBvG7Nx26fgyo=",
   "Source": "Online Shop",
   "BasePath": "_content/Online Shop",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Icons\\2976215.png"
+    },
+    {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Item_Images\\Black.png",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "Item_Images/Black.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Item_Images\\Black.png"
     },
     {
       "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\js\\site.js",

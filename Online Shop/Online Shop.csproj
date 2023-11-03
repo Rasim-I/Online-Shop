@@ -35,4 +35,8 @@
       <ProjectReference Include="..\OnlineShopLogic\OnlineShopLogic.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\Item_Images" />
+    </ItemGroup>
+
 </Project>
