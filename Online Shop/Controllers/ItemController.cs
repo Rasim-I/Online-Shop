@@ -64,4 +64,10 @@ public class ItemController : Controller
         ViewBag.Category = category;
         return View(items);
     }
+
+    public string ItemPage([FromQuery] string itemId)
+    {
+        return itemId;
+    }
+    
 }
