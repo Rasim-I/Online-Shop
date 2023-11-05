@@ -4,4 +4,27 @@
     ViewData["Title"] = Model.Name;
 }
 
+<div class="itemPageContainer">
 
+    <div id="itemPagePathLinks">
+        <!-- display generalized category. category -> category.SubCategory -> category.Subcategory.Subcategory  -->
+        <a href="">Category</a>
+        <a href="">SubCategory</a>
+    </div>
+    
+    <div class="itemPrimaryInfo">
+        <img class="itemImage" src="~/Item_Images/Black.png"/>
+        <h3 class="itemName">@Model.Name</h3>
+        <img class="itemRatingIcon" src="~/Icons/ItemRatingIcons/5st.png"/>
+        <h3 class="itemPrice">@Model.Price</h3>
+    </div>
+
+    <div class="itemInfo">
+        
+    </div>
+    
+    <div class="itemReviews">
+        
+    </div>
+    
+</div>

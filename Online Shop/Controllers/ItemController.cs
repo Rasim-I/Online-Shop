@@ -31,6 +31,11 @@ public class ItemController : Controller
             },
             new ItemWebModel()
             {
+                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
+                CategoryId = categoryId
+            },
+            new ItemWebModel()
+            {
                 Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
                 CategoryId = categoryId
             },
@@ -65,9 +70,16 @@ public class ItemController : Controller
         return View(items);
     }
 
-    public string ItemPage([FromQuery] string itemId)
+    public IActionResult ItemPage([FromQuery] string itemId)
     {
-        return itemId;
+        ItemWebModel item = new ItemWebModel()
+        {
+            Id = Guid.NewGuid(), Name = "product product", Description =
+                "Description description description description," +
+                "description dddddd dddd dddd ddd d ddddddd d ddd. DDdddd ddd d dddd.",
+            CategoryId = Guid.NewGuid(), Price = 2321
+        };
+        return View(item);
     }
     
 }

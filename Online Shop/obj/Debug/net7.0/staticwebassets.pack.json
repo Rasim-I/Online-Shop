@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\css\\ItemCategory.css"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\ItemPage.css",
+      "PackagePath": "staticwebassets\\css\\ItemPage.css"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\partial.css",
       "PackagePath": "staticwebassets\\css\\partial.css"
     },

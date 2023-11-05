@@ -1,0 +1,50 @@
+﻿
+.itemPageContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(30, 5vh);
+    grid-gap: 2rem;
+    background: gainsboro;
+    padding: 1rem;
+}
+#itemPagePathLinks{
+    grid-column: 2 / 19;
+    grid-row: 1 / 2;
+    background: #bfe2e9;
+}
+
+.itemPrimaryInfo{
+    grid-column: 3 / 19;
+    grid-row: 2 / 9;
+    background: #d7d8da;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.itemImage{
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+.itemName{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.itemPrice{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.itemRatingIcon{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    max-width: 10vh;
+    max-height: 2vh;
+    width: auto;
+    height: auto;
+}
+
