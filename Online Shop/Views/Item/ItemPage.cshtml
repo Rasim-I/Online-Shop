@@ -11,20 +11,25 @@
         <a href="">Category</a>
         <a href="">SubCategory</a>
     </div>
-    
+
     <div class="itemPrimaryInfo">
         <img class="itemImage" src="~/Item_Images/Black.png"/>
-        <h3 class="itemName">@Model.Name</h3>
+        <h2 class="itemName">@Model.Name</h2>
         <img class="itemRatingIcon" src="~/Icons/ItemRatingIcons/5st.png"/>
-        <h3 class="itemPrice">@Model.Price</h3>
+        <h2 class="itemPrice">@Model.Price</h2>
+        <h3 class="itemDescription">@Model.Description</h3>
+        <form class="buyItemForm" method="post">
+            <button type="button" class="buyItemBtn btn btn-success btn-lg">Buy <img class="buyItemIcon" src="~/Icons/shopping-cart.png"/></button>
+        </form>
     </div>
 
     <div class="itemInfo">
-        
+        <h2>Item Description</h2>
+        <h4>@Model.Description</h4>
     </div>
-    
+
     <div class="itemReviews">
-        
+        <h2>Reviews</h2>
     </div>
-    
+
 </div>

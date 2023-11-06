@@ -4,7 +4,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(19, 1fr);
-    grid-template-rows: repeat(30, 5vh);
+    grid-template-rows: repeat(30, auto) 1fr;
     grid-gap: 2rem;
     background: gainsboro;
     padding: 1rem;
@@ -16,35 +16,76 @@
 }
 
 .itemPrimaryInfo{
-    grid-column: 3 / 19;
+    grid-column: 2 / 19;
     grid-row: 2 / 9;
     background: #d7d8da;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(15, 1fr);
 }
 .itemImage{
-    grid-column: 1 / 2;
-    grid-row: 1 / 4;
+    grid-column: 2 / 7;
+    grid-row: 1 / 8;
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
 }
 .itemName{
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-.itemPrice{
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-column: 8 / 11;
+    grid-row: 1 / 2;
+    margin: 2vh;
 }
 .itemRatingIcon{
-    grid-column: 2 / 3;
+    grid-column: 8 / 11;
     grid-row: 2 / 3;
     max-width: 10vh;
     max-height: 2vh;
     width: auto;
     height: auto;
+    margin: 1vh 2vh 1vh 2vh;
+}
+.itemDescription{
+    grid-column: 8 / 14;
+    grid-row: 3 / 4;
+    margin: 2vh;
+}
+.itemPrice{
+    grid-column: 8 / 9;
+    grid-row: 4 / 5;
+    margin: 4vh 2vh 2vh 2vh;
 }
 
+.buyItemForm{
+    grid-column: 8 / 10;
+    grid-row: 5 / 6;
+    margin: 0 2vh 2vh 2vh;
+}
+.buyItemIcon{
+    max-width: 40%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
+
+
+.itemInfo{
+    background: #bfe2e9;
+    margin-top: 4vh;
+    grid-column: 2 / 19;
+}
+.itemInfo h2, h4{
+    margin: 2vh;
+}
+.itemInfo h4{
+    margin-bottom: 4vh;
+}
+
+
+.itemReviews{
+    background: #ece1be;
+    grid-column: 2 / 19;
+    min-height: 20vh;
+}
+.itemReviews h2{
+    margin: 2vh;
+}
