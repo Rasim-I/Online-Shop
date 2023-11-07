@@ -41,6 +41,14 @@
       "PackagePath": "staticwebassets\\Item_Images\\Black.png"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Item_Images\\Blue.png",
+      "PackagePath": "staticwebassets\\Item_Images\\Blue.png"
+    },
+    {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Item_Images\\Green.png",
+      "PackagePath": "staticwebassets\\Item_Images\\Green.png"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Slides\\1080p-Full-HD-Images.jpg",
       "PackagePath": "staticwebassets\\Slides\\1080p-Full-HD-Images.jpg"
     },

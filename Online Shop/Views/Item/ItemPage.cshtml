@@ -13,9 +13,26 @@
     </div>
 
     <div class="itemPrimaryInfo">
-        <img class="itemImage" src="~/Item_Images/Black.png"/>
+
+        <section id="itemImage-carousel" class="splide itemImage" aria-label="Item pictures">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="~/Item_Images/Black.png" alt=""/>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="~/Item_Images/Blue.png" alt=""/>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="~/Item_Images/Green.png" alt=""/>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--img class="itemImage" src="~/Item_Images/Black.png"/-->
         <h2 class="itemName">@Model.Name</h2>
-        <img class="itemRatingIcon" src="~/Icons/ItemRatingIcons/5st.png"/>
+        <img class="itemRatingIcon" src="~/Icons/ItemRatingIcons/5st.png" alt="rating"/>
         <h2 class="itemPrice">@Model.Price</h2>
         <h3 class="itemDescription">@Model.Description</h3>
         <form class="buyItemForm" method="post">
@@ -33,3 +50,11 @@
     </div>
 
 </div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function (){
+    new Splide('#itemImage-carousel', {heightRatio: 1}).mount();
+    } );
+</script>

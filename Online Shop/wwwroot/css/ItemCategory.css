@@ -47,7 +47,7 @@
     border: 1px solid black;
     margin: 1%;
     width: 20%;
-    height: 55%;
+    height: fit-content;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 .item a{
@@ -75,6 +75,7 @@
 .itemInfoContainer img{
     margin-top: 1vh;
     margin-bottom: 2vh;
+    margin-left: 1vh;
     width: auto;
     height: auto;
     max-width: 10vh;
