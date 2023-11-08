@@ -96,6 +96,11 @@
 
                     </ul>
 
+                    <ul class="ulNavCart">
+                        <button id="openCartButton">
+                            <img src="~/Icons/shopping-cart.png" alt="cart"/>
+                        </button>
+                    </ul>
 
                     <partial name="_LoginPartial"/>
 
@@ -105,9 +110,34 @@
     </header>
 
     <main role="main" class="pb-3">
+        @{
+            await Html.RenderPartialAsync("_CartPartial");
+        }
         @RenderBody()
     </main>
 
+    <script>
+        const cartMenu = document.getElementById('cartMenu');
+        const openCartButton = document.getElementById('openCartButton');
+        const overlay = document.getElementById('overlay');
+        const closeCartButton = document.getElementById('closeCartButton');
+        
+        openCartButton.addEventListener('click', () => {
+            cartMenu.style.display = 'block';
+            overlay.style.display = 'block';
+        } );
+        
+        overlay.addEventListener('click', () => {
+            cartMenu.style.display = 'none';
+            overlay.style.display = 'none';
+        } );
+        
+        closeCartButton.addEventListener('click', () => {
+           cartMenu.style.display = 'none';
+           overlay.style.display = 'none';
+        });
+    </script>
+    
     <footer class="border-top footer text-muted">
         @if (IsSectionDefined("Footer"))
         {

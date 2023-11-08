@@ -130,6 +130,60 @@ main{
   flex-grow: 1;
   min-width: 400px;
 }
+
+.ulNavCart{
+  margin: 0 2vh 0 0;
+  padding: 0;
+}
+
+.ulNavCart button{
+  background: none;
+  border: none;
+}
+
+.ulNavCart button img{
+  width: 4vh;
+  height: auto;
+
+}
+
+.cartMenu{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 99;
+  display: none;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+}
+
+.closeCartButton{
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+}
+.closeCartButton img{
+  width: 3vh;
+  height: auto;
+}
+
+
 /* Navigation */
 
 

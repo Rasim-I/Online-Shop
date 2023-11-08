@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Icons\\ItemRatingIcons\\5st.png"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\closeCartIcon.png",
+      "PackagePath": "staticwebassets\\Icons\\closeCartIcon.png"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\shopping-cart.png",
       "PackagePath": "staticwebassets\\Icons\\shopping-cart.png"
     },
