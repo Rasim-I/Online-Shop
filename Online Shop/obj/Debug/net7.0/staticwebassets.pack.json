@@ -33,8 +33,20 @@
       "PackagePath": "staticwebassets\\Icons\\ItemRatingIcons\\5st.png"
     },
     {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\arrowLess.png",
+      "PackagePath": "staticwebassets\\Icons\\arrowLess.png"
+    },
+    {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\arrowMore.png",
+      "PackagePath": "staticwebassets\\Icons\\arrowMore.png"
+    },
+    {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\closeCartIcon.png",
       "PackagePath": "staticwebassets\\Icons\\closeCartIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\removeItem.png",
+      "PackagePath": "staticwebassets\\Icons\\removeItem.png"
     },
     {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\shopping-cart.png",
@@ -67,6 +79,10 @@
     {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Slides\\pictureSlide.png",
       "PackagePath": "staticwebassets\\Slides\\pictureSlide.png"
+    },
+    {
+      "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\CartPartial.css",
+      "PackagePath": "staticwebassets\\css\\CartPartial.css"
     },
     {
       "Id": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\HomePage.css",

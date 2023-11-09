@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QVDqNSBSUZ3VOu0H8CH4aYrQNxChbcbwBDvD0HIfDYg=",
+  "Hash": "oUCbScbJWyOCUFCz7ymYnBEE24impkSiGltAJjizHxA=",
   "Source": "Online Shop",
   "BasePath": "_content/Online Shop",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Online Shop.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\CartPartial.css",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "css/CartPartial.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\CartPartial.css"
+    },
+    {
       "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\css\\HomePage.css",
       "SourceId": "Online Shop",
       "SourceType": "Discovered",
@@ -1190,6 +1207,40 @@
       "OriginalItemSpec": "wwwroot\\Icons\\2976215.png"
     },
     {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\arrowLess.png",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "Icons/arrowLess.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Icons\\arrowLess.png"
+    },
+    {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\arrowMore.png",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "Icons/arrowMore.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Icons\\arrowMore.png"
+    },
+    {
       "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\closeCartIcon.png",
       "SourceId": "Online Shop",
       "SourceType": "Discovered",
@@ -1307,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Icons\\ItemRatingIcons\\5st.png"
+    },
+    {
+      "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\removeItem.png",
+      "SourceId": "Online Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\",
+      "BasePath": "_content/Online Shop",
+      "RelativePath": "Icons/removeItem.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Icons\\removeItem.png"
     },
     {
       "Identity": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\wwwroot\\Icons\\shopping-cart.png",
