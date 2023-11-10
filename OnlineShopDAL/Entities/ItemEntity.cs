@@ -16,7 +16,7 @@ public class ItemEntity
     public int Quantity { get; set; }
     
     [ForeignKey(nameof(PhotoEntity))]
-    public List<PhotoEntity> Photoes { get; set; }
+    public List<PhotoEntity> Photos { get; set; }
     
     [ForeignKey(nameof(CategoryEntity))]
     public CategoryEntity Category { get; set; }
