@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online Shop", "Online Shop\Online Shop.csproj", "{4961022F-79DC-4982-BF20-E4E7F294E13D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShopLogic", "OnlineShopLogic\OnlineShopLogic.csproj", "{EF6B527C-117C-4446-BA59-30B2FC98F971}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShopDAL", "OnlineShopDAL\OnlineShopDAL.csproj", "{42DEC780-6784-42D1-8920-8AC2B990F089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShopLogic", "OnlineShopLogic\OnlineShopLogic.csproj", "{E3492AAC-EC9C-4813-B161-1579E0AEDECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +16,13 @@ Global
 		{4961022F-79DC-4982-BF20-E4E7F294E13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4961022F-79DC-4982-BF20-E4E7F294E13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4961022F-79DC-4982-BF20-E4E7F294E13D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF6B527C-117C-4446-BA59-30B2FC98F971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF6B527C-117C-4446-BA59-30B2FC98F971}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF6B527C-117C-4446-BA59-30B2FC98F971}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF6B527C-117C-4446-BA59-30B2FC98F971}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42DEC780-6784-42D1-8920-8AC2B990F089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42DEC780-6784-42D1-8920-8AC2B990F089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42DEC780-6784-42D1-8920-8AC2B990F089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42DEC780-6784-42D1-8920-8AC2B990F089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3492AAC-EC9C-4813-B161-1579E0AEDECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3492AAC-EC9C-4813-B161-1579E0AEDECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3492AAC-EC9C-4813-B161-1579E0AEDECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3492AAC-EC9C-4813-B161-1579E0AEDECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

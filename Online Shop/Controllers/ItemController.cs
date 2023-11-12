@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
+using OnlineShopDAL.Utility;
+using OnlineShopLogic.Implementation.Services;
 
 namespace OnlineShop.Controllers;
 
@@ -7,12 +9,19 @@ namespace OnlineShop.Controllers;
 public class ItemController : Controller
 {
     private readonly ILogger<ItemController> _logger;
-
-    public ItemController(ILogger<ItemController> logger)
+    private ItemService _itemService;
+    public ItemController(ILogger<ItemController> logger, ItemService itemService)
     {
+        _itemService = itemService;
         _logger = logger;
     }
 
+    [HttpGet]
+    public bool FillDatabase()
+    {
+        return _itemService.FillDatabase();
+    }
+    
     [HttpGet]
     public IActionResult ItemCategory([FromQuery] string category)
     {

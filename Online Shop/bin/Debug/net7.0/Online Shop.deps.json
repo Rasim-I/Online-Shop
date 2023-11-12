@@ -2810,6 +2810,9 @@
         }
       },
       "OnlineShopLogic/1.0.0": {
+        "dependencies": {
+          "OnlineShopDAL": "1.0.0"
+        },
         "runtime": {
           "OnlineShopLogic.dll": {}
         }

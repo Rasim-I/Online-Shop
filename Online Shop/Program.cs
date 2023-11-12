@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Online_Shop.Areas.Identity.Data;
 using OnlineShop.Data;
 using OnlineShopDAL;
+using OnlineShopLogic.Implementation.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ var authConnectionString = builder.Configuration.GetConnectionString("AuthDbCont
 
 builder.Services.AddDbContext<OnlineShopContext>(options =>
     options
-        .UseLazyLoadingProxies()
+        //.UseLazyLoadingProxies()
         .UseSqlServer(connectionString));
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
@@ -49,6 +50,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddTransient<OnlineShopContext>();
 builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddTransient<ItemService>();
 
 
 

@@ -12,8 +12,8 @@ public class CartEntity
     
     public int Price { get; set; }
     
-    [ForeignKey(nameof(ItemEntity))]
-    public Dictionary<ItemEntity, int> Items { get; set; }
+    [ForeignKey(nameof(CartItemEntity))]
+    public List<CartItemEntity> Items { get; set; }
     
 
 
