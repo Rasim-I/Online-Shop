@@ -10,3 +10,5 @@ C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\obj\Debug\net7.0\OnlineSh
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\obj\Debug\net7.0\refint\OnlineShopDAL.dll
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\obj\Debug\net7.0\OnlineShopDAL.pdb
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\obj\Debug\net7.0\ref\OnlineShopDAL.dll
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\bin\Debug\net7.0\OnlineShopDAL.runtimeconfig.json
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopDAL\obj\Debug\net7.0\OnlineShopDAL.genruntimeconfig.cache

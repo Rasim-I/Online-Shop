@@ -5,6 +5,7 @@ using OnlineShopLogic.Models.Enums;
 
 namespace Online_Shop.Areas.Identity.Data;
 
+//[Table("Customer")]
 public class ApplicationUser : IdentityUser
 {
     [PersonalData]

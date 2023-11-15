@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 public class OnlineShopContext : DbContext
 {
+
     public OnlineShopContext(DbContextOptions<OnlineShopContext> options) : base(options)
     {
-        Database.EnsureCreated();
+        //Database.EnsureCreated();
     }
     
     public virtual DbSet<CartEntity> Carts { get; set; }
@@ -25,11 +26,10 @@ public class OnlineShopContext : DbContext
     public virtual DbSet<ReviewEntity> Reviews { get; set; }
 
 
-    /*
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         
     }
-    */
     
 }

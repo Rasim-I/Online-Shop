@@ -47,7 +47,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 
-builder.Services.AddTransient<OnlineShopContext>();
+//builder.Services.AddTransient<OnlineShopContext>();
 builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
