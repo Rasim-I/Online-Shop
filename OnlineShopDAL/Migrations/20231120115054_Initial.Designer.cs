@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineShopDAL;
 
@@ -11,9 +12,11 @@ using OnlineShopDAL;
 namespace OnlineShopDAL.Migrations
 {
     [DbContext(typeof(OnlineShopContext))]
-    partial class OnlineShopContextModelSnapshot : ModelSnapshot
+    [Migration("20231120115054_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,9 +179,6 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ItemEntityId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -187,17 +187,12 @@ namespace OnlineShopDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PhotoEntity")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ReviewEntityId")
+                    b.Property<Guid?>("PhotoEntity")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemEntityId");
-
-                    b.HasIndex("ReviewEntityId");
+                    b.HasIndex("PhotoEntity");
 
                     b.ToTable("Photos");
                 });
@@ -272,21 +267,13 @@ namespace OnlineShopDAL.Migrations
 
             modelBuilder.Entity("OnlineShopDAL.Entities.PhotoEntity", b =>
                 {
-                    b.HasOne("OnlineShopDAL.Entities.ItemEntity", "Item")
+                    b.HasOne("OnlineShopDAL.Entities.ItemEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ItemEntityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PhotoEntity");
 
-                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", "Review")
+                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ReviewEntityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Review");
+                        .HasForeignKey("PhotoEntity");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.ReviewEntity", b =>

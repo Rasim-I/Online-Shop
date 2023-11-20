@@ -36,13 +36,13 @@ public class InitData
         };
 
         CategoryEntity categoryElectronics = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, Photo = photoElectronics };
+            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations};
         CategoryEntity categorySport = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Sport, Photo = photoSport };
+            { Id = Guid.NewGuid(), Name = CategoryNames.Sport};
         CategoryEntity categoryDecorations = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, Photo = photoDecorations };
+            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations};
         CategoryEntity categoryClothes = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Clothes, Photo = photoClothes };
+            { Id = Guid.NewGuid(), Name = CategoryNames.Clothes};
 
 
         List<PhotoEntity> photosForElectronics1 = new List<PhotoEntity>()
@@ -109,7 +109,7 @@ public class InitData
 
         ItemEntity itemElectronics4 = new ItemEntity()
         {
-            Id = Guid.NewGuid(), Name = "Tablet model something Mate Gray",
+            Id = Guid.NewGuid(), Name = "Tablet model something Matte Gray",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             Category = categoryElectronics, Price = 1000, Quantity = 5, Photos = photosForElectronics2
@@ -117,7 +117,7 @@ public class InitData
 
         ItemEntity itemElectronics5 = new ItemEntity()
         {
-            Id = Guid.NewGuid(), Name = "Tablet 2 model something Mate Gray",
+            Id = Guid.NewGuid(), Name = "Tablet 2 model something Matte Gray",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             Category = categoryElectronics, Price = 1100, Quantity = 4, Photos = photosForElectronics2
@@ -125,7 +125,7 @@ public class InitData
 
         ItemEntity itemElectronics6 = new ItemEntity()
         {
-            Id = Guid.NewGuid(), Name = "Tablet 3 model something Mate Gray",
+            Id = Guid.NewGuid(), Name = "Tablet 3 model something Matte Gray",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             Category = categoryElectronics, Price = 900, Quantity = 4, Photos = photosForElectronics2

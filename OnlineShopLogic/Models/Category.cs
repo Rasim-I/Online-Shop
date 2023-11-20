@@ -9,7 +9,6 @@ namespace OnlineShopLogic.Models
         private Guid _id;
         private CategoryNames _name;
         private List<Item> _items;
-        private Photo _photo;
         private List<Category> _subCategories;
 
         public List<Category> SubCategories
@@ -34,11 +33,6 @@ namespace OnlineShopLogic.Models
         }
     */
         
-        public Photo Photo
-        {
-            get => _photo;
-            set => _photo = value;
-        }
 
         public Category(CategoryNames name)
         {

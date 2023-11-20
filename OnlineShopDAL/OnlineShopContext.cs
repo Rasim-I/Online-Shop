@@ -29,7 +29,16 @@ public class OnlineShopContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
+        modelBuilder.Entity<ItemEntity>()
+            .HasMany(item => item.Photos)
+            .WithOne(photo => photo.Item)
+            .HasForeignKey(photo => photo.ItemEntityId);
+
+        modelBuilder.Entity<ReviewEntity>()
+            .HasMany(review => review.Photos)
+            .WithOne(photo => photo.Review)
+            .HasForeignKey(photo => photo.ReviewEntityId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
     
 }

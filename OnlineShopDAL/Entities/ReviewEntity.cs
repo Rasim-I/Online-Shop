@@ -10,7 +10,7 @@ public class ReviewEntity
     public Guid Id { get; set; }
     
     [ForeignKey(nameof(CustomerEntity))]
-    public Guid CustomerId { get; set; }
+    public CustomerEntity Customer { get; set; }
     
     [ForeignKey(nameof(ItemEntity))]
     public ItemEntity Item { get; set; }

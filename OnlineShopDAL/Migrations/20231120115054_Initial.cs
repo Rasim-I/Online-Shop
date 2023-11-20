@@ -25,6 +25,24 @@ namespace OnlineShopDAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<int>(type: "int", nullable: false),
+                    CategoryEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Categories_Categories_CategoryEntity",
+                        column: x => x.CategoryEntity,
+                        principalTable: "Categories",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
@@ -56,51 +74,6 @@ namespace OnlineShopDAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CartItem",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    ItemEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CartItemEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CartItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CartItem_Carts_CartItemEntity",
-                        column: x => x.CartItemEntity,
-                        principalTable: "Carts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_CartItem_Orders_CartItemEntity",
-                        column: x => x.CartItemEntity,
-                        principalTable: "Orders",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<int>(type: "int", nullable: false),
-                    PhotoEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CategoryEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Categories_Categories_CategoryEntity",
-                        column: x => x.CategoryEntity,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Items",
                 columns: table => new
                 {
@@ -123,11 +96,43 @@ namespace OnlineShopDAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CartItem",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    ItemEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CartItemEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CartItem_Carts_CartItemEntity",
+                        column: x => x.CartItemEntity,
+                        principalTable: "Carts",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CartItem_Items_ItemEntity",
+                        column: x => x.ItemEntity,
+                        principalTable: "Items",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CartItem_Orders_CartItemEntity",
+                        column: x => x.CartItemEntity,
+                        principalTable: "Orders",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CustomerEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ItemEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Stars = table.Column<int>(type: "int", nullable: false),
@@ -136,6 +141,12 @@ namespace OnlineShopDAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Customers_CustomerEntity",
+                        column: x => x.CustomerEntity,
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reviews_Items_ItemEntity",
                         column: x => x.ItemEntity,
@@ -184,11 +195,6 @@ namespace OnlineShopDAL.Migrations
                 column: "CategoryEntity");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Categories_PhotoEntity",
-                table: "Categories",
-                column: "PhotoEntity");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Items_CategoryEntity",
                 table: "Items",
                 column: "CategoryEntity");
@@ -199,43 +205,24 @@ namespace OnlineShopDAL.Migrations
                 column: "PhotoEntity");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reviews_CustomerEntity",
+                table: "Reviews",
+                column: "CustomerEntity");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_ItemEntity",
                 table: "Reviews",
                 column: "ItemEntity");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_CartItem_Items_ItemEntity",
-                table: "CartItem",
-                column: "ItemEntity",
-                principalTable: "Items",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Categories_Photos_PhotoEntity",
-                table: "Categories",
-                column: "PhotoEntity",
-                principalTable: "Photos",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Photos_Items_PhotoEntity",
-                table: "Photos");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Reviews_Items_ItemEntity",
-                table: "Reviews");
-
             migrationBuilder.DropTable(
                 name: "CartItem");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Photos");
 
             migrationBuilder.DropTable(
                 name: "Carts");
@@ -244,16 +231,16 @@ namespace OnlineShopDAL.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
+                name: "Reviews");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
+
+            migrationBuilder.DropTable(
                 name: "Items");
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "Photos");
-
-            migrationBuilder.DropTable(
-                name: "Reviews");
         }
     }
 }
