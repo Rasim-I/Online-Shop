@@ -176,7 +176,7 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ItemEntityId")
+                    b.Property<Guid?>("ItemEntityId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Link")
@@ -190,7 +190,7 @@ namespace OnlineShopDAL.Migrations
                     b.Property<Guid>("PhotoEntity")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ReviewEntityId")
+                    b.Property<Guid?>("ReviewEntityId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -274,15 +274,12 @@ namespace OnlineShopDAL.Migrations
                 {
                     b.HasOne("OnlineShopDAL.Entities.ItemEntity", "Item")
                         .WithMany("Photos")
-                        .HasForeignKey("ItemEntityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ItemEntityId");
 
                     b.HasOne("OnlineShopDAL.Entities.ReviewEntity", "Review")
                         .WithMany("Photos")
                         .HasForeignKey("ReviewEntityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Item");
 

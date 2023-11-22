@@ -29,6 +29,7 @@ public class OnlineShopContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
         modelBuilder.Entity<ItemEntity>()
             .HasMany(item => item.Photos)
             .WithOne(photo => photo.Item)
@@ -39,6 +40,19 @@ public class OnlineShopContext : DbContext
             .WithOne(photo => photo.Review)
             .HasForeignKey(photo => photo.ReviewEntityId)
             .OnDelete(DeleteBehavior.Restrict);
+            
+            /*
+        modelBuilder.Entity<PhotoEntity>()
+            .HasOne(p => p.Item)
+            .WithMany(i => i.Photos)
+            .HasForeignKey(p => p.ItemEntityId);
+
+        modelBuilder.Entity<PhotoEntity>()
+            .HasOne(p => p.Review)
+            .WithMany(r => r.Photos)
+            .HasForeignKey(p => p.ReviewEntityId);
+        */
+            
     }
     
 }

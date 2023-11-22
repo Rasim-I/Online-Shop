@@ -145,7 +145,7 @@ public class InitData
         items.Add(itemElectronics5);
         items.Add(itemElectronics6);
 
-        
+        /*
         _unitOfWork.Photos.Create(photoDecorations);
         _unitOfWork.Photos.Create(photoElectronics);
         _unitOfWork.Photos.Create(photoClothes);
@@ -158,7 +158,7 @@ public class InitData
         _unitOfWork.Categories.Create(categoryClothes);
         _unitOfWork.Save();
         
-        
+        */
         
         foreach (var photo in photosForElectronics1)
         {
@@ -170,7 +170,7 @@ public class InitData
         }
         _unitOfWork.Save();
         
-        /*
+        
         _unitOfWork.Items.Create(itemElectronics1);
         _unitOfWork.Items.Create(itemElectronics2);
         _unitOfWork.Items.Create(itemElectronics3);
@@ -178,6 +178,5 @@ public class InitData
         _unitOfWork.Items.Create(itemElectronics5);
         _unitOfWork.Items.Create(itemElectronics6);
         _unitOfWork.Save();
-        */
     }
 }

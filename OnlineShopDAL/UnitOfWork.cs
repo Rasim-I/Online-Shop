@@ -1,4 +1,5 @@
-﻿using OnlineShopDAL.IRepositories;
+﻿using OnlineShopDAL.Entities;
+using OnlineShopDAL.IRepositories;
 using OnlineShopDAL.Repositories;
 
 namespace OnlineShopDAL;
@@ -31,6 +32,7 @@ public class UnitOfWork : IUnitOfWork
         Orders = new OrderRepository(context);
         Photos = new PhotoRepository(context);
         Reviews = new ReviewRepository(context);
+
     }
     
     public int Save()

@@ -7,8 +7,14 @@ namespace OnlineShopLogic.Models
         private Guid _id;
         private string _name;
         private string _link;
+        private Item _item;
+        private Review _review;
 
-        public Guid Id => _id;
+        public Guid Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
         public string Name
         {
@@ -22,12 +28,25 @@ namespace OnlineShopLogic.Models
             set => _link = value;
         }
 
+        public Item Item
+        {
+            get => _item;
+            set => _item = value;
+        }
+
+        public Review Review
+        {
+            get => _review;
+            set => _review = value;
+        }
+        
         public Photo(string name, string link)
         {
             _id = Guid.NewGuid();
             _name = name;
             _link = link;
         }
-        
+
+        public Photo(){}
     }
 }

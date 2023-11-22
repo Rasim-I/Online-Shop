@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OnlineShopDAL.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class PhotoFix : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -162,21 +162,23 @@ namespace OnlineShopDAL.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Link = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhotoEntity = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    ItemEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ReviewEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Photos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Photos_Items_PhotoEntity",
-                        column: x => x.PhotoEntity,
+                        name: "FK_Photos_Items_ItemEntityId",
+                        column: x => x.ItemEntityId,
                         principalTable: "Items",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Photos_Reviews_PhotoEntity",
-                        column: x => x.PhotoEntity,
+                        name: "FK_Photos_Reviews_ReviewEntityId",
+                        column: x => x.ReviewEntityId,
                         principalTable: "Reviews",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -200,9 +202,14 @@ namespace OnlineShopDAL.Migrations
                 column: "CategoryEntity");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Photos_PhotoEntity",
+                name: "IX_Photos_ItemEntityId",
                 table: "Photos",
-                column: "PhotoEntity");
+                column: "ItemEntityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photos_ReviewEntityId",
+                table: "Photos",
+                column: "ReviewEntityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_CustomerEntity",

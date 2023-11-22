@@ -10,12 +10,14 @@ public class PhotoEntity
     public string Name { get; set; }
     public string Link { get; set; }
     
-    [ForeignKey(nameof(ItemEntity))]
-    public Guid ItemEntityId { get; set; }
+    
+    //[ForeignKey(nameof(ItemEntity))]
+    public Guid? ItemEntityId { get; set; }
     public ItemEntity Item { get; set; }
     
-    [ForeignKey(nameof(ItemEntity))]
-    public Guid ReviewEntityId { get; set; }
+    
+    //[ForeignKey(nameof(ReviewEntity))]
+    public Guid? ReviewEntityId { get; set; }
     public ReviewEntity Review { get; set; }
 
 }
