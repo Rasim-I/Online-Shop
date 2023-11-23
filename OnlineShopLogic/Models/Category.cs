@@ -17,7 +17,11 @@ namespace OnlineShopLogic.Models
             set => _subCategories = value;
         }
 
-        public Guid Id => _id;
+        public Guid Id 
+        { 
+            get => _id; 
+            set => _id = value; 
+        }
 
         public CategoryNames Name
         {
@@ -42,6 +46,7 @@ namespace OnlineShopLogic.Models
             _subCategories = new List<Category>();
         }
         
+        public Category(){}
     }
 
 }

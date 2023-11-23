@@ -11,9 +11,13 @@ namespace OnlineShopLogic.Models
         private string _description;
         private List<Photo> _photos;
         private int _quantity;
-        private Guid _categoryId;
+        private Category _category;
 
-        public Guid Id => _id;
+        public Guid Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
         public int Price
         {
@@ -45,22 +49,23 @@ namespace OnlineShopLogic.Models
             set => _quantity = value;
         }
 
-        public Guid CategoryId
+        public Category Category
         {
-            get => _categoryId;
-            set => _categoryId = value;
+            get => _category;
+            set => _category = value;
         }
 
-        public Item(string name, string description, int price, Guid categoryId, int quantity)
+        public Item(string name, string description, int price, Category category, int quantity)
         {
             _id = Guid.NewGuid();
             _name = name;
             _description = description;
             _price = price;
-            _categoryId = categoryId;
+            _category = category;
             _quantity = quantity;
             _photos = new List<Photo>();
         }
         
+        public Item(){}
     }
 }
