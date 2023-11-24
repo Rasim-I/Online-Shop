@@ -24,8 +24,8 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Link = model.Link,
             ItemEntityId = model.Item?.Id,
             ReviewEntityId = model.Review?.Id,
-            Item = model.Item == null? null : _itemMapper.ToEntity(model.Item),
-            Review = model.Review == null? null : _reviewMapper.ToEntity(model.Review)
+            Item = MapItemEntity(model.Item), //model.Item == null? null : _itemMapper.ToEntity(model.Item),
+            Review = MapReviewEntity(model.Review) //model.Review == null? null : _reviewMapper.ToEntity(model.Review)
         };
     }
 
@@ -36,9 +36,30 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Id = entity.Id,
             Name = entity.Name,
             Link = entity.Link,
-            Item = _itemMapper.ToModel(entity.Item),
-            Review = _reviewMapper.ToModel(entity.Review)
+            Item = MapItem(entity.Item), //_itemMapper.ToModel(entity.Item),
+            Review = MapReview(entity.Review) //_reviewMapper.ToModel(entity.Review)
         };
+    }
+
+
+    private Item MapItem(ItemEntity? itemEntity)
+    {
+        return itemEntity == null ? null : _itemMapper.ToModel(itemEntity);
+    }
+    
+    private ItemEntity MapItemEntity(Item? item)
+    {
+        return item == null ? null : _itemMapper.ToEntity(item);
+    }
+
+    private Review MapReview(ReviewEntity? reviewEntity)
+    {
+        return reviewEntity == null ? null : _reviewMapper.ToModel(reviewEntity);
+    }
+
+    private ReviewEntity MapReviewEntity(Review? review)
+    {
+        return review == null ? null : _reviewMapper.ToEntity(review);
     }
     
 }

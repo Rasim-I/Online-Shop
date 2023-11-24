@@ -22,5 +22,8 @@ public class CustomerEntity
     [EnumDataType(typeof(Gender))]
     public Gender Gender { get; set; }  
 
+    
+    public Guid ApplicationUserId { get; set; }
+    
 
 }

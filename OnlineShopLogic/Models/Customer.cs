@@ -12,6 +12,7 @@ namespace OnlineShopLogic.Models
         private string _secondName;
         private readonly DateTime _birthDate;
         private readonly Gender _gender;
+        private readonly Guid _applicationUserId;
 
         public Guid Id => _id;
 
@@ -39,8 +40,9 @@ namespace OnlineShopLogic.Models
 
         public Gender Gender => _gender;
 
-
-        public Customer(string name, string surname, string secondName, DateTime birthDate, Gender gender)
+        public Guid ApplicationUserId { get; set; }
+        
+        public Customer(string name, string surname, string secondName, DateTime birthDate, Gender gender, Guid applicationUserId)
         {
             _id = Guid.NewGuid();
             _name = name;
@@ -49,6 +51,7 @@ namespace OnlineShopLogic.Models
             _birthDate = birthDate;
             _gender = gender;
             _registrationDate = DateTime.Today;
+            _applicationUserId = applicationUserId;
         }
         
     }

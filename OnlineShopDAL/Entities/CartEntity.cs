@@ -7,7 +7,7 @@ public class CartEntity
 {
     public Guid Id { get; set; }
     
-    //[ForeignKey(nameof(CustomerEntity))]
+    //[ForeignKey(nameof(ApplicationUser))]
     public Guid CustomerId { get; set; }
     
     public int Price { get; set; }
