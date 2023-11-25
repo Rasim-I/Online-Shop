@@ -9,8 +9,8 @@ public class OrderEntity
 {
     public Guid Id { get; set; }
     
-    //[ForeignKey(nameof(CustomerEntity))]
-    public Guid CustomerId { get; set; }
+    [ForeignKey(nameof(CustomerEntity))]
+    public CustomerEntity Customer { get; set; }
     
     [ForeignKey(nameof(CartItemEntity))]
     public List<CartItemEntity> Items { get; set; }

@@ -7,24 +7,48 @@ namespace OnlineShopLogic.Models
     public class Review
     {
         private Guid _id;
-        private Guid _customerId;
+        private Customer _customer;
         private Item _item;
         private string _text;
         private Stars _stars;
         private DateTime _reviewDate;
         private List<Photo> _photos;
 
-        public Guid Id => _id;
+        public Guid Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
-        public Guid CustomerId => _customerId;
+        public Customer Customer
+        {
+            get => _customer;
+            set => _customer = value;
+        }
 
-        public Item Item => _item;
+        public Item Item
+        {
+            get => _item;
+            set => _item = value;
+        }
 
-        public string Text => _text;
+        public string Text
+        {
+            get => _text;
+            set => _text = value;
+        }
 
-        public Stars Stars => _stars;
+        public Stars Stars
+        {
+            get => _stars;
+            set => _stars = value;
+        }
 
-        public DateTime ReviewDate => _reviewDate;
+        public DateTime ReviewDate
+        {
+            get => _reviewDate;
+            set => _reviewDate = value;
+        }
 
         public List<Photo> Photos
         {
@@ -32,16 +56,18 @@ namespace OnlineShopLogic.Models
             set => _photos = value;
         }
 
-        public Review(Guid customerId, Item item, string text, Stars stars, DateTime reviewDate)
+        public Review(Customer customer, Item item, string text, Stars stars, DateTime reviewDate)
         {
             _id = Guid.NewGuid();
-            _customerId = customerId;
+            _customer = customer;
             _item = item;
             _text = text;
             _stars = stars;
             _reviewDate = reviewDate;
             _photos = new List<Photo>();
         }
+        
+        public Review(){}
         
     }
 }

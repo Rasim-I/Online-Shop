@@ -153,6 +153,7 @@ namespace Online_Shop.Areas.Identity.Pages.Account
                 user.BirthDate = Input.BirthDate;
                 user.Gender = Input.Gender;
                 
+                //TODO Create Customer Entity
                 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

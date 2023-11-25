@@ -5,18 +5,26 @@ namespace OnlineShopLogic.Models
 {
     public class Customer
     {
-        private readonly Guid _id;
-        private readonly DateTime _registrationDate;
+        private Guid _id;
+        private DateTime _registrationDate;
         private string _name;
         private string _surname;
         private string _secondName;
-        private readonly DateTime _birthDate;
-        private readonly Gender _gender;
+        private DateTime _birthDate;
+        private Gender _gender;
         private readonly Guid _applicationUserId;
 
-        public Guid Id => _id;
+        public Guid Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
-        public DateTime RegistrationDate => _registrationDate;
+        public DateTime RegistrationDate
+        {
+            get => _registrationDate;
+            set => _registrationDate = value;
+        }
 
         public string Name
         {
@@ -36,9 +44,17 @@ namespace OnlineShopLogic.Models
             set => _secondName = value;
         }
 
-        public DateTime BirthDate => _birthDate;
+        public DateTime BirthDate
+        {
+            get => _birthDate;
+            set => _birthDate = value;
+        }
 
-        public Gender Gender => _gender;
+        public Gender Gender
+        {
+            get => _gender;
+            set => _gender = value;
+        }
 
         public Guid ApplicationUserId { get; set; }
         
@@ -53,6 +69,8 @@ namespace OnlineShopLogic.Models
             _registrationDate = DateTime.Today;
             _applicationUserId = applicationUserId;
         }
+        
+        public Customer(){}
         
     }
 }
