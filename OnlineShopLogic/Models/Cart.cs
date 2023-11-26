@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Schema;
 
 namespace OnlineShopLogic.Models
 {
@@ -9,14 +10,29 @@ namespace OnlineShopLogic.Models
         private Guid _id;
         private Guid _customerId;
         private int _price;
-        private Dictionary<Item, int> _items;
+        //private Dictionary<Item, int> _items;
+        private List<CartItem> _items;
 
-        public Guid Id => _id;
+        public Guid Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
-        public Guid Customer => _customerId;
+        public Guid Customer
+        {
+            get => _customerId;
+            set => _customerId = value;
+        }
 
-        public int Price => _price;
+        public int Price
+        {
+            get => _price;
+            set => _price = value;
+        }
 
+        /*
+        Dictionary<Item, int> Remove and Add methods
         public bool AddItem(Item item, int quantity)
         {
             if (item.Quantity < quantity)
@@ -48,12 +64,30 @@ namespace OnlineShopLogic.Models
             
             return false;
         }
+        */
 
+        public bool AddItem(Item item, int quantity)
+        {
+            if (item.Quantity < quantity)
+                return false;
+            
+            _items.Add(new CartItem(_id, item, quantity));
+            _price += item.Price * quantity;
+            return true;
+        }
+
+        //TODO
+        public bool RemoveItem(Item item, int quantity)
+        {
+
+            return false;
+        }
+        
         public Cart(Guid customerId)
         {
             _id = Guid.NewGuid();
             _customerId = customerId;
-            _items = new Dictionary<Item, int>();
+            _items = new List<CartItem>();  //new Dictionary<Item, int>();
         }
         
     }
