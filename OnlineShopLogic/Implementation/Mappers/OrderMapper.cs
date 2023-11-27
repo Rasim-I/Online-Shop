@@ -9,11 +9,14 @@ public class OrderMapper : IMapper<OrderEntity, Order>
 {
     private IMapper<CustomerEntity, Customer> _customerMapper;
     private IMapper<ItemEntity, Item> _itemMapper;
+    private IMapper<CartItemEntity, CartItem> _cartItemMapper;
 
-    public OrderMapper(IMapper<CustomerEntity, Customer> customerMapper, IMapper<ItemEntity, Item> itemMapper)
+    public OrderMapper(IMapper<CustomerEntity, Customer> customerMapper, IMapper<ItemEntity, Item> itemMapper,
+        IMapper<CartItemEntity, CartItem> cartItemMapper)
     {
         _customerMapper = customerMapper;
         _itemMapper = itemMapper;
+        _cartItemMapper = cartItemMapper;
     }
 
     public OrderEntity ToEntity(Order model)
@@ -24,8 +27,7 @@ public class OrderMapper : IMapper<OrderEntity, Order>
             Customer = _customerMapper.ToEntity(model.Customer),
             OrderDate = model.OrderDate,
             Status = (Status)model.Status,
-            Items = new List<CartItemEntity>()
-
+            Items = new List<CartItemEntity>(model.Items.ConvertAll(i => _cartItemMapper.ToEntity(i)))
         };
     }
 
@@ -33,27 +35,12 @@ public class OrderMapper : IMapper<OrderEntity, Order>
     {
         return new Order()
         {
-
+            Id = entity.Id,
+            Customer = _customerMapper.ToModel(entity.Customer),
+            OrderDate = entity.OrderDate,
+            Status = (Models.Enums.Status)entity.Status,
+            Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))
         };
     }
 
-    /*
-    public CartItemEntity Dict(Dictionary<Item, int> items, Guid cartId)
-    {
-        List<CartItemEntity> cartItemEntities = new List<CartItemEntity>();
-        foreach (KeyValuePair<Item, int> keyValue in items)
-        {
-            cartItemEntities.Add(new CartItemEntity()
-            {
-                //Id = keyValue.Key. 
-                CartId = cartId, 
-                Item = _itemMapper.ToEntity(keyValue.Key),
-                ItemId = keyValue.Key.Id,
-                Quantity = keyValue.Value,
-                Id = 
-            });
-        }
-    }
-    */
-    
 }

@@ -8,7 +8,7 @@ namespace OnlineShopLogic.Models
     {
         private Guid _id;
         private Customer _customer;
-        private Dictionary<Item, int> _items;
+        private List<CartItem> _items;
         private DateTime _orderDate;
         private Status _status;
 
@@ -24,7 +24,7 @@ namespace OnlineShopLogic.Models
             set => _customer = value;
         }
 
-        public Dictionary<Item, int> Items
+        public List<CartItem> Items
         {
             get => _items;
             set => _items = value;
@@ -48,7 +48,7 @@ namespace OnlineShopLogic.Models
             _customer = customer;
             _orderDate = DateTime.Now;
             _status = Status.Created;
-            _items = new Dictionary<Item, int>();
+            _items = new List<CartItem>();
         }
         public Order(){}
     }

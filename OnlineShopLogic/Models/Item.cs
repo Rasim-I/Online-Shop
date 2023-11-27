@@ -67,5 +67,22 @@ namespace OnlineShopLogic.Models
         }
         
         public Item(){}
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Item otherItem = (Item)obj;
+            return Id == otherItem.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+        
     }
 }

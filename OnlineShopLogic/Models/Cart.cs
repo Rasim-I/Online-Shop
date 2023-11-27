@@ -8,7 +8,7 @@ namespace OnlineShopLogic.Models
     public class Cart
     {
         private Guid _id;
-        private Guid _customerId;
+        private Customer _customer;
         private int _price;
         //private Dictionary<Item, int> _items;
         private List<CartItem> _items;
@@ -19,10 +19,16 @@ namespace OnlineShopLogic.Models
             set => _id = value;
         }
 
-        public Guid Customer
+        public Customer Customer
         {
-            get => _customerId;
-            set => _customerId = value;
+            get => _customer;
+            set => _customer = value;
+        }
+
+        public List<CartItem> Items
+        {
+            get => _items;
+            set => _items = value;
         }
 
         public int Price
@@ -76,19 +82,38 @@ namespace OnlineShopLogic.Models
             return true;
         }
 
-        //TODO
+        
         public bool RemoveItem(Item item, int quantity)
         {
+            foreach (var cartItem in Items)
+            {
+                if (cartItem.Item.Equals(item))
+                {
+                    if (cartItem.Quantity < quantity)
+                        return false;
 
+                    if (cartItem.Quantity == quantity)
+                    {
+                        _items.Remove(cartItem);
+                        _price -= cartItem.Item.Price * quantity;
+                        return true;
+                    }
+
+                    cartItem.Item.Quantity -= quantity;
+                    _price -= item.Price * quantity;
+                    return true;
+                }
+            }
             return false;
         }
         
-        public Cart(Guid customerId)
+        public Cart(Customer customer)
         {
             _id = Guid.NewGuid();
-            _customerId = customerId;
+            _customer = customer;
             _items = new List<CartItem>();  //new Dictionary<Item, int>();
         }
         
+        public Cart(){}
     }
 }
