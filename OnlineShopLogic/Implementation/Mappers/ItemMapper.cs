@@ -4,6 +4,8 @@ using OnlineShopLogic.Models;
 
 namespace OnlineShopLogic.Implementation.Mappers;
 
+//TODO Break circular dependencies by adding interface for each concrete mapper
+
 public class ItemMapper : IMapper<ItemEntity, Item>
 {
     private IMapper<PhotoEntity, Photo> _photoMapper;

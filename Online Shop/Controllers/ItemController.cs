@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
+using OnlineShop.Models.WebMappers;
 using OnlineShopDAL.Utility;
 using OnlineShopLogic.Implementation.Services;
 
@@ -25,6 +26,7 @@ public class ItemController : Controller
     [HttpGet]
     public IActionResult ItemCategory([FromQuery] string category)
     {
+        /*
         Guid categoryId = Guid.NewGuid();
         List<ItemWebModel> items = new List<ItemWebModel>
         {
@@ -74,8 +76,13 @@ public class ItemController : Controller
                 CategoryId = categoryId
             }
         };
-
         ViewBag.Category = category;
+        */
+
+        ItemWebModelMapper itemWebModelMapper = new ItemWebModelMapper();
+        List<ItemWebModel> items = 
+            _itemService.GetItems().ConvertAll(model => itemWebModelMapper.ToWebModel(model));
+        
         return View(items);
     }
 

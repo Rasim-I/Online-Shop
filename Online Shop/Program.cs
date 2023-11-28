@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Online_Shop.Areas.Identity.Data;
 using OnlineShop.Data;
 using OnlineShopDAL;
+using OnlineShopDAL.Entities;
+using OnlineShopLogic.Abstraction.IMappers;
+using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopLogic.Implementation.Services;
+using OnlineShopLogic.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,9 +54,16 @@ builder.Services.AddAuthorization(options =>
 //builder.Services.AddTransient<OnlineShopContext>();
 builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-
 builder.Services.AddTransient<ItemService>();
 
+builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();
+builder.Services.AddTransient<IMapper<PhotoEntity, Photo>, PhotoMapper>();
+builder.Services.AddTransient<IMapper<CategoryEntity, Category>, CategoryMapper>();
+builder.Services.AddTransient<IMapper<CartItemEntity, CartItem>, CartItemMapper>();
+builder.Services.AddTransient<IMapper<CustomerEntity, Customer>, CustomerMapper>();
+builder.Services.AddTransient<IMapper<CartEntity, Cart>, CartMapper>();
+builder.Services.AddTransient<IMapper<OrderEntity, Order>, OrderMapper>();
+builder.Services.AddTransient<IMapper<ReviewEntity, Review>, ReviewMapper>();
 
 
 var app = builder.Build();
