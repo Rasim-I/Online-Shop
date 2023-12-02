@@ -8,14 +8,12 @@ namespace OnlineShopLogic.Implementation.Mappers;
 public class OrderMapper : IMapper<OrderEntity, Order>
 {
     private IMapper<CustomerEntity, Customer> _customerMapper;
-    private IMapper<ItemEntity, Item> _itemMapper;
     private IMapper<CartItemEntity, CartItem> _cartItemMapper;
 
-    public OrderMapper(IMapper<CustomerEntity, Customer> customerMapper, IMapper<ItemEntity, Item> itemMapper,
-        IMapper<CartItemEntity, CartItem> cartItemMapper)
+    public OrderMapper(IMapper<CustomerEntity, Customer> customerMapper, IMapper<CartItemEntity, CartItem> cartItemMapper)
     {
         _customerMapper = customerMapper;
-        _itemMapper = itemMapper;
+        //_itemMapper = itemMapper;
         _cartItemMapper = cartItemMapper;
     }
 

@@ -32,7 +32,7 @@ public class OnlineShopContext : DbContext
         
         modelBuilder.Entity<ItemEntity>()
             .HasMany(item => item.Photos)
-            .WithOne(photo => photo.Item)
+            .WithOne() //photo => photo.Item
             .HasForeignKey(photo => photo.ItemEntityId);
 
         modelBuilder.Entity<ReviewEntity>()

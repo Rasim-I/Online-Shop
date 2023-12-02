@@ -7,11 +7,11 @@ namespace OnlineShopLogic.Implementation.Mappers;
 
 public class CategoryMapper : IMapper<CategoryEntity, Category>
 {
-    private IMapper<CategoryEntity, Category> _categoryMapper;
+    //private IMapper<CategoryEntity, Category> _categoryMapper;
 
-    public CategoryMapper(IMapper<CategoryEntity, Category> categoryMapper)
+    public CategoryMapper()
     {
-        _categoryMapper = categoryMapper;
+        //_categoryMapper = categoryMapper;
     }
 
 
@@ -21,7 +21,7 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         {
             Id = model.Id,
             Name = (CategoryNames)model.Name,
-            SubCategories = new List<CategoryEntity>(model.SubCategories.ConvertAll(c => _categoryMapper.ToEntity(c)))
+            SubCategories = new List<CategoryEntity>(model.SubCategories.ConvertAll(ToEntity))
                 //model.SubCategories?.Select(c => _categoryMapper.ToEntity(c)).ToList() ?? new List<CategoryEntity>()
         };
     }
@@ -32,7 +32,7 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         {
             Id = entity.Id,
             Name = (Models.Enums.CategoryNames)entity.Name,
-            SubCategories = new List<Category>(entity.SubCategories.ConvertAll(c => _categoryMapper.ToModel(c)))
+            SubCategories = new List<Category>(entity.SubCategories.ConvertAll(ToModel))
         };
     }
     

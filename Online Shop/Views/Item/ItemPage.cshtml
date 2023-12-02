@@ -17,9 +17,13 @@
         <section id="itemImage-carousel" class="splide itemImage" aria-label="Item pictures">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img src="~/Item_Images/Black.png" alt=""/>
-                    </li>
+                    @foreach (var photo in Model.Photos)
+                    {
+                        <li class="splide__slide">
+                            <img src="@photo.Link" alt=""/>
+                        </li>
+                    }
+                    
                     <li class="splide__slide">
                         <img src="~/Item_Images/Blue.png" alt=""/>
                     </li>
@@ -34,7 +38,8 @@
         <h2 class="itemName">@Model.Name</h2>
         <img class="itemRatingIcon" src="~/Icons/ItemRatingIcons/5st.png" alt="rating"/>
         <h2 class="itemPrice">@Model.Price</h2>
-        <h3 class="itemDescription">@Model.Description</h3>
+        <!--h3 class="itemDescription">@Model.Description</h3-->
+        <h3 class="itemDescription" style="display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2">@Model.Description</h3>
         <form class="buyItemForm" method="post">
             <button type="button" class="buyItemBtn btn btn-success btn-lg">Buy <img class="buyItemIcon" src="~/Icons/shopping-cart.png"/></button>
         </form>

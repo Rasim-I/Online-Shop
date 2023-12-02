@@ -11,10 +11,12 @@ public class ItemController : Controller
 {
     private readonly ILogger<ItemController> _logger;
     private ItemService _itemService;
-    public ItemController(ILogger<ItemController> logger, ItemService itemService)
+    private ItemWebModelMapper _itemWebModelMapper;
+    public ItemController(ILogger<ItemController> logger, ItemService itemService, ItemWebModelMapper itemWebModelMapper)
     {
-        _itemService = itemService;
         _logger = logger;
+        _itemService = itemService;
+        _itemWebModelMapper = itemWebModelMapper;
     }
 
     [HttpGet]
@@ -88,14 +90,19 @@ public class ItemController : Controller
 
     public IActionResult ItemPage([FromQuery] string itemId)
     {
-        ItemWebModel item = new ItemWebModel()
+        /*
+        ItemWebModel itemTest = new ItemWebModel()
         {
             Id = Guid.NewGuid(), Name = "product product", Description =
                 "Description description description description," +
                 "description dddddd dddd dddd ddd d ddddddd d ddd. DDdddd ddd d dddd.",
             CategoryId = Guid.NewGuid(), Price = 2321
         };
-        return View(item);
+        */  
+        
+        ItemWebModel itemWebModel = _itemWebModelMapper.ToWebModel(_itemService.GetItem(Guid.Parse(itemId)));
+        
+        return View(itemWebModel);
     }
     
 }

@@ -86,3 +86,12 @@
     max-width: 10vh;
     max-height: 2vh;
 }
+
+
+.shortDescriptionItem{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+

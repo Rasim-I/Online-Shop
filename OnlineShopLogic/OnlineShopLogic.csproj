@@ -10,8 +10,4 @@
       <ProjectReference Include="..\OnlineShopDAL\OnlineShopDAL.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Abstraction\IServices" />
-    </ItemGroup>
-
 </Project>

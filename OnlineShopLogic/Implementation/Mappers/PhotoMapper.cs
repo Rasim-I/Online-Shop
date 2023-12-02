@@ -6,15 +6,7 @@ namespace OnlineShopLogic.Implementation.Mappers;
 
 public class PhotoMapper : IMapper<PhotoEntity, Photo>
 {
-    private IMapper<ItemEntity, Item> _itemMapper;
-    private IMapper<ReviewEntity, Review> _reviewMapper;
 
-    public PhotoMapper(IMapper<ItemEntity, Item> itemMapper, IMapper<ReviewEntity, Review> reviewMapper)
-    {
-        _itemMapper = itemMapper;
-        _reviewMapper = reviewMapper;
-    }
-    
     public PhotoEntity ToEntity(Photo model)
     {
         return new PhotoEntity()
@@ -22,10 +14,11 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Id = model.Id,
             Name = model.Name,
             Link = model.Link,
-            ItemEntityId = model.Item?.Id,
-            ReviewEntityId = model.Review?.Id,
-            Item = MapItemEntity(model.Item), //model.Item == null? null : _itemMapper.ToEntity(model.Item),
-            Review = MapReviewEntity(model.Review) //model.Review == null? null : _reviewMapper.ToEntity(model.Review)
+            ItemEntityId = model.ItemId,
+            ReviewEntityId = model.ReviewId
+            
+            //Item = MapItemEntity(model.Item), //model.Item == null? null : _itemMapper.ToEntity(model.Item),
+            //Review = MapReviewEntity(model.Review) //model.Review == null? null : _reviewMapper.ToEntity(model.Review)
         };
     }
 
@@ -36,12 +29,15 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Id = entity.Id,
             Name = entity.Name,
             Link = entity.Link,
-            Item = MapItem(entity.Item), //_itemMapper.ToModel(entity.Item),
-            Review = MapReview(entity.Review) //_reviewMapper.ToModel(entity.Review)
+            ItemId = entity.ItemEntityId,
+            ReviewId = entity.ReviewEntityId
+            
+            //Item = MapItem(entity.Item), //_itemMapper.ToModel(entity.Item),
+            //Review = MapReview(entity.Review) //_reviewMapper.ToModel(entity.Review)
         };
     }
 
-
+    /*
     private Item MapItem(ItemEntity? itemEntity)
     {
         return itemEntity == null ? null : _itemMapper.ToModel(itemEntity);
@@ -61,5 +57,5 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
     {
         return review == null ? null : _reviewMapper.ToEntity(review);
     }
-    
+    */
 }

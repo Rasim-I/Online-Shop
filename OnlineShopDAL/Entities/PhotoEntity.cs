@@ -13,7 +13,7 @@ public class PhotoEntity
     
     //[ForeignKey(nameof(ItemEntity))]
     public Guid? ItemEntityId { get; set; }
-    public ItemEntity Item { get; set; }
+    //public ItemEntity Item { get; set; }
     
     
     //[ForeignKey(nameof(ReviewEntity))]
