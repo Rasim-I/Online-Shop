@@ -8,15 +8,26 @@ namespace OnlineShopLogic.Models
     {
         private Guid _id;
         private CategoryNames _name;
-        private List<Item> _items;
-        private List<Category> _subCategories;
+        //private List<Item> _items;
+        private Guid _rootCategory;
+        private bool _isRoot;
 
-        public List<Category> SubCategories
+        public Guid RootCategory
         {
-            get => _subCategories;
-            set => _subCategories = value;
+            get => _rootCategory;
+            set
+            {
+                _rootCategory = value;
+                _isRoot = false;
+            }
         }
 
+        public bool IsRoot
+        {
+            get => _isRoot;
+            set => _isRoot = value;
+        }
+        
         public Guid Id 
         { 
             get => _id; 
@@ -42,8 +53,8 @@ namespace OnlineShopLogic.Models
         {
             _id = Guid.NewGuid();
             _name = name;
-            _items = new List<Item>();
-            _subCategories = new List<Category>();
+            _isRoot = true;
+            //_items = new List<Item>();
         }
         
         public Category(){}

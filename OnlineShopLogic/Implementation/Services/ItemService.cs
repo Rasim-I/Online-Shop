@@ -2,12 +2,13 @@
 using OnlineShopDAL.Entities;
 using OnlineShopDAL.Utility;
 using OnlineShopLogic.Abstraction.IMappers;
+using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopLogic.Models;
 
 namespace OnlineShopLogic.Implementation.Services;
 
-public class ItemService
+public class ItemService : IItemService
 {
     private IUnitOfWork _unitOfWork;
     private IMapper<ItemEntity, Item> _itemMapper;

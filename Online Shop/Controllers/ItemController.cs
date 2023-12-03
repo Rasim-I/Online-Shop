@@ -2,6 +2,7 @@
 using OnlineShop.Models;
 using OnlineShop.Models.WebMappers;
 using OnlineShopDAL.Utility;
+using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Services;
 
 namespace OnlineShop.Controllers;
@@ -10,9 +11,9 @@ namespace OnlineShop.Controllers;
 public class ItemController : Controller
 {
     private readonly ILogger<ItemController> _logger;
-    private ItemService _itemService;
+    private IItemService _itemService;
     private ItemWebModelMapper _itemWebModelMapper;
-    public ItemController(ILogger<ItemController> logger, ItemService itemService, ItemWebModelMapper itemWebModelMapper)
+    public ItemController(ILogger<ItemController> logger, IItemService itemService, ItemWebModelMapper itemWebModelMapper)
     {
         _logger = logger;
         _itemService = itemService;

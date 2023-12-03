@@ -21,7 +21,9 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         {
             Id = model.Id,
             Name = (CategoryNames)model.Name,
-            SubCategories = new List<CategoryEntity>(model.SubCategories.ConvertAll(ToEntity))
+            RootCategory = model.RootCategory,
+            IsRoot = model.IsRoot
+            //SubCategories = new List<CategoryEntity>(model.SubCategories.ConvertAll(ToEntity))
                 //model.SubCategories?.Select(c => _categoryMapper.ToEntity(c)).ToList() ?? new List<CategoryEntity>()
         };
     }
@@ -32,7 +34,9 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         {
             Id = entity.Id,
             Name = (Models.Enums.CategoryNames)entity.Name,
-            SubCategories = new List<Category>(entity.SubCategories.ConvertAll(ToModel))
+            RootCategory = entity.RootCategory,
+            IsRoot = entity.IsRoot
+            //SubCategories = new List<Category>(entity.SubCategories.ConvertAll(ToModel))
         };
     }
     

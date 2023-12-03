@@ -6,6 +6,7 @@ using OnlineShop.Models.WebMappers;
 using OnlineShopDAL;
 using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
+using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopLogic.Models;
@@ -55,7 +56,7 @@ builder.Services.AddAuthorization(options =>
 //builder.Services.AddTransient<OnlineShopContext>();
 builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddTransient<ItemService>();
+builder.Services.AddTransient<IItemService, ItemService>();
 
 
 builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();

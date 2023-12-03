@@ -15,8 +15,8 @@ public class ItemRepository : Repository<ItemEntity, Guid>, IItemRepository
     {
         return db.Items
             .Include(i => i.Category)
-            .Include(i => i.Photos)
-            .Include(i =>i.Category.SubCategories);
+            .Include(i => i.Photos);
+
     }
 
     public ItemEntity? GetById(Guid itemId)
@@ -24,7 +24,7 @@ public class ItemRepository : Repository<ItemEntity, Guid>, IItemRepository
         return db.Items.Where(i => i.Id == itemId)
             .Include(i => i.Category)
             .Include(i => i.Photos)
-            .Include(i => i.Category.SubCategories).FirstOrDefault();
+            .FirstOrDefault();
     }
 
 }
