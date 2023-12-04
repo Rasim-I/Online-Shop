@@ -57,7 +57,7 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IItemService, ItemService>();
-
+builder.Services.AddTransient<IHomeService, HomeService>();
 
 builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();
 builder.Services.AddTransient<IMapper<PhotoEntity, Photo>, PhotoMapper>();

@@ -9,5 +9,10 @@ public class CategoryRepository : Repository<CategoryEntity, Guid>, ICategoryRep
     {
         
     }
+
+    public List<CategoryEntity> GetRootCategories()
+    {
+        return db.Categories.Where(c => c.IsRoot == true).ToList();
+    }
     
 }

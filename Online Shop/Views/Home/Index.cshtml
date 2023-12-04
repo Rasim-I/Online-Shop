@@ -1,4 +1,5 @@
-﻿@model List<ItemWebModel>
+﻿@using OnlineShopLogic.Models
+@model List<ItemWebModel>
 @{
     ViewData["Title"] = "Home Page";
     ViewData["FirstSlide"] = "Slides/pictureSlide.png";
@@ -45,7 +46,7 @@
     </div>
     
 
-    @await Html.PartialAsync("Partial/_CatalogPartial", (List<CategoryWebModel>)ViewBag.Categories)
+    @await Html.PartialAsync("Partial/_CatalogPartial", (List<Category>)ViewBag.Categories)
 
     @await Html.PartialAsync("Partial/_RecommendationItemPartial", Model)
     

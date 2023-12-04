@@ -3,20 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Models;
 using OnlineShop.Models.Enums;
+using OnlineShopLogic.Abstraction.IServices;
 
 namespace OnlineShop.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private IHomeService _homeService;
+    
+    public HomeController(ILogger<HomeController> logger, IHomeService homeService)
     {
         _logger = logger;
+        _homeService = homeService;
     }
 
     public IActionResult Index()
     {
+        
         Guid categoryId = Guid.NewGuid();
         List<ItemWebModel> items = new List<ItemWebModel>
         {
@@ -61,7 +65,7 @@ public class HomeController : Controller
                 CategoryId = categoryId
             }
         };
-
+        /*
         CategoryWebModel category1 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Electronics" };
         CategoryWebModel category2 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Sport" };
         CategoryWebModel category3 = new CategoryWebModel() { Id = Guid.NewGuid(), Name = "Decorations" };
@@ -70,6 +74,9 @@ public class HomeController : Controller
         categories.Add(category2);
         categories.Add(category3);
         ViewBag.Categories = categories;
+        */
+
+        ViewBag.Categories = _homeService.GetRootCategories();  //Remove CategoryWebModel
         return View(items);
     }
 
