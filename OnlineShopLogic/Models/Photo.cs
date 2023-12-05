@@ -11,6 +11,7 @@ namespace OnlineShopLogic.Models
         private Guid? _itemId;
         //private Review _review;
         private Guid? _reviewId;
+        private bool _isMain;
 
         public Guid Id
         {
@@ -40,6 +41,12 @@ namespace OnlineShopLogic.Models
         {
             get => _reviewId;
             set => _reviewId = value;
+        }
+
+        public bool IsMain
+        {
+            get => _isMain;
+            set => _isMain = value;
         }
         
         public Photo(string name, string link)

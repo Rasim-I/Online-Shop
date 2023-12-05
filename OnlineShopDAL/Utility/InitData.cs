@@ -52,17 +52,18 @@ public class InitData
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics11",
-                Link = "https://drive.google.com/file/d/11HB5-DTRx6aSyoZZ0CzNU93NUi6W2SeC/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=11HB5-DTRx6aSyoZZ0CzNU93NUi6W2SeC",
+                IsMain = true
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics12",
-                Link = "https://drive.google.com/file/d/1iAhrxC0gRnM_hz5EaD-O99mK2XxEytc7/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1iAhrxC0gRnM_hz5EaD-O99mK2XxEytc7"
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics13",
-                Link = "https://drive.google.com/file/d/1fXkHxp36yEb6y04salvOYEj69OXyiqWN/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1fXkHxp36yEb6y04salvOYEj69OXyiqWN"
             }
         };
         List<PhotoEntity> photosForElectronics2 = new List<PhotoEntity>()
@@ -70,17 +71,18 @@ public class InitData
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics21",
-                Link = "https://drive.google.com/file/d/1lwDpRSgwHqr0TGNXt7ie14k2rb-14dhs/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1lwDpRSgwHqr0TGNXt7ie14k2rb-14dhs",
+                IsMain = true
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics22",
-                Link = "https://drive.google.com/file/d/18FY6MjfPru6MLEtOGzNGM93NxAQEvSsX/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=18FY6MjfPru6MLEtOGzNGM93NxAQEvSsX"
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics23",
-                Link = "https://drive.google.com/file/d/1lHzLtcij3hzo_MhwTC7jTaWwyhAG5xow/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1lHzLtcij3hzo_MhwTC7jTaWwyhAG5xow"
             }
         };
         List<PhotoEntity> photosForElectronics3 = new List<PhotoEntity>()
@@ -88,12 +90,13 @@ public class InitData
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics31",
-                Link = "https://drive.google.com/file/d/1lV0dGV6Oes1aQulx-xJG4fnzdpW7nGMj/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1lV0dGV6Oes1aQulx-xJG4fnzdpW7nGMj",
+                IsMain = true
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics32",
-                Link = "https://drive.google.com/file/d/1BHyHccQr8dUWpbkCQ0iGA5Yk_Fe9Jq6o/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1BHyHccQr8dUWpbkCQ0iGA5Yk_Fe9Jq6o"
             }
         };
         List<PhotoEntity> photosForElectronics4 = new List<PhotoEntity>()
@@ -101,12 +104,13 @@ public class InitData
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics41",
-                Link = "https://drive.google.com/file/d/1BEeOQ5SDRfbQI3f1i_kfU5qe-WL0QCXO/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1BEeOQ5SDRfbQI3f1i_kfU5qe-WL0QCXO",
+                IsMain = true
             },
             new PhotoEntity()
             {
                 Id = Guid.NewGuid(), Name = "Electronics42",
-                Link = "https://drive.google.com/file/d/1TCY_U7zMZNh6-zl6_OLfoOrRf6Bu5ZXH/view?usp=sharing"
+                Link = "https://drive.google.com/uc?id=1TCY_U7zMZNh6-zl6_OLfoOrRf6Bu5ZXH"
             }
         };
 

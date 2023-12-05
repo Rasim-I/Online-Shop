@@ -15,8 +15,8 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Name = model.Name,
             Link = model.Link,
             ItemEntityId = model.ItemId,
-            ReviewEntityId = model.ReviewId
-            
+            ReviewEntityId = model.ReviewId,
+            IsMain = model.IsMain
             //Item = MapItemEntity(model.Item), //model.Item == null? null : _itemMapper.ToEntity(model.Item),
             //Review = MapReviewEntity(model.Review) //model.Review == null? null : _reviewMapper.ToEntity(model.Review)
         };
@@ -30,8 +30,8 @@ public class PhotoMapper : IMapper<PhotoEntity, Photo>
             Name = entity.Name,
             Link = entity.Link,
             ItemId = entity.ItemEntityId,
-            ReviewId = entity.ReviewEntityId
-            
+            ReviewId = entity.ReviewEntityId,
+            IsMain = entity.IsMain
             //Item = MapItem(entity.Item), //_itemMapper.ToModel(entity.Item),
             //Review = MapReview(entity.Review) //_reviewMapper.ToModel(entity.Review)
         };
