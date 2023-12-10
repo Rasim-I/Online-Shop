@@ -1,4 +1,5 @@
 ﻿using OnlineShopDAL.Entities;
+using OnlineShopDAL.Entities.ItemTypes;
 
 namespace OnlineShopDAL;
 using Microsoft.EntityFrameworkCore;
@@ -40,19 +41,27 @@ public class OnlineShopContext : DbContext
             .WithOne(photo => photo.Review)
             .HasForeignKey(photo => photo.ReviewEntityId)
             .OnDelete(DeleteBehavior.Restrict);
-            
-            /*
-        modelBuilder.Entity<PhotoEntity>()
-            .HasOne(p => p.Item)
-            .WithMany(i => i.Photos)
-            .HasForeignKey(p => p.ItemEntityId);
 
-        modelBuilder.Entity<PhotoEntity>()
-            .HasOne(p => p.Review)
-            .WithMany(r => r.Photos)
-            .HasForeignKey(p => p.ReviewEntityId);
-        */
-            
+        modelBuilder.Entity<ItemEntity>()
+            .HasDiscriminator<string>("CategoryType")
+            .HasValue<ItemEntity>("Item")
+            .HasValue<ElectronicsItemEntity>("Electronics")
+            .HasValue<SportItemEntity>("Sport")
+            .HasValue<DecorationsItemEntity>("Decorations")
+            .HasValue<ClothesItemEntity>("Clothes");
+
+        /*
+    modelBuilder.Entity<PhotoEntity>()
+        .HasOne(p => p.Item)
+        .WithMany(i => i.Photos)
+        .HasForeignKey(p => p.ItemEntityId);
+
+    modelBuilder.Entity<PhotoEntity>()
+        .HasOne(p => p.Review)
+        .WithMany(r => r.Photos)
+        .HasForeignKey(p => p.ReviewEntityId);
+    */
+
     }
     
 }

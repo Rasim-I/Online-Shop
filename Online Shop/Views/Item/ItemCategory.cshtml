@@ -25,11 +25,11 @@
         {
             <div class="item">
                 <a asp-controller="Item" asp-action="ItemPage" asp-route-itemId="@item.Id">
-                    <img src=@item.Photos.FirstOrDefault()?.Link alt="@item.Name"/>
+                    <img src=@item.Photos.FirstOrDefault(p => p.IsMain)?.Link alt="@item.Name"/>
                     <div class="itemInfoContainer">
                         <h4>@item.Name</h4>
                         <h6 class="shortDescriptionItem">@item.Description</h6>
-                        <img src="~/Icons/ItemRatingIcons/5st.png" alt="rating"/>
+                        <img class="itemRatingIconCategory" src="~/Icons/ItemRatingIcons/5st.png" alt="rating"/>
                         <h4>10000</h4>
                     </div>
                 </a>
