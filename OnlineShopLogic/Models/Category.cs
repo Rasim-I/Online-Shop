@@ -7,8 +7,8 @@ namespace OnlineShopLogic.Models
     public class Category
     {
         private Guid _id;
-        private CategoryNames _name;
-        //private List<Item> _items;
+        //private CategoryNames _name;
+        //private Item _item;
         private Guid _rootCategory;
         private bool _isRoot;
 
@@ -34,27 +34,29 @@ namespace OnlineShopLogic.Models
             set => _id = value; 
         }
 
+        /*
         public CategoryNames Name
         {
             get => _name;
             set => _name = value;
         }
-
+        */
+        
         /*
-        public List<Item> Items
+        public Item Item
         {
-            get => _items;
-            set => _items = value;
+            get => _item;
+            set => _item = value;
         }
-    */
+        */
         
 
-        public Category(CategoryNames name)
+        public Category(Guid itemId)
         {
             _id = Guid.NewGuid();
-            _name = name;
+            //_name = name;
             _isRoot = true;
-            //_items = new List<Item>();
+            //_item = item;
         }
         
         public Category(){}

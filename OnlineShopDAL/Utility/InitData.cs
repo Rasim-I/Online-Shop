@@ -37,6 +37,7 @@ public class InitData
         };
         */
         
+        
         CategoryEntity categoryElectronics = new CategoryEntity()
             { Id = Guid.NewGuid(), Name = CategoryNames.Electronics, IsRoot = true};
         CategoryEntity categorySport = new CategoryEntity()
@@ -45,7 +46,7 @@ public class InitData
             { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, IsRoot = true};
         CategoryEntity categoryClothes = new CategoryEntity()
             { Id = Guid.NewGuid(), Name = CategoryNames.Clothes, IsRoot = true};
-
+        
 
         List<PhotoEntity> photosForElectronics1 = new List<PhotoEntity>()
         {
