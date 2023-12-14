@@ -10,4 +10,11 @@ public class CategoryItemClothes : Category
         get => _size;
         set => _size = value;
     }
+
+    public string Gender
+    {
+        get => _gender;
+        set => _gender = value;
+    }
+    
 }
