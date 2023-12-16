@@ -10,6 +10,8 @@ using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopLogic.Models;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,7 +63,9 @@ builder.Services.AddTransient<IHomeService, HomeService>();
 
 builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();
 builder.Services.AddTransient<IMapper<PhotoEntity, Photo>, PhotoMapper>();
-builder.Services.AddTransient<IMapper<CategoryEntity, Category>, CategoryMapper>();
+//builder.Services.AddTransient<IMapper<CategoryEntity, Category>, CategoryMapper>();
+builder.Services.AddAutoMapper(typeof(CategoryMappingProfile));
+
 builder.Services.AddTransient<IMapper<CartItemEntity, CartItem>, CartItemMapper>();
 builder.Services.AddTransient<IMapper<CustomerEntity, Customer>, CustomerMapper>();
 builder.Services.AddTransient<IMapper<CartEntity, Cart>, CartMapper>();

@@ -80,15 +80,20 @@ namespace OnlineShopDAL.Migrations
                     b.Property<bool>("IsRoot")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
-
                     b.Property<Guid>("RootCategory")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasDiscriminator<string>("discriminator").HasValue("BaseCategory");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.CustomerEntity", b =>
@@ -242,6 +247,70 @@ namespace OnlineShopDAL.Migrations
                     b.HasIndex("ItemEntity");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.Categories.CategoryItemClothesEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.CategoryEntity");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Categories");
+
+                    b.HasDiscriminator().HasValue("Clothes");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.Categories.CategoryItemDecorationsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.CategoryEntity");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Categories");
+
+                    b.HasDiscriminator().HasValue("Decorations");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.Categories.CategoryItemElectronicsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.CategoryEntity");
+
+                    b.Property<string>("CpuModel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemoryCapacity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Categories");
+
+                    b.HasDiscriminator().HasValue("Electronics");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.Categories.CategoryItemSportEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.CategoryEntity");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Categories");
+
+                    b.HasDiscriminator().HasValue("Sport");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.CartEntity", b =>

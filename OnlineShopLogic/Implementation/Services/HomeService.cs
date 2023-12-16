@@ -1,4 +1,5 @@
-﻿using OnlineShopDAL;
+﻿using AutoMapper;
+using OnlineShopDAL;
 using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Abstraction.IServices;
@@ -9,19 +10,23 @@ namespace OnlineShopLogic.Implementation.Services;
 public class HomeService : IHomeService
 {
     private IUnitOfWork _unitOfWork;
-    private IMapper<CategoryEntity, Category> _categoryMapper;
+    //private IMapper<CategoryEntity, Category> _categoryMapper;
+    private IMapper _mapper;
 
-    public HomeService(IUnitOfWork unitOfWork, IMapper<CategoryEntity, Category> categoryMapper)
+    public HomeService(IUnitOfWork unitOfWork, IMapper mapper)//, IMapper<CategoryEntity, Category> categoryMapper)
     {
         _unitOfWork = unitOfWork;
-        _categoryMapper = categoryMapper;
+        //_categoryMapper = categoryMapper;
+        _mapper = mapper;
     }
 
     public List<Category> GetRootCategories()
     {
         List<CategoryEntity> categoryEntities = _unitOfWork.Categories.GetRootCategories();
 
-        return categoryEntities.ConvertAll(_categoryMapper.ToModel);
+        //return categoryEntities.ConvertAll(_categoryMapper.ToModel);
+        return categoryEntities.ConvertAll(_mapper.Map<Category>);
+
     }
     
 }

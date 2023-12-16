@@ -1,4 +1,5 @@
 ﻿using OnlineShopDAL.Entities;
+using OnlineShopDAL.Entities.Categories;
 using OnlineShopDAL.Entities.Enums;
 
 namespace OnlineShopDAL.Utility;
@@ -36,16 +37,21 @@ public class InitData
             Link = "https://drive.google.com/file/d/1EgCvp7PN3CKQQikQxcWwl0mSzwkbCpIv/view?usp=sharing"
         };
         */
-        
+
+
+        CategoryItemElectronicsEntity electronicsEntity = new CategoryItemElectronicsEntity()
+        {
+            Id = Guid.NewGuid(), CpuModel = "Ryzen 3700x", IsRoot = true, MemoryCapacity = "16"
+        };
         
         CategoryEntity categoryElectronics = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Electronics, IsRoot = true};
+            { Id = Guid.NewGuid()};//, Name = CategoryNames.Electronics, IsRoot = true};
         CategoryEntity categorySport = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Sport, IsRoot = true};
+            { Id = Guid.NewGuid()};//, Name = CategoryNames.Sport, IsRoot = true};
         CategoryEntity categoryDecorations = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, IsRoot = true};
+            { Id = Guid.NewGuid()};// , Name = CategoryNames.Decorations, IsRoot = true};
         CategoryEntity categoryClothes = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Clothes, IsRoot = true};
+            { Id = Guid.NewGuid()};//, Name = CategoryNames.Clothes, IsRoot = true};
         
 
         List<PhotoEntity> photosForElectronics1 = new List<PhotoEntity>()
@@ -174,6 +180,7 @@ public class InitData
         _unitOfWork.Categories.Create(categorySport);
         _unitOfWork.Categories.Create(categoryDecorations);
         _unitOfWork.Categories.Create(categoryClothes);
+        _unitOfWork.Categories.Create(electronicsEntity);
         _unitOfWork.Save();
         
         foreach (var photo in photosForElectronics1)

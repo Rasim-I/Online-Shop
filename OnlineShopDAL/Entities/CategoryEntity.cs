@@ -16,8 +16,8 @@ public class CategoryEntity
     
     public bool IsRoot { get; set; }
     
-    [ForeignKey(nameof(ItemEntity))]
-    public ItemEntity Item { get; set; }
-    //public Guid ItemId { get; set; }
+    //[ForeignKey(nameof(ItemEntity))]
+    //public ItemEntity Item { get; set; }
+    //public Guid? ItemEntityId { get; set; }
 
 }

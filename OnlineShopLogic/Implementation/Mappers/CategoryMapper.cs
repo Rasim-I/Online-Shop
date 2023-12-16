@@ -7,6 +7,7 @@ using OnlineShopLogic.Models.Categories;
 
 namespace OnlineShopLogic.Implementation.Mappers;
 
+/*
 public class CategoryMapper : IMapper<CategoryEntity, Category> 
     
 {
@@ -120,3 +121,4 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
     
     
 }
+*/

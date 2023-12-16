@@ -1,4 +1,5 @@
-﻿using OnlineShopDAL.Entities;
+﻿using AutoMapper;
+using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
@@ -7,12 +8,14 @@ namespace OnlineShopLogic.Implementation.Mappers;
 public class ItemMapper : IMapper<ItemEntity, Item>
 {
     private IMapper<PhotoEntity, Photo> _photoMapper;
-    private IMapper<CategoryEntity, Category> _categoryMapper;
-
-    public ItemMapper(IMapper<PhotoEntity, Photo> photoMapper, IMapper<CategoryEntity, Category> categoryMapper)
+    //private IMapper<CategoryEntity, Category> _categoryMapper;
+    private IMapper _mapper;
+    
+    public ItemMapper(IMapper<PhotoEntity, Photo> photoMapper, IMapper mapper) //IMapper<CategoryEntity, Category> categoryMapper)
     {
         _photoMapper = photoMapper;
-        _categoryMapper = categoryMapper;
+        //_categoryMapper = categoryMapper;
+        _mapper = mapper;
     }
 
     public ItemEntity ToEntity(Item model)
@@ -25,7 +28,8 @@ public class ItemMapper : IMapper<ItemEntity, Item>
             Price = model.Price,
             Quantity = model.Quantity,
             Photos = new List<PhotoEntity>(model.Photos.ConvertAll(p => _photoMapper.ToEntity(p))),
-            Category = _categoryMapper.ToEntity(model.Category)
+            //Category = _categoryMapper.ToEntity(model.Category)
+            Category = _mapper.Map<CategoryEntity>(model.Category)
         };
     }
 
@@ -39,7 +43,8 @@ public class ItemMapper : IMapper<ItemEntity, Item>
             Price = entity.Price,
             Quantity = entity.Quantity,
             Photos = new List<Photo>(entity.Photos.ConvertAll(p => _photoMapper.ToModel(p))),
-            Category = _categoryMapper.ToModel(entity.Category)
+            //Category = _categoryMapper.ToModel(entity.Category)
+            Category = _mapper.Map<Category>(entity.Category)
         };
     }
     
