@@ -18,7 +18,7 @@ public class PhotoEntity
     
     //[ForeignKey(nameof(ReviewEntity))]
     public Guid? ReviewEntityId { get; set; }
-    public ReviewEntity Review { get; set; }
+    //public ReviewEntity Review { get; set; }
     
     public bool IsMain { get; set; }
 

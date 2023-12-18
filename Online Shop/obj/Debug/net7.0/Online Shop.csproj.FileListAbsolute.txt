@@ -345,3 +345,5 @@ C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
