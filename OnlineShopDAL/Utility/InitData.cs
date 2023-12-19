@@ -39,13 +39,13 @@ public class InitData
         */
         
         CategoryEntity categoryElectronics = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Electronics, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Electronics, IsRoot = true};
         CategoryEntity categorySport = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Sport, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Sport, IsRoot = true};
         CategoryEntity categoryDecorations = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Decorations, IsRoot = true};
         CategoryEntity categoryClothes = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Clothes, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Clothes, IsRoot = true};
 
 
         List<PhotoEntity> photosForElectronics1 = new List<PhotoEntity>()

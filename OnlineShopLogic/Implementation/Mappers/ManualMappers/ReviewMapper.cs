@@ -4,7 +4,7 @@ using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
-namespace OnlineShopLogic.Implementation.Mappers;
+namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
 public class ReviewMapper : IMapper<ReviewEntity, Review>
 {

@@ -7,7 +7,7 @@ namespace OnlineShopLogic.Models
     public class Category
     {
         private Guid _id;
-        private CategoryNames _name;
+        private CategoryName _name;
         //private List<Item> _items;
         private Guid _rootCategory;
         private bool _isRoot;
@@ -34,7 +34,7 @@ namespace OnlineShopLogic.Models
             set => _id = value; 
         }
 
-        public CategoryNames Name
+        public CategoryName Name
         {
             get => _name;
             set => _name = value;
@@ -49,7 +49,7 @@ namespace OnlineShopLogic.Models
     */
         
 
-        public Category(CategoryNames name)
+        public Category(CategoryName name)
         {
             _id = Guid.NewGuid();
             _name = name;

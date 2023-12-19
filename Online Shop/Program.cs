@@ -8,6 +8,7 @@ using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
+using OnlineShopLogic.Implementation.Mappers.ManualMappers;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopLogic.Models;
 

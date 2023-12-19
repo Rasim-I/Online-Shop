@@ -18,8 +18,7 @@ public class ItemMappingProfile : Profile
         //_photoMapper = photoMapper;
 
         
-        CreateMap<ItemEntity, Item>()
-            .IncludeAllDerived();
+        CreateMap<ItemEntity, Item>().IncludeAllDerived();
             //.ForMember(
             //    dest => dest.Category,
             //    opt => opt.MapFrom(src => _categoryMapper.ToModel(src.Category)));

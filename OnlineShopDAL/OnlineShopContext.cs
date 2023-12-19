@@ -34,12 +34,12 @@ public class OnlineShopContext : DbContext
         modelBuilder.Entity<ItemEntity>()
             .HasMany(item => item.Photos)
             .WithOne() //photo => photo.Item
-            .HasForeignKey(photo => photo.ItemEntityId);
+            .HasForeignKey(photo => photo.ItemId);
 
         modelBuilder.Entity<ReviewEntity>()
             .HasMany(review => review.Photos)
             .WithOne() //photo => photo.Review
-            .HasForeignKey(photo => photo.ReviewEntityId)
+            .HasForeignKey(photo => photo.ReviewId)
             .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<ItemEntity>()

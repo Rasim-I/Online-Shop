@@ -9,7 +9,7 @@ public class CategoryEntity
 {
     public Guid Id { get; set; }
     
-    public CategoryNames Name { get; set; }
+    public CategoryName Name { get; set; }
     
     [ForeignKey(nameof(CategoryEntity))]
     public Guid RootCategory { get; set; }

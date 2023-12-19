@@ -3,7 +3,7 @@ using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
-namespace OnlineShopLogic.Implementation.Mappers;
+namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
 public class CartItemMapper : IMapper<CartItemEntity, CartItem>
 {

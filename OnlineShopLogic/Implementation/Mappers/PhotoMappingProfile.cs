@@ -10,14 +10,14 @@ public class PhotoMappingProfile : Profile
     {
         CreateMap<PhotoEntity, Photo>()
             .ForMember(dest=> dest.ItemId,
-                opt=>opt.MapFrom(src=>src.ItemEntityId))
+                opt=>opt.MapFrom(src=>src.ItemId))
             .ForMember(dest=>dest.ReviewId,
-                opt=>opt.MapFrom(src=>src.ReviewEntityId));
+                opt=>opt.MapFrom(src=>src.ReviewId));
 
         CreateMap<Photo, PhotoEntity>()
-            .ForMember(dest=>dest.ItemEntityId,
+            .ForMember(dest=>dest.ItemId,
                 opt=>opt.MapFrom(src=>src.ItemId))
-            .ForMember(dest=>dest.ReviewEntityId,
+            .ForMember(dest=>dest.ReviewId,
                 opt=>opt.MapFrom(src=>src.ReviewId));
     }
     
