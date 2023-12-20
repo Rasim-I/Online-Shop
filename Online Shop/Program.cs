@@ -62,7 +62,15 @@ builder.Services.AddTransient<IHomeService, HomeService>();
 
 //builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();
 builder.Services.AddAutoMapper(typeof(ItemMappingProfile));
+builder.Services.AddAutoMapper(typeof(CartItemMappingProfile));
+builder.Services.AddAutoMapper(typeof(CartMappingProfile));
+builder.Services.AddAutoMapper(typeof(CategoryMappingProfile));
+builder.Services.AddAutoMapper(typeof(CustomerMappingProfile));
+builder.Services.AddAutoMapper(typeof(OrderMappingProfile));
+builder.Services.AddAutoMapper(typeof(PhotoMappingProfile));
+builder.Services.AddAutoMapper(typeof(ReviewMappingProfile));
 
+/*
 builder.Services.AddTransient<IMapper<PhotoEntity, Photo>, PhotoMapper>();
 builder.Services.AddTransient<IMapper<CategoryEntity, Category>, CategoryMapper>();
 builder.Services.AddTransient<IMapper<CartItemEntity, CartItem>, CartItemMapper>();
@@ -70,6 +78,7 @@ builder.Services.AddTransient<IMapper<CustomerEntity, Customer>, CustomerMapper>
 builder.Services.AddTransient<IMapper<CartEntity, Cart>, CartMapper>();
 builder.Services.AddTransient<IMapper<OrderEntity, Order>, OrderMapper>();
 builder.Services.AddTransient<IMapper<ReviewEntity, Review>, ReviewMapper>();
+*/
 
 builder.Services.AddTransient<ItemWebModelMapper>();
 

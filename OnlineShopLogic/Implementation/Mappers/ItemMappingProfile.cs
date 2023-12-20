@@ -17,17 +17,21 @@ public class ItemMappingProfile : Profile
         //_categoryMapper = categoryMapper;
         //_photoMapper = photoMapper;
 
-        
-        CreateMap<ItemEntity, Item>().IncludeAllDerived();
-            //.ForMember(
-            //    dest => dest.Category,
-            //    opt => opt.MapFrom(src => _categoryMapper.ToModel(src.Category)));
-            //Make the same for Photos
-        CreateMap<Item, ItemEntity>().IncludeAllDerived();
-            //.ForMember(
-            //    dest =>dest.Category,
-            //    opt => opt.MapFrom(src =>_categoryMapper.ToEntity(src.Category)));
-            //Make the same for Photos
+
+        CreateMap<ItemEntity, Item>()
+            //.PreserveReferences()
+            .ForMember(dest => dest.Category,
+                opt => opt.MapFrom(src => src.Category))
+            .ForMember(dest => dest.Photos,
+                opt => opt.MapFrom(src => src.Photos));
+
+        CreateMap<Item, ItemEntity>()
+            //.PreserveReferences()
+            .ForMember(dest => dest.Category,
+                opt => opt.MapFrom(src => src.Category))
+            .ForMember(dest => dest.Photos,
+                opt => opt.MapFrom(src => src.Photos));
+
 
         
         CreateMap<ItemElectronicsEntity, ItemElectronics>().IncludeBase<ItemEntity, Item>();
