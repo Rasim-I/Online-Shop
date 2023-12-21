@@ -1,4 +1,8 @@
-﻿@model ItemWebModel
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ItemWebModel
+
 
 @{
     ViewData["Title"] = Model.Name;
@@ -50,6 +54,8 @@
     <div class="itemInfo">
         <h2>Item Description</h2>
         <h4>@Model.Description</h4>
+        
+        
     </div>
 
     <div class="itemReviews">
