@@ -149,11 +149,19 @@ namespace OnlineShopDAL.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryEntity");
 
                     b.ToTable("Items");
+
+                    b.HasDiscriminator<string>("discriminator").HasValue("BaseItem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
@@ -187,7 +195,7 @@ namespace OnlineShopDAL.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("ItemEntityId")
+                    b.Property<Guid?>("ItemId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Link")
@@ -198,17 +206,17 @@ namespace OnlineShopDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PhotoEntity")
+                    b.Property<Guid?>("PhotoEntity")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ReviewEntityId")
+                    b.Property<Guid?>("ReviewId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemEntityId");
+                    b.HasIndex("ItemId");
 
-                    b.HasIndex("ReviewEntityId");
+                    b.HasIndex("ReviewId");
 
                     b.ToTable("Photos");
                 });
@@ -242,6 +250,65 @@ namespace OnlineShopDAL.Migrations
                     b.HasIndex("ItemEntity");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemClothesEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Clothes");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemDecorationsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Decorations");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemElectronicsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("CpuModel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MemoryCapacity")
+                        .HasColumnType("int");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Electronics");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemSportEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Sport");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.CartEntity", b =>
@@ -300,14 +367,12 @@ namespace OnlineShopDAL.Migrations
                 {
                     b.HasOne("OnlineShopDAL.Entities.ItemEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ItemEntityId");
+                        .HasForeignKey("ItemId");
 
-                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", "Review")
+                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ReviewEntityId")
+                        .HasForeignKey("ReviewId")
                         .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.ReviewEntity", b =>

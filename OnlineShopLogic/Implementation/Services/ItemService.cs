@@ -1,4 +1,5 @@
-﻿using OnlineShopDAL;
+﻿using AutoMapper;
+using OnlineShopDAL;
 using OnlineShopDAL.Entities;
 using OnlineShopDAL.Utility;
 using OnlineShopLogic.Abstraction.IMappers;
@@ -11,12 +12,14 @@ namespace OnlineShopLogic.Implementation.Services;
 public class ItemService : IItemService
 {
     private IUnitOfWork _unitOfWork;
-    private IMapper<ItemEntity, Item> _itemMapper;
+    //private IMapper<ItemEntity, Item> _itemMapper;
+    private IMapper _mapper;
     
-    public ItemService(IUnitOfWork unitOfWork, IMapper<ItemEntity, Item> itemMapper)
+    public ItemService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
-        _itemMapper = itemMapper;
+        //_itemMapper = itemMapper;
+        _mapper = mapper;
     }
 
     public bool FillDatabase()
@@ -40,8 +43,8 @@ public class ItemService : IItemService
 
         foreach (var item in _unitOfWork.Items.GetAll_IncludeAll())
         {
-            itemsResult.Add(_itemMapper.ToModel(item));
-            itemsResult.Add(_itemMapper.ToModel(item));
+            itemsResult.Add(_mapper.Map<Item>(item));
+            itemsResult.Add(_mapper.Map<Item>(item));
         }
 
         return itemsResult;
@@ -56,7 +59,7 @@ public class ItemService : IItemService
             throw new NullReferenceException("There is no item with that Id");
         }
 
-        Item item = _itemMapper.ToModel(itemEntity);
+        Item item = _mapper.Map<Item>(itemEntity);
         return item;
     }
 

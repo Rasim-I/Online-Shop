@@ -1,6 +1,6 @@
 ﻿namespace OnlineShopDAL.Entities.Enums;
 
-public enum CategoryNames
+public enum CategoryName
 {
     Electronics,
     Sport,

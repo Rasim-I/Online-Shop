@@ -1,5 +1,6 @@
 ﻿using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
+using OnlineShopDAL.Entities.ItemTypes;
 
 namespace OnlineShopDAL.Utility;
 
@@ -38,13 +39,13 @@ public class InitData
         */
         
         CategoryEntity categoryElectronics = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Electronics, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Electronics, IsRoot = true};
         CategoryEntity categorySport = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Sport, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Sport, IsRoot = true};
         CategoryEntity categoryDecorations = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Decorations, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Decorations, IsRoot = true};
         CategoryEntity categoryClothes = new CategoryEntity()
-            { Id = Guid.NewGuid(), Name = CategoryNames.Clothes, IsRoot = true};
+            { Id = Guid.NewGuid(), Name = CategoryName.Clothes, IsRoot = true};
 
 
         List<PhotoEntity> photosForElectronics1 = new List<PhotoEntity>()
@@ -114,37 +115,37 @@ public class InitData
             }
         };
 
-        ItemEntity itemElectronics1 = new ItemEntity()
+        ItemEntity itemElectronics1 = new ItemElectronicsEntity()
         {
             Id = Guid.NewGuid(), Name = "Laptop model something Silver Grey",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            Category = categoryElectronics, Price = 1200, Quantity = 10, Photos = photosForElectronics1
+            Category = categoryElectronics, Price = 1200, Quantity = 10, Photos = photosForElectronics1, CpuModel = "Amd", MemoryCapacity = 256
         };
 
-        ItemEntity itemElectronics2 = new ItemEntity()
+        ItemEntity itemElectronics2 = new ItemElectronicsEntity()
         {
             Id = Guid.NewGuid(), Name = "Laptop 2 model something Silver Grey",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            Category = categoryElectronics, Price = 1400, Quantity = 8, Photos = photosForElectronics2
+            Category = categoryElectronics, Price = 1400, Quantity = 8, Photos = photosForElectronics2, CpuModel = "Intel", MemoryCapacity = 256
         };
 
 
-        ItemEntity itemElectronics4 = new ItemEntity()
+        ItemEntity itemElectronics4 = new ItemElectronicsEntity()
         {
             Id = Guid.NewGuid(), Name = "Tablet model something Matte Gray",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            Category = categoryElectronics, Price = 1000, Quantity = 5, Photos = photosForElectronics3
+            Category = categoryElectronics, Price = 1000, Quantity = 5, Photos = photosForElectronics3, CpuModel = "Qualcomm", MemoryCapacity = 128
         };
 
-        ItemEntity itemElectronics5 = new ItemEntity()
+        ItemEntity itemElectronics5 = new ItemElectronicsEntity()
         {
             Id = Guid.NewGuid(), Name = "Tablet 2 model something Silver Gray",
             Description =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sequis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            Category = categoryElectronics, Price = 1100, Quantity = 4, Photos = photosForElectronics4
+            Category = categoryElectronics, Price = 1100, Quantity = 4, Photos = photosForElectronics4, CpuModel = "MediaTech", MemoryCapacity = 128
         };
         
         

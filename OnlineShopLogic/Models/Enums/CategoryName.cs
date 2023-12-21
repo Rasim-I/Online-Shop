@@ -1,6 +1,6 @@
 ﻿namespace OnlineShopLogic.Models.Enums;
 
-public enum CategoryNames
+public enum CategoryName
 {
     Electronics,
     Sport,

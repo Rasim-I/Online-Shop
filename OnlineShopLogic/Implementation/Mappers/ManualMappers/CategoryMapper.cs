@@ -3,7 +3,7 @@ using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
-namespace OnlineShopLogic.Implementation.Mappers;
+namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
 public class CategoryMapper : IMapper<CategoryEntity, Category>
 {
@@ -20,7 +20,7 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         return new CategoryEntity()
         {
             Id = model.Id,
-            Name = (CategoryNames)model.Name,
+            Name = (CategoryName)model.Name,
             RootCategory = model.RootCategory,
             IsRoot = model.IsRoot
             //SubCategories = new List<CategoryEntity>(model.SubCategories.ConvertAll(ToEntity))
@@ -33,7 +33,7 @@ public class CategoryMapper : IMapper<CategoryEntity, Category>
         return new Category()
         {
             Id = entity.Id,
-            Name = (Models.Enums.CategoryNames)entity.Name,
+            Name = (Models.Enums.CategoryName)entity.Name,
             RootCategory = entity.RootCategory,
             IsRoot = entity.IsRoot
             //SubCategories = new List<Category>(entity.SubCategories.ConvertAll(ToModel))

@@ -12,13 +12,13 @@ public class PhotoEntity
     
     
     //[ForeignKey(nameof(ItemEntity))]
-    public Guid? ItemEntityId { get; set; }
+    public Guid? ItemId { get; set; }
     //public ItemEntity Item { get; set; }
     
     
     //[ForeignKey(nameof(ReviewEntity))]
-    public Guid? ReviewEntityId { get; set; }
-    public ReviewEntity Review { get; set; }
+    public Guid? ReviewId { get; set; }
+    //public ReviewEntity Review { get; set; }
     
     public bool IsMain { get; set; }
 

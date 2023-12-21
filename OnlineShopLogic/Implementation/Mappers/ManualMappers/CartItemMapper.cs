@@ -1,14 +1,16 @@
-﻿using OnlineShopDAL.Entities;
+﻿using AutoMapper;
+using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
-namespace OnlineShopLogic.Implementation.Mappers;
+namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
 public class CartItemMapper : IMapper<CartItemEntity, CartItem>
 {
-    private IMapper<ItemEntity, Item> _itemMapper;
+    //private IMapper<ItemEntity, Item> _itemMapper;
+    private IMapper _itemMapper;
 
-    public CartItemMapper(IMapper<ItemEntity, Item> itemMapper)
+    public CartItemMapper(IMapper itemMapper)
     {
         _itemMapper = itemMapper;
     }
@@ -19,7 +21,7 @@ public class CartItemMapper : IMapper<CartItemEntity, CartItem>
         {
             Id = model.Id,
             CartId = model.CartId,
-            Item = _itemMapper.ToEntity(model.Item),
+            Item = _itemMapper.Map<ItemEntity>(model.Item),
             ItemId = model.Item.Id,
             Quantity = model.Quantity
         };
@@ -31,7 +33,7 @@ public class CartItemMapper : IMapper<CartItemEntity, CartItem>
         {
             Id = entity.Id,
             CartId = entity.CartId,
-            Item = _itemMapper.ToModel(entity.Item),
+            Item = _itemMapper.Map<Item>(entity.Item),
             //ItemId = entity.Item.Id,
             Quantity = entity.Quantity
         };

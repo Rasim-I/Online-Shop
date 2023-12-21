@@ -1,18 +1,20 @@
-﻿using OnlineShopDAL.Entities;
+﻿using AutoMapper;
+using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Models;
 
-namespace OnlineShopLogic.Implementation.Mappers;
+namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
 public class ReviewMapper : IMapper<ReviewEntity, Review>
 {
     private IMapper<CustomerEntity, Customer> _customerMapper;
-    private IMapper<ItemEntity, Item> _itemMapper;
+    //private IMapper<ItemEntity, Item> _itemMapper;
+    private IMapper _itemMapper;
     private IMapper<PhotoEntity, Photo> _photoMapper;
 
     public ReviewMapper(IMapper<CustomerEntity, Customer> customerMapper, 
-        IMapper<ItemEntity, Item> itemMapper, IMapper<PhotoEntity, Photo> photoMapper)
+        IMapper itemMapper, IMapper<PhotoEntity, Photo> photoMapper)
     {
         _customerMapper = customerMapper;
         _itemMapper = itemMapper;
@@ -27,7 +29,7 @@ public class ReviewMapper : IMapper<ReviewEntity, Review>
             ReviewDate = model.ReviewDate,
             Stars = (Stars)model.Stars,
             Text = model.Text,
-            Item = _itemMapper.ToEntity(model.Item),
+            Item = _itemMapper.Map<ItemEntity>(model.Item),
             Customer = _customerMapper.ToEntity(model.Customer),
             Photos = new List<PhotoEntity>(model.Photos.ConvertAll(p => _photoMapper.ToEntity(p)))
         };
@@ -41,7 +43,7 @@ public class ReviewMapper : IMapper<ReviewEntity, Review>
             ReviewDate = entity.ReviewDate,
             Stars = (Models.Enums.Stars)entity.Stars,
             Text = entity.Text,
-            Item = _itemMapper.ToModel(entity.Item),
+            Item = _itemMapper.Map<Item>(entity.Item),
             Customer = _customerMapper.ToModel(entity.Customer),
             Photos = new List<Photo>(entity.Photos.ConvertAll(p => _photoMapper.ToModel(p)))
         };

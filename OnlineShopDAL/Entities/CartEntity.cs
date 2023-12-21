@@ -15,6 +15,4 @@ public class CartEntity
     [ForeignKey(nameof(CartItemEntity))]
     public List<CartItemEntity> Items { get; set; }
     
-
-
 }
