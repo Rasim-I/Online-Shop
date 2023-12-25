@@ -4,6 +4,8 @@ using OnlineShop.Models.WebMappers;
 using OnlineShopDAL.Utility;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Services;
+using OnlineShopLogic.Models;
+using OnlineShopLogic.Models.ItemTypes;
 
 namespace OnlineShop.Controllers;
 
@@ -101,9 +103,11 @@ public class ItemController : Controller
         };
         */  
         
-        ItemWebModel itemWebModel = _itemWebModelMapper.ToWebModel(_itemService.GetItem(Guid.Parse(itemId)));
+        //ItemWebModel itemWebModel = _itemWebModelMapper.ToWebModel(_itemService.GetItem(Guid.Parse(itemId)));
+        Item item = _itemService.GetItem(Guid.Parse(itemId));
         
-        return View(itemWebModel);
+        
+        return View((ItemElectronics)item);
     }
     
 }

@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
+using Online_Shop;
 using Online_Shop.Areas.Identity.Data;
 using OnlineShop.Data;
 using OnlineShop.Models.WebMappers;
@@ -44,7 +46,15 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddRazorPages();
-builder.Services.AddControllersWithViews();
+//builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddControllersWithViews(options =>
+{
+   // options.ModelBinderProviders.Insert(0, new DerivedTypeModelBinderProvider());
+});
+
+
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization(options =>

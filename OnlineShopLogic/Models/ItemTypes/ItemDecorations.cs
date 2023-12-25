@@ -18,4 +18,9 @@ public class ItemDecorations : Item
         set => _material = value;
     }
 
+    public ItemDecorations()
+    {
+        ItemType = "ItemDecorations";
+    }
+
 }

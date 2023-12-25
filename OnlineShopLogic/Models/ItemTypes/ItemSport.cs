@@ -9,5 +9,10 @@ public class ItemSport : Item
         get => _category;
         set => _category = value;
     }
+
+    public ItemSport()
+    {
+        ItemType = "ItemSport";
+    }
     
 }

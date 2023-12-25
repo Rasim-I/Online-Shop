@@ -72,6 +72,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJdGVtUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemBasePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQmFzZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemClothesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQ2xvdGhlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemDecorationsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtRGVjb3JhdGlvbnNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemElectronicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtRWxlY3Ryb25pY3NQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemSportPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtU3BvcnRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

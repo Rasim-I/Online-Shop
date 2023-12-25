@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model ItemWebModel
+@using OnlineShopLogic.Models.ItemTypes
+@model OnlineShopLogic.Models.Item
 
 
 @{
@@ -35,7 +36,7 @@
                         <img src="~/Item_Images/Green.png" alt=""/>
                     </li>
                     -->
-                    
+
                 </ul>
             </div>
         </section>
@@ -51,19 +52,38 @@
         </form>
     </div>
 
-    <div class="itemInfo">
-        <h2>Item Description</h2>
-        <h4>@Model.Description</h4>
-        
-        
-    </div>
+
+
+
+        @if (Model is ItemElectronics electronics)
+        {
+            @(await Html.PartialAsync("Partial/_ItemElectronicsPartial", electronics))
+        }
+        else if (Model is ItemDecorations decorations)
+        {
+            @(await Html.PartialAsync("Partial/_ItemDecorationsPartial", decorations))
+        }
+        else if (Model is ItemClothes clothes)
+        {
+            @(await Html.PartialAsync("Partial/_ItemClothesPartial", clothes))
+        }
+        else if (Model is ItemSport sport)
+        {
+            @(await Html.PartialAsync("Partial/_ItemSportPartial", sport))
+        }
+        else
+        {
+            @(await Html.PartialAsync("Partial/_ItemBasePartial", Model))
+        }
+
+
+
 
     <div class="itemReviews">
         <h2>Reviews</h2>
     </div>
 
 </div>
-
 
 
 <script>

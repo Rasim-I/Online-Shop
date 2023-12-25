@@ -16,4 +16,9 @@ public class ItemClothes : Item
         get => _size;
         set => _size = value;
     }
+
+    public ItemClothes()
+    {
+        ItemType = "ItemClothes";
+    }
 }

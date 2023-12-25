@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using OnlineShopLogic.Models.ItemTypes;
 
 namespace OnlineShopLogic.Models
 {
-    public class Item
+    public class Item 
     {
         private Guid _id;
         private int _price;
@@ -12,6 +13,13 @@ namespace OnlineShopLogic.Models
         private List<Photo> _photos;
         private int _quantity;
         private Category _category;
+        private string _itemType;
+
+        public string ItemType
+        {
+            get => _itemType;
+            protected set => _itemType = value;
+        }
 
         public Guid Id
         {
@@ -65,8 +73,11 @@ namespace OnlineShopLogic.Models
             _quantity = quantity;
             _photos = new List<Photo>();
         }
-        
-        public Item(){}
+
+        public Item()
+        {
+            _itemType = "Item";
+        }
 
         public override bool Equals(object obj)
         {
