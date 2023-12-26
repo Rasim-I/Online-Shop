@@ -18,8 +18,10 @@ public class ItemElectronics : Item
         set => _memoryCapacity = value;
     }
 
+    /*
     public ItemElectronics()
     {
         ItemType = "ItemElectronics";
     }
+    */
 }

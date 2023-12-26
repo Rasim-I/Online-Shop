@@ -2,17 +2,18 @@
 
 public class ItemSport : Item
 {
-    private string _category;
+    private string _activity;
 
-    public string Category
+    public string Activity
     {
-        get => _category;
-        set => _category = value;
+        get => _activity;
+        set => _activity = value;
     }
 
+    /*
     public ItemSport()
     {
         ItemType = "ItemSport";
     }
-    
+    */
 }

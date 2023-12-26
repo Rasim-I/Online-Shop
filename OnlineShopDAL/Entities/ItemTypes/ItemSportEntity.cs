@@ -2,5 +2,5 @@
 
 public class ItemSportEntity : ItemEntity
 {
-    public string Category { get; set; }
+    public string Activity { get; set; }
 }

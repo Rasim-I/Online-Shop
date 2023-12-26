@@ -107,7 +107,7 @@ public class ItemController : Controller
         Item item = _itemService.GetItem(Guid.Parse(itemId));
         
         
-        return View((ItemElectronics)item);
+        return View(item);
     }
     
 }

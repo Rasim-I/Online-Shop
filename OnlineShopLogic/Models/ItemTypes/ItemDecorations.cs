@@ -17,10 +17,13 @@ public class ItemDecorations : Item
         get => _material;
         set => _material = value;
     }
-
+    
+    
+    /*
     public ItemDecorations()
     {
         ItemType = "ItemDecorations";
     }
+    */
 
 }

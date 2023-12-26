@@ -4,7 +4,7 @@ using OnlineShopLogic.Models.ItemTypes;
 
 namespace OnlineShopLogic.Models
 {
-    public class Item 
+    public class Item
     {
         private Guid _id;
         private int _price;
@@ -13,6 +13,8 @@ namespace OnlineShopLogic.Models
         private List<Photo> _photos;
         private int _quantity;
         private Category _category;
+
+        /*
         private string _itemType;
 
         public string ItemType
@@ -20,7 +22,8 @@ namespace OnlineShopLogic.Models
             get => _itemType;
             protected set => _itemType = value;
         }
-
+        */
+        
         public Guid Id
         {
             get => _id;
@@ -76,7 +79,7 @@ namespace OnlineShopLogic.Models
 
         public Item()
         {
-            _itemType = "Item";
+            //_itemType = "Item";
         }
 
         public override bool Equals(object obj)
@@ -94,6 +97,5 @@ namespace OnlineShopLogic.Models
         {
             return Id.GetHashCode();
         }
-        
     }
 }

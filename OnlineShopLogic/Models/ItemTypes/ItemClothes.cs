@@ -17,8 +17,10 @@ public class ItemClothes : Item
         set => _size = value;
     }
 
+    /*
     public ItemClothes()
     {
         ItemType = "ItemClothes";
     }
+    */
 }
