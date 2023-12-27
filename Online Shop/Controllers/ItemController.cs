@@ -84,9 +84,12 @@ public class ItemController : Controller
         ViewBag.Category = category;
         */
 
+        //Category category = _itemService.GetItemsByCategory(category)
+        
         ItemWebModelMapper itemWebModelMapper = new ItemWebModelMapper();
-        List<ItemWebModel> items = 
-            _itemService.GetItems().ConvertAll(model => itemWebModelMapper.ToWebModel(model));
+        List<ItemWebModel> items =
+            _itemService.GetItemsByCategory(category).ConvertAll(model => itemWebModelMapper.ToWebModel(model));
+            //_itemService.GetItems().ConvertAll(model => itemWebModelMapper.ToWebModel(model));
         
         return View(items);
     }

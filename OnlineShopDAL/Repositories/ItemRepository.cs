@@ -27,4 +27,11 @@ public class ItemRepository : Repository<ItemEntity, Guid>, IItemRepository
             .FirstOrDefault();
     }
 
+    public IEnumerable<ItemEntity> GetByCategory(Guid categoryId)
+    {
+        return db.Items.Where(i => i.Category.Id == categoryId)
+            .Include(i => i.Category)
+            .Include(i => i.Photos);
+    }
+
 }

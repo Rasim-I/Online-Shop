@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using OnlineShopDAL;
 using OnlineShopDAL.Entities;
+using OnlineShopDAL.Entities.Enums;
 using OnlineShopDAL.Utility;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Abstraction.IServices;
@@ -44,7 +45,7 @@ public class ItemService : IItemService
         foreach (var item in _unitOfWork.Items.GetAll_IncludeAll())
         {
             itemsResult.Add(_mapper.Map<Item>(item));
-            itemsResult.Add(_mapper.Map<Item>(item));
+            //itemsResult.Add(_mapper.Map<Item>(item));
         }
 
         return itemsResult;
@@ -63,4 +64,36 @@ public class ItemService : IItemService
         return item;
     }
 
+    public Category? GetCategoryByName(string categoryName)
+    {
+        CategoryName categoryNameEnum;
+        if (Enum.TryParse(categoryName, out categoryNameEnum))
+        {
+            Category? category = _mapper
+                .Map<Category>(_unitOfWork.Categories.GetCategoryByName(categoryNameEnum).FirstOrDefault());
+            return category;
+        }
+        else
+            return null;
+    }
+
+    public List<Item> GetItemsByCategory(string categoryName)
+    {
+        List<Item> items = new List<Item>();
+        var category = GetCategoryByName(categoryName);
+        if (category != null)
+        {
+            //return _unitOfWork.Items.GetByCategory(category.Id).ToList().ConvertAll(_mapper.Map<Item>);
+
+            foreach (var item in _unitOfWork.Items.GetByCategory(category.Id).ToList().ConvertAll(_mapper.Map<Item>))
+            {
+                items.Add(item);
+                items.Add(item);
+            }
+
+            return items;
+        }
+        else
+            return new List<Item>(); //consider handling wrong category name
+    }
 }

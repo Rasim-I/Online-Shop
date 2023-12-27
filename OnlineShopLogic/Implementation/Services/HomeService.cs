@@ -21,7 +21,7 @@ public class HomeService : IHomeService
 
     public List<Category> GetRootCategories()
     {
-        List<CategoryEntity> categoryEntities = _unitOfWork.Categories.GetRootCategories();
+        List<CategoryEntity> categoryEntities = _unitOfWork.Categories.GetRootCategories().ToList();
 
         return categoryEntities.ConvertAll(entity => _mapper.Map<Category>(entity));
     }

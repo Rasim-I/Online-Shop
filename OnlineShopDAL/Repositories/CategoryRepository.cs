@@ -1,4 +1,5 @@
 ﻿using OnlineShopDAL.Entities;
+using OnlineShopDAL.Entities.Enums;
 using OnlineShopDAL.IRepositories;
 
 namespace OnlineShopDAL.Repositories;
@@ -10,9 +11,14 @@ public class CategoryRepository : Repository<CategoryEntity, Guid>, ICategoryRep
         
     }
 
-    public List<CategoryEntity> GetRootCategories()
+    public IEnumerable<CategoryEntity> GetRootCategories()
     {
-        return db.Categories.Where(c => c.IsRoot == true).ToList();
+        return db.Categories.Where(c => c.IsRoot == true);
     }
-    
+
+    public List<CategoryEntity> GetCategoryByName(CategoryName categoryName)
+    {
+        return db.Categories.Where(c => c.Name.Equals(categoryName)).ToList();
+    }
+
 }

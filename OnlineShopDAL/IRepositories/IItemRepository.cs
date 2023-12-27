@@ -6,4 +6,6 @@ public interface IItemRepository : IRepository<ItemEntity, Guid>
 {
     public IEnumerable<ItemEntity> GetAll_IncludeAll();
     public ItemEntity? GetById(Guid itemId);
+
+    public IEnumerable<ItemEntity> GetByCategory(Guid categoryId);
 }
