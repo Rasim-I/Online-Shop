@@ -1,7 +1,7 @@
 ﻿using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
-using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
@@ -32,7 +32,7 @@ public class CustomerMapper : IMapper<CustomerEntity, Customer>
             SecondName = entity.SecondName,
             BirthDate = entity.BirthDate,
             RegistrationDate = entity.RegistrationDate,
-            Gender = (Models.Enums.Gender)entity.Gender,
+            Gender = (OnlineShopModels.Models.Enums.Gender)entity.Gender,
             ApplicationUserId = entity.ApplicationUserId
         };
     }

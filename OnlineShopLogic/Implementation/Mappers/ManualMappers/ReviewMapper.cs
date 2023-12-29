@@ -2,7 +2,7 @@
 using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
-using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
@@ -41,7 +41,7 @@ public class ReviewMapper : IMapper<ReviewEntity, Review>
         {
             Id = entity.Id,
             ReviewDate = entity.ReviewDate,
-            Stars = (Models.Enums.Stars)entity.Stars,
+            Stars = (OnlineShopModels.Models.Enums.Stars)entity.Stars,
             Text = entity.Text,
             Item = _itemMapper.Map<Item>(entity.Item),
             Customer = _customerMapper.ToModel(entity.Customer),

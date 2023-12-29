@@ -2,11 +2,11 @@
 using OnlineShopDAL;
 using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
-using OnlineShopDAL.Utility;
+using OnlineShopLogic.Utility;
 using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
-using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 namespace OnlineShopLogic.Implementation.Services;
 

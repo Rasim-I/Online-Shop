@@ -17,7 +17,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.10",
           "OnlineShopDAL": "1.0.0",
-          "OnlineShopLogic": "1.0.0"
+          "OnlineShopLogic": "1.0.0",
+          "OnlineShopModels": "1.0.0"
         },
         "runtime": {
           "Online Shop.dll": {}
@@ -2653,10 +2654,16 @@
       "OnlineShopLogic/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "OnlineShopDAL": "1.0.0"
+          "OnlineShopDAL": "1.0.0",
+          "OnlineShopModels": "1.0.0"
         },
         "runtime": {
           "OnlineShopLogic.dll": {}
+        }
+      },
+      "OnlineShopModels/1.0.0": {
+        "runtime": {
+          "OnlineShopModels.dll": {}
         }
       }
     }
@@ -4318,6 +4325,11 @@
       "sha512": ""
     },
     "OnlineShopLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineShopModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -36,6 +36,7 @@
     <ItemGroup>
       <ProjectReference Include="..\OnlineShopDAL\OnlineShopDAL.csproj" />
       <ProjectReference Include="..\OnlineShopLogic\OnlineShopLogic.csproj" />
+      <ProjectReference Include="..\OnlineShopModels\OnlineShopModels.csproj" />
     </ItemGroup>
 
 </Project>

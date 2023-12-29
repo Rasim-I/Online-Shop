@@ -1,6 +1,6 @@
 ﻿using OnlineShopDAL.Entities;
 using OnlineShopLogic.Abstraction.IMappers;
-using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 

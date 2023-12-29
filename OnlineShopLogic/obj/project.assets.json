@@ -993,6 +993,16 @@
         "runtime": {
           "bin/placeholder/OnlineShopDAL.dll": {}
         }
+      },
+      "OnlineShopModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/OnlineShopModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShopModels.dll": {}
+        }
       }
     }
   },
@@ -2663,12 +2673,18 @@
       "type": "project",
       "path": "../OnlineShopDAL/OnlineShopDAL.csproj",
       "msbuildProject": "../OnlineShopDAL/OnlineShopDAL.csproj"
+    },
+    "OnlineShopModels/1.0.0": {
+      "type": "project",
+      "path": "../OnlineShopModels/OnlineShopModels.csproj",
+      "msbuildProject": "../OnlineShopModels/OnlineShopModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
-      "OnlineShopDAL >= 1.0.0"
+      "OnlineShopDAL >= 1.0.0",
+      "OnlineShopModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2700,6 +2716,9 @@
           "projectReferences": {
             "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
               "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj"
+            },
+            "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj": {
+              "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj"
             }
           }
         }

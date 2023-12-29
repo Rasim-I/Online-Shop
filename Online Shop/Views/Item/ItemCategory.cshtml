@@ -1,7 +1,10 @@
-﻿@model List<ItemWebModel>
+﻿@using OnlineShopModels.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<ItemWebModel>
 
 @{
     ViewData["Title"] = "";
+    Category category = ViewBag.Category; 
 }
 
 <div id="containerItemCategory">
@@ -15,9 +18,8 @@
         </div>
     </div>
 
-    <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    </div>
+    @await Html.PartialAsync("Partial/_ItemCharacteristicsPartial", category)
 
     <div id="containerItems" class="gridItemItemCategory">
 

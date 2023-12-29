@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQmFzZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemCharacteristicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemClothesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQ2xvdGhlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -347,3 +347,5 @@ C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Mono.TextT
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\OnlineShopModels.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\OnlineShopModels.pdb

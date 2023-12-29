@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using OnlineShopLogic.Models;
-using OnlineShopLogic.Models.ItemTypes;
+using OnlineShopModels.Models;
+using OnlineShopModels.Models.ItemTypes;
 
 namespace Online_Shop;
 

@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Online_Shop.Areas.Identity.Data;
-using OnlineShopLogic.Models.Enums;
+using OnlineShopModels.Models.Enums;
 
 namespace Online_Shop.Areas.Identity.Pages.Account
 {

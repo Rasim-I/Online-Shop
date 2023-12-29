@@ -9,7 +9,8 @@
       "OnlineShopLogic/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "OnlineShopDAL": "1.0.0"
+          "OnlineShopDAL": "1.0.0",
+          "OnlineShopModels": "1.0.0"
         },
         "runtime": {
           "OnlineShopLogic.dll": {}
@@ -573,6 +574,11 @@
         "runtime": {
           "OnlineShopDAL.dll": {}
         }
+      },
+      "OnlineShopModels/1.0.0": {
+        "runtime": {
+          "OnlineShopModels.dll": {}
+        }
       }
     }
   },
@@ -968,6 +974,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "OnlineShopDAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineShopModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

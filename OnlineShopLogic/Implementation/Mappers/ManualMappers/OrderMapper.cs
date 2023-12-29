@@ -1,7 +1,7 @@
 ﻿using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.Enums;
 using OnlineShopLogic.Abstraction.IMappers;
-using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 namespace OnlineShopLogic.Implementation.Mappers.ManualMappers;
 
@@ -36,7 +36,7 @@ public class OrderMapper : IMapper<OrderEntity, Order>
             Id = entity.Id,
             Customer = _customerMapper.ToModel(entity.Customer),
             OrderDate = entity.OrderDate,
-            Status = (Models.Enums.Status)entity.Status,
+            Status = (OnlineShopModels.Models.Enums.Status)entity.Status,
             Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))
         };
     }

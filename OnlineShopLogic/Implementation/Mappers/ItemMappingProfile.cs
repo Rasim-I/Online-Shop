@@ -2,8 +2,8 @@
 using OnlineShopDAL.Entities;
 using OnlineShopDAL.Entities.ItemTypes;
 using OnlineShopLogic.Abstraction.IMappers;
-using OnlineShopLogic.Models;
-using OnlineShopLogic.Models.ItemTypes;
+using OnlineShopModels.Models;
+using OnlineShopModels.Models.ItemTypes;
 
 namespace OnlineShopLogic.Implementation.Mappers;
 

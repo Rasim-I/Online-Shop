@@ -294,8 +294,9 @@ namespace OnlineShopDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MemoryCapacity")
-                        .HasColumnType("int");
+                    b.Property<string>("MemoryCapacity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.ToTable("Items");
 

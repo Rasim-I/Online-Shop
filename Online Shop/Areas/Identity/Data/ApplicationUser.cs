@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using OnlineShopLogic.Models.Enums;
+using OnlineShopModels.Models.Enums;
 
 namespace Online_Shop.Areas.Identity.Data;
 

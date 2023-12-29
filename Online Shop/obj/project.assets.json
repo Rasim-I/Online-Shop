@@ -4121,13 +4121,24 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "OnlineShopDAL": "1.0.0"
+          "OnlineShopDAL": "1.0.0",
+          "OnlineShopModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OnlineShopLogic.dll": {}
         },
         "runtime": {
           "bin/placeholder/OnlineShopLogic.dll": {}
+        }
+      },
+      "OnlineShopModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/OnlineShopModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShopModels.dll": {}
         }
       }
     }
@@ -11833,6 +11844,11 @@
       "type": "project",
       "path": "../OnlineShopLogic/OnlineShopLogic.csproj",
       "msbuildProject": "../OnlineShopLogic/OnlineShopLogic.csproj"
+    },
+    "OnlineShopModels/1.0.0": {
+      "type": "project",
+      "path": "../OnlineShopModels/OnlineShopModels.csproj",
+      "msbuildProject": "../OnlineShopModels/OnlineShopModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11846,7 +11862,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.10",
       "OnlineShopDAL >= 1.0.0",
-      "OnlineShopLogic >= 1.0.0"
+      "OnlineShopLogic >= 1.0.0",
+      "OnlineShopModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11881,6 +11898,9 @@
             },
             "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj": {
               "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj"
+            },
+            "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj": {
+              "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj"
             }
           }
         }

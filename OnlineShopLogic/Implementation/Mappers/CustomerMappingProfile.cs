@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using OnlineShopDAL.Entities;
-using OnlineShopLogic.Models;
-using OnlineShopLogic.Models.Enums;
+using OnlineShopModels.Models;
+using OnlineShopModels.Models.Enums;
 
 namespace OnlineShopLogic.Implementation.Mappers;
 

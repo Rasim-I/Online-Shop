@@ -1,4 +1,4 @@
-﻿using OnlineShopLogic.Models;
+﻿using OnlineShopModels.Models;
 
 namespace OnlineShop.Models.WebMappers;
 

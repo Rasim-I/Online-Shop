@@ -13,3 +13,5 @@ C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\Online
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\refint\OnlineShopLogic.dll
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.pdb
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\ref\OnlineShopLogic.dll
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopModels.dll
+C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopModels.pdb

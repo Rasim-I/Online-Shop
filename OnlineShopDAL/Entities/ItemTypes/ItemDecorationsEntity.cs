@@ -1,4 +1,7 @@
-﻿namespace OnlineShopDAL.Entities.ItemTypes;
+﻿using System.Drawing;
+using OnlineShopDAL.Entities.Enums.ItemParameters.ItemDecorations;
+
+namespace OnlineShopDAL.Entities.ItemTypes;
 
 public class ItemDecorationsEntity: ItemEntity
 {
