@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tpRSbL0bShC750QGDttrrERNl+ZCCgdZVM4NklvqrsanAIYgMG3nHgx3rU8FVV7fnWB9sscsWq8tBdStgSuuIw==",
+  "dgSpecHash": "KpKF0BjscMey9oMcH6VkXgX5nm1qZBFbNwAoriQPeYHha8xnOSeaZMhy5xcsgqegwbwCCF5yYlQHDbkQ1jtZ7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rasim\\.nuget\\packages\\angularjs\\1.8.2\\angularjs.1.8.2.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

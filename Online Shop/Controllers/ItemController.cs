@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
 using OnlineShop.Models.WebMappers;
+using OnlineShopDAL.Entities.Enums.ItemParameters.ItemSport;
 using OnlineShopLogic.Utility;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopModels.Models;
 using OnlineShopModels.Models.ItemTypes;
+using Activity = System.Diagnostics.Activity;
 
 namespace Online_Shop.Controllers;
 
@@ -31,7 +33,7 @@ public class ItemController : Controller
     }
 
     [HttpGet]
-    public IActionResult ItemCategory([FromQuery] string categoryString)
+    public IActionResult ItemCategory([FromQuery] string category)
     {
         /*
         Guid categoryId = Guid.NewGuid();
@@ -90,17 +92,22 @@ public class ItemController : Controller
 
         ItemWebModelMapper itemWebModelMapper = new ItemWebModelMapper();
         List<ItemWebModel> items =
-            _itemService.GetItemsByCategory(categoryString).ConvertAll(model => itemWebModelMapper.ToWebModel(model));
+            _itemService.GetItemsByCategory(category).ConvertAll(model => itemWebModelMapper.ToWebModel(model));
         //_itemService.GetItems().ConvertAll(model => itemWebModelMapper.ToWebModel(model));
 
-        Category? category = _itemService.GetCategoryByName(categoryString);
-        if(category != null)
+        Category? categoryModel = _itemService.GetCategoryByName(category);
+        if(categoryModel != null)
         {
-            ViewBag.Category = category;
+            ViewBag.Category = categoryModel;
         }
         else
         {
-            //TODO Error page or something
+            var errorViewModel = new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+
+            return View("Error", errorViewModel);
         }
         return View(items);
     }

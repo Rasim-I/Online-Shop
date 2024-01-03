@@ -1,13 +1,195 @@
-﻿@model OnlineShopModels.Models.Category
+﻿@using OnlineShopLogic.ItemParameters
+@model OnlineShopModels.Models.Category
+
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
     <form asp-action="">
-        <div>
-            @Model.Name
+
+        <div class="brandBox">
+            <h4>Brand:</h4>
+            @foreach (var brand in ItemElectronicsParameters.Brands)
+            {
+                <div class="form-check" name="brand_container">
+                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <label class="form-check-label" for="@brand">
+                        @brand
+                    </label>
+                </div>
+            }
         </div>
-        
-        
+
+        <div class="cpuModelBox">
+            <h4>Cpu Model:</h4>
+            @foreach (var cpuModel in ItemElectronicsParameters.CpuModels)
+            {
+                <div class="form-check" name="cpuModels_container">
+                    <input class="form-check-inline" name="selectedCpuModels" type="checkbox" value="@cpuModel" id="@cpuModel"/>
+                    <label class="form-check-label" for="@cpuModel">
+                        @cpuModel
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="memoryCapacityBox">
+            <h4>Memory Capacity</h4>
+            @foreach (var memoryCap in ItemElectronicsParameters.MemoryCapacity)
+            {
+                <div class="form-check" name="memoryCapacity_container">
+                    <input class="form-check-inline" name="selectedMemoryCapacities" type="checkbox" value="@memoryCap" id="@memoryCap"/>
+                    <label class="form-check-label" for="@memoryCap">
+                        @memoryCap
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="priceBox">
+            <h4>Price:</h4>
+
+            <div class="priceValueBox">
+                
+                <div class="priceLowerValueBox">
+                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                </div>
+
+                <div class="priceHigherValueBox">
+                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                </div>
+
+            </div>
+            
+            <input type="text" class="js-range-slider" name="my_range" value=""/>
+
+            <button type="submit">Submit</button>
+
+        </div>
+
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+                type: "double",
+                min: 0,
+                max: 1000,
+                from: 200,
+                to: 500,
+                grid: true,
+                onChange: function (data){
+                    $(".priceLowerValue").val(data.from);    
+                    $(".priceHigherValue").val(data.to);
+                }
+            });        
+            
+            $(".priceLowerValue, .priceHigherValue").on("change", validatePrices);
+            
+            function validatePrices(){
+                var lowerValue = $(".priceLowerValue");
+                var higherValue = $(".priceHigherValue");
+                
+                if (isNaN(lowerValue.val()) || isNaN(higherValue.val()) || lowerValue.val() < 0 || lowerValue.val() > higherValue.val){
+                    lowerValue.addClass("priceInvalid-input");
+                    higherValue.addClass("priceInvalid-input");
+                    
+                    console.log(lowerValue + " wrong input");
+                    return false;
+                }
+                lowerValue.removeClass("priceInvalid-input");
+                higherValue.removeClass("priceInvalid-input");
+                
+                console.log(lowerValue + " correct input")
+                return true
+            }
+            
+    </script>
+
+        @Model.Name
+
     </form>
-    
+
 </div>
+
+
+<style>
+    .priceInvalid-input{
+        border: 1px solid red;
+    }
+    
+    
+    .priceValueBox{
+        display: flex;
+        width: 100%;
+    }
+    .priceLowerValueBox, .priceHigherValueBox{
+        flex: 1;
+        padding: 0 5px 0 5px;
+    }
+    
+    .priceValue{
+        width: 100%;
+    }
+    
+    .priceBox button{
+        margin-top: 5px;
+        padding: 16px 10px;
+        background-color: #0d6efd;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        width: 100%;
+        display: block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .cpuModelBox, .memoryCapacityBox, .brandBox, .priceBox{
+        background-color: white;
+    }
+   
+    .irs-min, .irs-max{
+        display: none;
+    }
+    
+    .irs--flat .irs-line{
+        background-color: #ced4da;
+        height: 5px;
+    }
+    .irs--flat .irs-bar{
+        background-color: #bfe2e9;
+        height: 5px;
+    }
+    .irs--flat .irs-handle{
+        width: 16px;
+        height: 16px;
+        border: 4px solid #1b6ec2;
+        background-color: white;
+        border-radius: 50%;
+        top: 19px;
+    }
+    .irs--flat .irs-handle>i:first-child{
+        display: none;
+    }
+    .irs-with-grid .irs-grid{
+        display: none;
+    }
+    
+    .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
+        display: none;
+        color: white;
+        font-size: 10px;
+        line-height: 1.333;
+        text-shadow: none;
+        padding: 1px 5px;
+        background-color: #ed5565;
+        border-radius: 4px;
+    }
+    
+    
+</style>
