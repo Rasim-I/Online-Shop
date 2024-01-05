@@ -1,0 +1,98 @@
+﻿@using OnlineShopLogic.ItemParameters
+@model OnlineShopModels.Models.Category
+
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+
+<div id="containerItemCharacteristics" class="gridItemItemCategory">
+
+    <form asp-action="">
+
+        <div class="brandBox">
+            <h4>Brand:</h4>
+            @foreach (var brand in ItemDecorationsParameters.Brands)
+            {
+                <div class="form-check" name="brand_container">
+                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <label class="form-check-label" for="@brand">
+                        @brand
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="MaterialBox">
+            <h4>Material:</h4>
+            @foreach (var material in ItemDecorationsParameters.Materials)
+            {
+                <div class="form-check" name="material_container">
+                    <input class="form-check-inline" name="selectedMaterial" type="checkbox" value="@material" id="@material"/>
+                    <label class="form-check-label" for="@material">
+                        @material
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="ColorBox">
+            <h4>Size:</h4>
+            @foreach (var color in ItemDecorationsParameters.Colors)
+            {
+                <div class="form-check" name="color_container">
+                    <input class="form-check-inline" name="selectedColor" type="checkbox" value="@color" id="@color"/>
+                    <label class="form-check-label" for="@color">
+                        @color
+                    </label>
+                </div>
+            }
+        </div>
+
+
+        <div class="priceBox">
+            <h4>Price:</h4>
+
+            <div class="priceValueBox">
+
+                <div class="priceLowerValueBox">
+                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                </div>
+
+                <div class="priceHigherValueBox">
+                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                </div>
+
+            </div>
+
+            <input type="text" class="js-range-slider" name="my_range" value=""/>
+
+            <button type="submit">Submit</button>
+
+        </div>
+
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+                type: "double",
+                min: 0,
+                max: 1000,
+                from: 200,
+                to: 500,
+                grid: true,
+                onChange: function (data){
+                    $(".priceLowerValue").val(data.from);    
+                    $(".priceHigherValue").val(data.to);
+                }
+            });        
+            
+            </script>
+
+        @Model.Name
+
+    </form>
+
+</div>

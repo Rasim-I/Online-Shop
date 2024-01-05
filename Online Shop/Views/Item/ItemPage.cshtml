@@ -57,19 +57,19 @@
 
         @if (Model is ItemElectronics electronics)
         {
-            @(await Html.PartialAsync("Partial/_ItemElectronicsPartial", electronics))
+            @(await Html.PartialAsync("Partial/ItemElectronics/_ItemElectronicsPartial", electronics))
         }
         else if (Model is ItemDecorations decorations)
         {
-            @(await Html.PartialAsync("Partial/_ItemDecorationsPartial", decorations))
+            @(await Html.PartialAsync("Partial/ItemDecorations/_ItemDecorationsPartial", decorations))
         }
         else if (Model is ItemClothes clothes)
         {
-            @(await Html.PartialAsync("Partial/_ItemClothesPartial", clothes))
+            @(await Html.PartialAsync("Partial/ItemClothes/_ItemClothesPartial", clothes))
         }
         else if (Model is ItemSport sport)
         {
-            @(await Html.PartialAsync("Partial/_ItemSportPartial", sport))
+            @(await Html.PartialAsync("Partial/ItemSport/_ItemSportPartial", sport))
         }
         else
         {

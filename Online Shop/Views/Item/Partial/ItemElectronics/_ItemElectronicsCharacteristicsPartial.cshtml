@@ -88,17 +88,17 @@
                 }
             });        
             
-            $(".priceLowerValue, .priceHigherValue").on("change", validatePrices);
+            //$(".priceLowerValue, .priceHigherValue").on("change", validatePrices);
             
             function validatePrices(){
-                var lowerValue = $(".priceLowerValue");
-                var higherValue = $(".priceHigherValue");
+                let lowerValue = $(".priceLowerValue");
+                let higherValue = $(".priceHigherValue");
                 
-                if (isNaN(lowerValue.val()) || isNaN(higherValue.val()) || lowerValue.val() < 0 || lowerValue.val() > higherValue.val){
+                if (isNaN(lowerValue) || isNaN(higherValue) || lowerValue < 0 || lowerValue > higherValue){
                     lowerValue.addClass("priceInvalid-input");
                     higherValue.addClass("priceInvalid-input");
                     
-                    console.log(lowerValue + " wrong input");
+                    console.log(lowerValue + " wrong input. Lower value is: " + lowerValue + ". Higher value is: " + higherValue);
                     return false;
                 }
                 lowerValue.removeClass("priceInvalid-input");

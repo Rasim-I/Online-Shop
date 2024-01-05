@@ -72,28 +72,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJdGVtUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesCharacteristicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1DbG90aGVzXF9JdGVtQ2xvdGhlc0NoYXJhY3RlcmlzdGljc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1DbG90aGVzXF9JdGVtQ2xvdGhlc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsCharacteristicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1EZWNvcmF0aW9uc1xfSXRlbURlY29yYXRpb25zQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1EZWNvcmF0aW9uc1xfSXRlbURlY29yYXRpb25zUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsCharacteristicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1FbGVjdHJvbmljc1xfSXRlbUVsZWN0cm9uaWNzQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1FbGVjdHJvbmljc1xfSXRlbUVsZWN0cm9uaWNzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportCharacteristicsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1TcG9ydFxfSXRlbVNwb3J0Q2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1TcG9ydFxfSXRlbVNwb3J0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemBasePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQmFzZVBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemCharacteristicsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemClothesPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQ2xvdGhlc1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemDecorationsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtRGVjb3JhdGlvbnNQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemElectronicsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtRWxlY3Ryb25pY3NQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemSportPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtU3BvcnRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Error.cshtml]

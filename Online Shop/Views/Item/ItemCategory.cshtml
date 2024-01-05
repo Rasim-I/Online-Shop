@@ -1,5 +1,6 @@
 ﻿@using OnlineShopModels.Models
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using OnlineShopModels.Models.Enums
 @model List<ItemWebModel>
 
 @{
@@ -10,7 +11,7 @@
 <div id="containerItemCategory">
 
     <div id="categoryPath" class="gridItemItemCategory">
-        <h2>@ViewBag.Category</h2> <!-- it must be Category object. Also it is the last of SubCategories -->
+        <h2>@ViewBag.Category</h2> <!-- it must be Category object. Also it is the last of SubCategories chain -->
         <div id="CategoryPathLinks">
             <!-- display generalized category. category -> category.SubCategory -> category.Subcategory.Subcategory  -->
             <a href="">Category</a>
@@ -19,7 +20,25 @@
     </div>
 
 
-    @await Html.PartialAsync("Partial/_ItemCharacteristicsPartial", category)
+    @switch (category.Name)
+    {
+        case CategoryName.Electronics:
+            @(await Html.PartialAsync("Partial/ItemElectronics/_ItemElectronicsCharacteristicsPartial", category))
+            break;
+        case CategoryName.Sport:
+            @(await Html.PartialAsync("Partial/ItemSport/_ItemSportCharacteristicsPartial", category))
+            break;
+        case CategoryName.Clothes:
+            @(await Html.PartialAsync("Partial/ItemClothes/_ItemClothesCharacteristicsPartial", category))
+            break;
+        case CategoryName.Decorations:
+            @(await Html.PartialAsync("Partial/ItemDecorations/_ItemDecorationsCharacteristicsPartial", category))
+            break;
+
+    }
+    
+ 
+    
 
     <div id="containerItems" class="gridItemItemCategory">
 
@@ -32,7 +51,7 @@
                         <h4>@item.Name</h4>
                         <h6 class="shortDescriptionItem">@item.Description</h6>
                         <img class="itemRatingIconCategory" src="~/Icons/ItemRatingIcons/5st.png" alt="rating"/>
-                        <h4>10000</h4>
+                        <h4>@item.Price</h4>
                     </div>
                 </a>
             </div>

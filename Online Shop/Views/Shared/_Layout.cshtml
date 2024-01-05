@@ -39,7 +39,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="lib/angularjs-slider-7.1.0/dist/rzslider.css"/>
     <script src="lib/angularjs/1.8.2/content/Scripts/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -70,8 +70,10 @@
 
                         <div class="btn-group divNavDropdown navFlex-item">
                             <button type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
-                                Catalog <img class="catalogIcon" src="~/@Configuration["Images:CatalogIconPath"]" alt="Catalog Icon"/>
+                                <label class="catalog-label">Catalog</label>
+                                <img class="catalogIcon" src="~/@Configuration["Images:CatalogIconPath"]" alt="Catalog Icon"/>
                             </button>
+                            
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another Action</a>
@@ -143,7 +145,7 @@
            overlay.style.display = 'none';
         });
     </script>
-    
+
     <footer class="border-top footer text-muted">
         @if (IsSectionDefined("Footer"))
         {

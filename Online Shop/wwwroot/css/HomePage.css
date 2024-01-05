@@ -95,13 +95,20 @@ main{
   width: 3vh;
   height: auto;
 }
+
+.catalog-btn img{
+  max-width: 20%;
+}
+
 .catalog-btn{
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
+  margin-top: 1%;
 }
 .catalog-label{
+  margin-bottom: 0;
 }
 .navFlex-item{
 
@@ -111,7 +118,6 @@ main{
   height: fit-content;
   display: flex;
   min-width: 115px;
-
 }
 
 .liNavHome{
