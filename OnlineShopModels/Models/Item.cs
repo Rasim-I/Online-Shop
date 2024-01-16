@@ -8,6 +8,7 @@ namespace OnlineShopModels.Models
     {
         private Guid _id;
         private int _price;
+        private string _brand;
         private string _name;
         private string _description;
         private List<Photo> _photos;
@@ -36,12 +37,18 @@ namespace OnlineShopModels.Models
             set => _price = value;
         }
 
+        public string Brand
+        {
+            get => _brand;
+            set => _brand = value;
+        }
+
         public string Name
         {
             get => _name;
             set => _name = value;
         }
-
+        
         public string Description
         {
             get => _description;

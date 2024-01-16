@@ -5,6 +5,7 @@ using OnlineShopDAL.Entities.Enums.ItemParameters.ItemSport;
 using OnlineShopLogic.Utility;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Services;
+using OnlineShopLogic.ItemParameters;
 using OnlineShopModels.Models;
 using OnlineShopModels.Models.ItemTypes;
 using Activity = System.Diagnostics.Activity;
@@ -129,5 +130,13 @@ public class ItemController : Controller
 
 
         return View(item);
+    }
+
+
+    public IActionResult VerifyBrand(string brandName)
+    {
+        if (ItemElectronicsParameters.Brands.Contains(brandName))
+            return Json(true);
+        return Json(false);
     }
 }

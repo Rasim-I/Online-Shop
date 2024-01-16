@@ -7,6 +7,9 @@ using OnlineShopLogic.Abstraction.IMappers;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopModels.Models;
+using System.Linq;
+using OnlineShopLogic.ItemParameters;
+using OnlineShopModels.Models.ItemTypes;
 
 namespace OnlineShopLogic.Implementation.Services;
 
@@ -96,4 +99,81 @@ public class ItemService : IItemService
         else
             return new List<Item>(); //consider handling wrong category name
     }
+
+    public List<Item> GetItemsByBrand(string brandName)
+    {
+        List<Item> items = _unitOfWork.Items
+            .GetAll().Where(i => i.Brand.Equals(brandName)).ToList()
+            .ConvertAll(_mapper.Map<ItemEntity, Item>);
+        return items;
+    }
+
+    public List<ItemElectronics> GetElectronicsByCpuModel(string cpuModel)
+    {
+        try
+        {
+            Guid categoryId = _unitOfWork.Categories.Find(c => c.Name == CategoryName.Electronics).FirstOrDefault().Id;
+            List<ItemElectronics> itemsToFilter = _unitOfWork.Items.GetByCategory(categoryId).ToList()
+                .ConvertAll(_mapper.Map<ItemEntity, ItemElectronics>);
+
+            return itemsToFilter.Where(i => i.CpuModel.Equals(cpuModel)).ToList();
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+
+    public List<ItemElectronics> GetElectronicsByMemoryCapacity(string memoryCapacity)
+    {
+        try
+        {
+            Guid categoryId = _unitOfWork.Categories.Find(c => c.Name == CategoryName.Electronics).FirstOrDefault().Id;
+            List<ItemElectronics> itemsToFilter = _unitOfWork.Items.GetByCategory(categoryId).ToList()
+                .ConvertAll(_mapper.Map<ItemEntity, ItemElectronics>);
+            return itemsToFilter.Where(i => i.MemoryCapacity.Equals(memoryCapacity)).ToList();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public List<ItemElectronics> MapToItemElectronics(List<Item> items)
+    {
+        List<ItemElectronics> mappedItems = new List<ItemElectronics>();
+        foreach (var item in items)
+        {
+            if (item is ItemElectronics itemElectronics)
+            {
+                mappedItems.Add(itemElectronics);
+            }
+        }
+
+        return mappedItems;
+    }
+
+    public List<Item> GetItemsMock()
+    {
+        List<Item> items = new List<Item>();
+        Category category = new Category()
+            { Id = Guid.NewGuid(), Name = OnlineShopModels.Models.Enums.CategoryName.Electronics, IsRoot = true };
+        items.Add(new ItemElectronics()
+        {
+            Brand = ItemElectronicsParameters.HPBrand, Category = category, 
+            CpuModel = ItemElectronicsParameters.AMDCpuModel, Description = "description", Id = Guid.NewGuid(), 
+            MemoryCapacity = ItemElectronicsParameters.Memory64, Name = "Laptop test model", Price = 222, Quantity = 23
+        });
+        
+        items.Add(new ItemElectronics()
+        {
+            Brand = ItemElectronicsParameters.AsusBrand, Category = category, 
+            CpuModel = ItemElectronicsParameters.IntelCpuModel, Description = "other description", Id = Guid.NewGuid(), 
+            MemoryCapacity = ItemElectronicsParameters.Memory512, Name = "Laptop test model 2", Price = 212, Quantity = 23
+        });
+        return items;
+    }
+    
+
 }
