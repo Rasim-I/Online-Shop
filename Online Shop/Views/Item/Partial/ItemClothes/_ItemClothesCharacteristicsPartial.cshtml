@@ -8,14 +8,14 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-action="">
+    <form asp-controller="Item" asp-action="FilterItems" method="post">
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemClothesParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"/>
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -28,7 +28,7 @@
             @foreach (var gender in ItemClothesParameters.Genders)
             {
                 <div class="form-check" name="gender_container">
-                    <input class="form-check-inline" name="selectedGender" type="checkbox" value="@gender" id="@gender"/>
+                    <input class="form-check-inline" name="Gender" type="radio" value="@gender" id="@gender"/>
                     <label class="form-check-label" for="@gender">
                         @gender
                     </label>
@@ -41,7 +41,7 @@
             @foreach (var size in ItemClothesParameters.Sizes)
             {
                 <div class="form-check" name="size_container">
-                    <input class="form-check-inline" name="selectedSize" type="checkbox" value="@size" id="@size"/>
+                    <input class="form-check-inline" name="Sizes" type="checkbox" value="@size" id="@size"/>
                     <label class="form-check-label" for="@size">
                         @size
                     </label>
@@ -76,8 +76,8 @@
                 type: "double",
                 min: 0,
                 max: 1000,
-                from: 200,
-                to: 500,
+                from: 0,
+                to: 1000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

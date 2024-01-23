@@ -9,14 +9,14 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-action="">
+    <form asp-controller="Item" asp-action="FilterItems" method="post">
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemDecorationsParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand"/>
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -29,7 +29,7 @@
             @foreach (var material in ItemDecorationsParameters.Materials)
             {
                 <div class="form-check" name="material_container">
-                    <input class="form-check-inline" name="selectedMaterial" type="checkbox" value="@material" id="@material"/>
+                    <input class="form-check-inline" name="materials" type="checkbox" value="@material" id="@material"/>
                     <label class="form-check-label" for="@material">
                         @material
                     </label>
@@ -42,7 +42,7 @@
             @foreach (var color in ItemDecorationsParameters.Colors)
             {
                 <div class="form-check" name="color_container">
-                    <input class="form-check-inline" name="selectedColor" type="checkbox" value="@color" id="@color"/>
+                    <input class="form-check-inline" name="colors" type="checkbox" value="@color" id="@color"/>
                     <label class="form-check-label" for="@color">
                         @color
                     </label>
@@ -57,11 +57,11 @@
             <div class="priceValueBox">
 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"/>
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"/>
                 </div>
 
             </div>
@@ -77,8 +77,8 @@
                 type: "double",
                 min: 0,
                 max: 1000,
-                from: 200,
-                to: 500,
+                from: 0,
+                to: 1000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

@@ -16,5 +16,8 @@ public interface IItemService
     public List<ItemElectronics> GetElectronicsByCpuModel(string cpuModel);
     public List<ItemElectronics> GetElectronicsByMemoryCapacity(string memoryCapacity);
     public List<ItemElectronics> MapToItemElectronics(List<Item> items);
+    public List<ItemSport> MapToItemSport(List<Item> items);
+    public List<ItemClothes> MapToItemClothes(List<Item> items);
+    public List<ItemDecorations> MapToItemDecorations(List<Item> items);
     public List<Item> GetItemsMock();
 }

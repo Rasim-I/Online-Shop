@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Online_Shop;
 using Online_Shop.Areas.Identity.Data;
+using Online_Shop.Infrastructure;
 using OnlineShop.Data;
 using OnlineShop.Models.WebMappers;
 using OnlineShopDAL;
@@ -51,7 +52,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddControllersWithViews(options =>
 {
-   // options.ModelBinderProviders.Insert(0, new DerivedTypeModelBinderProvider());
+   options.ModelBinderProviders.Insert(0, new ItemSearchModelBinderProvider());
 });
 
 

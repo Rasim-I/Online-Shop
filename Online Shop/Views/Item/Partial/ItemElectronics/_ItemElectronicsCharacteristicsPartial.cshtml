@@ -9,14 +9,14 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-action="">
+    <form asp-controller="Item" asp-action="FilterItems" method="post">
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemElectronicsParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand"/>
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -29,7 +29,7 @@
             @foreach (var cpuModel in ItemElectronicsParameters.CpuModels)
             {
                 <div class="form-check" name="cpuModels_container">
-                    <input class="form-check-inline" name="selectedCpuModels" type="checkbox" value="@cpuModel" id="@cpuModel"/>
+                    <input class="form-check-inline" name="cpuModels" type="checkbox" value="@cpuModel" id="@cpuModel"/>
                     <label class="form-check-label" for="@cpuModel">
                         @cpuModel
                     </label>
@@ -42,7 +42,7 @@
             @foreach (var memoryCap in ItemElectronicsParameters.MemoryCapacity)
             {
                 <div class="form-check" name="memoryCapacity_container">
-                    <input class="form-check-inline" name="selectedMemoryCapacities" type="checkbox" value="@memoryCap" id="@memoryCap"/>
+                    <input class="form-check-inline" name="memoryCapacities" type="checkbox" value="@memoryCap" id="@memoryCap"/>
                     <label class="form-check-label" for="@memoryCap">
                         @memoryCap
                     </label>
@@ -56,11 +56,11 @@
             <div class="priceValueBox">
                 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"/>
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"/>
                 </div>
 
             </div>
@@ -76,8 +76,8 @@
                 type: "double",
                 min: 0,
                 max: 1000,
-                from: 200,
-                to: 500,
+                from: 0,
+                to: 1000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

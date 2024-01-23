@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text;
+using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
 using OnlineShop.Models.WebMappers;
 using OnlineShopDAL.Entities.Enums.ItemParameters.ItemSport;
 using OnlineShopLogic.Utility;
 using OnlineShopLogic.Abstraction.IServices;
+using OnlineShopLogic.Implementation.FilterChain.ItemSearchModels;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopLogic.ItemParameters;
 using OnlineShopModels.Models;
@@ -131,12 +133,94 @@ public class ItemController : Controller
 
         return View(item);
     }
+    
 
-
-    public IActionResult VerifyBrand(string brandName)
+    [HttpPost]
+    public string FilterItems([FromForm] ItemSearchModel itemSearchModel, [FromForm]Category category)
     {
-        if (ItemElectronicsParameters.Brands.Contains(brandName))
-            return Json(true);
-        return Json(false);
+        if (itemSearchModel is ItemElectronicsSearchModel electronics)
+        {
+            return ("ItemElectronicsSearchModel type");
+        }
+        else if (itemSearchModel is ItemClothesSearchModel clothes)
+        {
+            return ("ItemClothesSearchModel type");
+        }
+        else if (itemSearchModel is ItemDecorationsSearchModel decorations)
+        {
+            return "ItemDecorationsSearchModel type";
+        }
+        else if (itemSearchModel is ItemSportSearchModel sport)
+        {
+            return "ItemSportSearchModel type" + ". Category: " + category.Name;
+        }
+        else
+        {
+            return "Simple itemSearchModel";
+        }
+        
+        
     }
+    
+/*
+    [HttpPost]
+    public string FilterItems([FromForm]ItemElectronicsSearchModel electronics, Category category)
+    {
+        List<Item> filteredItems = new List<Item>();
+
+        
+        
+        ViewBag.Category = category;
+        //return View("ItemCategory", filteredItems.ConvertAll(_itemWebModelMapper.ToWebModel));
+        StringBuilder result = new StringBuilder();
+        // electronics = itemSearchModel as ItemElectronicsSearchModel;
+        foreach (var brand in electronics.Brands)
+        {
+            result.Append(brand + ", ");
+        }
+
+        foreach (var cpu in electronics.CpuModels)
+        {
+            result.Append(cpu + ", ");
+        }
+
+        foreach (var memoryCap in electronics.MemoryCapacities)
+        {
+            result.Append(memoryCap + ", ");
+        }
+        return result.ToString();
+    }
+    
+    
+    [HttpPost]
+    public string FilterItems([FromForm]ItemDecorationsSearchModel decorations, Category category)
+    {
+        List<Item> filteredItems = new List<Item>();
+
+
+
+
+        ViewBag.Category = category;
+        //return View("ItemCategory", filteredItems.ConvertAll(_itemWebModelMapper.ToWebModel));
+        StringBuilder result = new StringBuilder();
+        // electronics = itemSearchModel as ItemElectronicsSearchModel;
+        foreach (var brand in decorations.Brands)
+        {
+            result.Append(brand + ", ");
+        }
+
+        foreach (var color in decorations.Colors)
+        {
+            result.Append(color + ", ");
+        }
+
+        foreach (var material in decorations.Materials)
+        {
+            result.Append(material + ", ");
+        }
+        return result.ToString();
+    }
+    */
+    
+    
 }

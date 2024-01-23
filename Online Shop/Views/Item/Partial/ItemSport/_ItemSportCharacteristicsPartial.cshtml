@@ -10,14 +10,16 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-action="">
+    <form asp-controller="Item" asp-action="FilterItems" method="post">
 
+        <input type="hidden" value="@Model"/>
+        
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemSportParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="selectedBrands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"/>
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -30,7 +32,7 @@
             @foreach (var activity in ItemSportParameters.Activities)
             {
                 <div class="form-check" name="activity_container">
-                    <input class="form-check-inline" name="selectedAtivity" type="checkbox" value="@activity" id="@activity"/>
+                    <input class="form-check-inline" name="Activities" type="checkbox" value="@activity" id="@activity"/>
                     <label class="form-check-label" for="@activity">
                         @activity
                     </label>
@@ -65,8 +67,8 @@
                 type: "double",
                 min: 0,
                 max: 1000,
-                from: 200,
-                to: 500,
+                from: 0,
+                to: 1000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

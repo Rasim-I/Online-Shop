@@ -32,8 +32,5 @@ public class BrandHandler : QueryHandler
         //return Successor?.HandleRequest(itemService, itemSearchModel, items) ?? items;
     }
 
-    public bool ValidateBrand(object request)
-    {
-        return true;
-    }
+
 }

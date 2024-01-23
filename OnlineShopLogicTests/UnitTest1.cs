@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OnlineShopDAL;
 using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.FilterChain;
+using OnlineShopLogic.Implementation.FilterChain.ItemClothesHandlers;
 using OnlineShopLogic.Implementation.FilterChain.ItemElectronicsHandlers;
 using OnlineShopLogic.Implementation.FilterChain.ItemSearchModels;
 using OnlineShopLogic.Implementation.Mappers;
@@ -53,4 +54,40 @@ public class Tests
         }
 
     }
+
+    [Test]
+    public void TestItemClothesHandlers()
+    {
+        IUnitOfWork unitOfWork = new UnitOfWork(new OnlineShopContext(new DbContextOptions<OnlineShopContext>()));
+
+        var mapperConfiguration = new MapperConfiguration(cfg =>
+        {
+            cfg.AddProfile<ItemMappingProfile>();
+        });
+        IItemService itemService = new ItemService(unitOfWork, new Mapper(mapperConfiguration));
+
+        ItemClothesSearchModel item = new ItemClothesSearchModel()
+        {
+            Brands = new List<string>(){ ItemClothesParameters.DiadoraBrand}, 
+            MinPrice = 0, MaxPrice = 11, Name = "Something", 
+            Gender = ItemClothesParameters.FemaleGender,
+            Sizes = new List<string>(){ ItemClothesParameters.SizeS, ItemClothesParameters.SizeM }
+        };
+        //BrandHandler br = new BrandHandler();
+        BrandHandler br = new BrandHandler();
+        SizeHandler size = new SizeHandler();
+        GenderHandler gen = new GenderHandler();
+        PriceHandler price = new PriceHandler();
+
+        br.Successor = size;
+        size.Successor = gen;
+        gen.Successor = price;
+
+        foreach (var i in br.HandleRequest(itemService, item, itemService.GetItemsMock()))
+        {
+            Console.WriteLine(i.Name);   
+        }
+
+    }
+    
 }

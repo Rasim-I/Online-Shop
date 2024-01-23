@@ -154,6 +154,45 @@ public class ItemService : IItemService
         return mappedItems;
     }
 
+    public List<ItemSport> MapToItemSport(List<Item> items)
+    {
+        List<ItemSport> mappedItems = new List<ItemSport>();
+        foreach (var item in items)
+        {
+            if (item is ItemSport itemSport)
+            {
+                mappedItems.Add(itemSport);
+            }
+        }
+        return mappedItems;
+    }
+
+    public List<ItemClothes> MapToItemClothes(List<Item> items)
+    {
+        List<ItemClothes> mappedItems = new List<ItemClothes>();
+        foreach (var item in items)
+        {
+            if (item is ItemClothes itemClothes)
+            {
+                mappedItems.Add(itemClothes);
+            }
+        }
+        return mappedItems;
+    }
+
+    public List<ItemDecorations> MapToItemDecorations(List<Item> items)
+    {
+        List<ItemDecorations> mappedItems = new List<ItemDecorations>();
+        foreach (var item in items)
+        {
+            if (item is ItemDecorations itemDecorations)
+            {
+                mappedItems.Add(itemDecorations);
+            }
+        }
+        return mappedItems;
+    }
+    
     public List<Item> GetItemsMock()
     {
         List<Item> items = new List<Item>();
@@ -172,7 +211,27 @@ public class ItemService : IItemService
             CpuModel = ItemElectronicsParameters.IntelCpuModel, Description = "other description", Id = Guid.NewGuid(), 
             MemoryCapacity = ItemElectronicsParameters.Memory512, Name = "Laptop test model 2", Price = 212, Quantity = 23
         });
-        return items;
+        //return items;
+
+
+
+        Category categoryClothes = new Category()
+            { Id = Guid.NewGuid(), IsRoot = true, Name = OnlineShopModels.Models.Enums.CategoryName.Clothes };
+        List<Item> itemClothes = new List<Item>();
+        itemClothes.Add(new ItemClothes()
+        {
+            Brand = ItemClothesParameters.DiadoraBrand, Category = categoryClothes,
+            Gender = ItemClothesParameters.FemaleGender, Description = "something", Id = Guid.NewGuid(),
+            Size = ItemClothesParameters.SizeM, Name = "t-short", Price = 12, Quantity = 23
+        });
+
+        itemClothes.Add(new ItemClothes()
+        {
+            Brand = ItemClothesParameters.CropBrand, Category = categoryClothes,
+            Gender = ItemClothesParameters.MaleGender, Description = "something 2", Id = Guid.NewGuid(),
+            Size = ItemClothesParameters.SizeM, Name = "pants", Price = 12, Quantity = 23
+        });
+        return itemClothes;
     }
     
 
