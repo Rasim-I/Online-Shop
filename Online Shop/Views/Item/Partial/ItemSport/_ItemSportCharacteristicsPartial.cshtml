@@ -6,14 +6,15 @@
 }
 
 
-
-
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
     <form asp-controller="Item" asp-action="FilterItems" method="post">
 
-        <input type="hidden" value="@Model"/>
-        
+        <input type="hidden" name="Id" value="@Model.Id"/>
+        <input type="hidden" name="Name" value="@Model.Name"/>
+        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
+
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemSportParameters.Brands)
@@ -39,7 +40,7 @@
                 </div>
             }
         </div>
-        
+
 
         <div class="priceBox propertyBox">
             <h4>Price:</h4>
@@ -83,8 +84,6 @@
     </form>
 
 </div>
-
-
 
 
 <style>

@@ -140,15 +140,15 @@ public class ItemController : Controller
     {
         if (itemSearchModel is ItemElectronicsSearchModel electronics)
         {
-            return ("ItemElectronicsSearchModel type");
+            return ("ItemElectronicsSearchModel type. Category: " + category.Name);
         }
         else if (itemSearchModel is ItemClothesSearchModel clothes)
         {
-            return ("ItemClothesSearchModel type");
+            return ("ItemClothesSearchModel type. Category: " + category.Name);
         }
         else if (itemSearchModel is ItemDecorationsSearchModel decorations)
         {
-            return "ItemDecorationsSearchModel type";
+            return "ItemDecorationsSearchModel type. Category: " + category.Name;
         }
         else if (itemSearchModel is ItemSportSearchModel sport)
         {

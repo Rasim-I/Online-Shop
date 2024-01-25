@@ -6,10 +6,15 @@
 }
 
 
-
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
     <form asp-controller="Item" asp-action="FilterItems" method="post">
+
+        <!--input type="hidden" name="category" value="Model"/-->
+        <input type="hidden" name="Id" value="@Model.Id"/>
+        <input type="hidden" name="Name" value="@Model.Name"/>
+        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
@@ -54,7 +59,7 @@
             <h4>Price:</h4>
 
             <div class="priceValueBox">
-                
+
                 <div class="priceLowerValueBox">
                     <input type="number" class="priceLowerValue priceValue" name="minPrice"/>
                 </div>
@@ -64,7 +69,7 @@
                 </div>
 
             </div>
-            
+
             <input type="text" class="js-range-slider" name="my_range" value=""/>
 
             <button type="submit">Submit</button>
@@ -112,8 +117,6 @@
     </form>
 
 </div>
-
-
 
 
 <style>
