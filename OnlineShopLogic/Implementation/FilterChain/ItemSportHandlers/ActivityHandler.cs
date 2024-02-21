@@ -9,7 +9,8 @@ public class ActivityHandler : QueryHandler
 {
     public override List<Item> HandleRequest(IItemService itemService, ItemSearchModel itemSearchModel, List<Item> items)
     {
-        if (itemSearchModel is ItemSportSearchModel sportSearchModel)
+        if (itemSearchModel is ItemSportSearchModel sportSearchModel &&
+            sportSearchModel.Activities.Count != 0)
         {
             List<ItemSport> allItems = itemService.MapToItemSport(items);
             List<ItemSport> filteredItems = new List<ItemSport>();

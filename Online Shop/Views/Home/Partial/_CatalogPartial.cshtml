@@ -6,11 +6,10 @@
 }
 
 <div id="categoryMenu" class="grid-itemMain">
-
     @foreach (var item in Model)
     {
-        <form class="categoryItemForm" asp-controller="Item" asp-action="ItemCategory" method="get">
-            <input type="hidden" name="category" value="@item.Name"/>
+        <form class="categoryItemForm" action="/@item.Name" method="get">
+            <!--input type="hidden" name="category" value="item.Name" /-->
             <button type="submit" class="categoryItemBtn">
                 <div class="categoryItem">
                     @item.Name
@@ -18,5 +17,4 @@
             </button>
         </form>
     }
-
 </div>

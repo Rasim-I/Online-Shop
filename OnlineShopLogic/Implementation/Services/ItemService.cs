@@ -73,14 +73,22 @@ public class ItemService : IItemService
         if (Enum.TryParse(categoryName, out categoryNameEnum))
         {
             Category? category = _mapper
-                .Map<Category>(_unitOfWork.Categories.GetCategoryByName(categoryNameEnum).FirstOrDefault());
+                .Map<Category>(_unitOfWork.Categories.GetCategoryByName(categoryNameEnum).FirstOrDefault());  //TODO optimization needed
             return category;
         }
         else
             return null;
     }
 
-    public List<Item> GetItemsByCategory(string categoryName)
+    public Category? GetCategory(CategoryName categoryName)
+    {
+        Category? category =
+            _mapper.Map<Category>(_unitOfWork.Categories.Find(c => c.Name == categoryName).FirstOrDefault());
+        return category;
+    }
+
+    
+    public List<Item> GetItemsByCategory(string categoryName)  //TODO optimization needed. Maybe merge with GetItemsByCategoryName()
     {
         List<Item> items = new List<Item>();
         var category = GetCategoryByName(categoryName);
@@ -193,6 +201,24 @@ public class ItemService : IItemService
         return mappedItems;
     }
     
+    
+    public List<Item> GetItemsByCategoryName(OnlineShopModels.Models.Enums.CategoryName category)
+    {
+        try
+        {
+            CategoryName categoryEntity = (CategoryName)category; //(CategoryName)Enum.Parse(typeof(CategoryEntity), category.ToString());
+            
+            Guid categoryId = _unitOfWork.Categories.Find(c => c.Name == categoryEntity).FirstOrDefault().Id;
+            return _unitOfWork.Items.GetByCategory(categoryId).ToList().ConvertAll(_mapper.Map<ItemEntity, Item>);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Problem with database");
+            return new List<Item>();
+        }
+
+    }
+    
     public List<Item> GetItemsMock()
     {
         List<Item> items = new List<Item>();
@@ -211,7 +237,7 @@ public class ItemService : IItemService
             CpuModel = ItemElectronicsParameters.IntelCpuModel, Description = "other description", Id = Guid.NewGuid(), 
             MemoryCapacity = ItemElectronicsParameters.Memory512, Name = "Laptop test model 2", Price = 212, Quantity = 23
         });
-        //return items;
+        return items;
 
 
 

@@ -13,8 +13,10 @@ public class CpuModelHandler : QueryHandler
     public override List<Item> HandleRequest(IItemService itemService, ItemSearchModel itemSearchModel, List<Item> items)
     {
         //List<Item> itemsWithCpuModel = items;
-        if (itemSearchModel is ItemElectronicsSearchModel electronicsSearchModel)
+        if (itemSearchModel is ItemElectronicsSearchModel electronicsSearchModel &&
+            electronicsSearchModel.CpuModels.Count() != 0)
         {
+
             List<ItemElectronics> allItems = itemService.MapToItemElectronics(items);
             List<ItemElectronics> filteredItems = new List<ItemElectronics>();
 

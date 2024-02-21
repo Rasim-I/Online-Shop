@@ -11,8 +11,10 @@ public class SizeHandler : QueryHandler
         List<Item> items)
     {
         //List<Item> itemsWithCpuModel = items;
-        if (itemSearchModel is ItemClothesSearchModel clothesSearchModel)
+        if (itemSearchModel is ItemClothesSearchModel clothesSearchModel &&
+            clothesSearchModel.Sizes.Count != 0)
         {
+
             List<ItemClothes> allItems = itemService.MapToItemClothes(items);
             List<ItemClothes> filteredItems = new List<ItemClothes>();
 

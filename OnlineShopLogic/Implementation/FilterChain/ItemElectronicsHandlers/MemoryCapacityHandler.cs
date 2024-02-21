@@ -9,8 +9,10 @@ public class MemoryCapacityHandler : QueryHandler
 {
     public override List<Item> HandleRequest(IItemService itemService, ItemSearchModel itemSearchModel, List<Item> items)
     {
-        if (itemSearchModel is ItemElectronicsSearchModel electronicsSearchModel)
+        if (itemSearchModel is ItemElectronicsSearchModel electronicsSearchModel &&
+            electronicsSearchModel.MemoryCapacities.Count != 0)
         {
+
             List<ItemElectronics> allItems = itemService.MapToItemElectronics(items);
             List<ItemElectronics> filteredItems = new List<ItemElectronics>();
 

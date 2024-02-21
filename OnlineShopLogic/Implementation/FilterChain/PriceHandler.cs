@@ -13,8 +13,7 @@ public class PriceHandler : QueryHandler
         {
             return Successor?.HandleRequest(itemService, itemSearchModel, items) ?? items;
         }
-        
-        
+
         List<Item> allItems = items;
         List<Item> filteredItems = new List<Item>();
 
@@ -30,10 +29,14 @@ public class PriceHandler : QueryHandler
         return Successor?.HandleRequest(itemService, itemSearchModel, items) ?? items;
     }
 
-    public bool ValidatePrice(int minPrice, int maxPrice)
+    private bool ValidatePrice(int minPrice, int maxPrice)
     {
         if (minPrice < 0 || minPrice > maxPrice)
             return false;
+        else if (minPrice == 0 && maxPrice == 0)
+        {
+            return false;
+        }
         else
             return true;
     }

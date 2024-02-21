@@ -8,20 +8,24 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-controller="Item" asp-action="FilterItems" method="post">
+    <form asp-controller="Item" asp-action="FilterItems" method="get">
 
+        
         <!--input type="hidden" name="category" value="Model"/-->
-        <input type="hidden" name="Id" value="@Model.Id"/>
-        <input type="hidden" name="Name" value="@Model.Name"/>
-        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
-        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
-
+        <!-- 
+        <input type="hidden" name="Id" value="Model.Id"/>
+        <input type="hidden" name="Name" value="Model.Name"/>
+        <input type="hidden" name="IsRoot" value="Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="Model.RootCategory"/>
+        -->
+        
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemElectronicsParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand" 
+                           @(ViewBag.ElectronicsSearchModel != null && ViewBag.ElectronicsSearchModel.Brands.Contains(brand) ? "checked" : "") />
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -34,7 +38,8 @@
             @foreach (var cpuModel in ItemElectronicsParameters.CpuModels)
             {
                 <div class="form-check" name="cpuModels_container">
-                    <input class="form-check-inline" name="cpuModels" type="checkbox" value="@cpuModel" id="@cpuModel"/>
+                    <input class="form-check-inline" name="cpuModels" type="checkbox" value="@cpuModel" id="@cpuModel"
+                           @(ViewBag.ElectronicsSearchModel != null && ViewBag.ElectronicsSearchModel.CpuModels.Contains(cpuModel) ? "checked" : "") />
                     <label class="form-check-label" for="@cpuModel">
                         @cpuModel
                     </label>
@@ -47,7 +52,8 @@
             @foreach (var memoryCap in ItemElectronicsParameters.MemoryCapacity)
             {
                 <div class="form-check" name="memoryCapacity_container">
-                    <input class="form-check-inline" name="memoryCapacities" type="checkbox" value="@memoryCap" id="@memoryCap"/>
+                    <input class="form-check-inline" name="memoryCapacities" type="checkbox" value="@memoryCap" id="@memoryCap"
+                           @(ViewBag.ElectronicsSearchModel != null && ViewBag.ElectronicsSearchModel.MemoryCapacities.Contains(memoryCap) ? "checked" : "") />
                     <label class="form-check-label" for="@memoryCap">
                         @memoryCap
                     </label>
@@ -61,16 +67,18 @@
             <div class="priceValueBox">
 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="minPrice"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"
+                           value="@((ViewBag.ElectronicsSearchModel != null) ? ViewBag.ElectronicsSearchModel.MinPrice : "")" />
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"
+                           value="@((ViewBag.ElectronicsSearchModel != null) ? ViewBag.ElectronicsSearchModel.MaxPrice : null)" />
                 </div>
 
             </div>
 
-            <input type="text" class="js-range-slider" name="my_range" value=""/>
+            <input type="text" class="js-range-slider"/>
 
             <button type="submit">Submit</button>
 
@@ -80,9 +88,9 @@
             $(".js-range-slider").ionRangeSlider({
                 type: "double",
                 min: 0,
-                max: 1000,
+                max: 5000,
                 from: 0,
-                to: 1000,
+                to: 5000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

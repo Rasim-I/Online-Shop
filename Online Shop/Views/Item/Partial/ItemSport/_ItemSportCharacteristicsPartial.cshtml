@@ -8,19 +8,21 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-controller="Item" asp-action="FilterItems" method="post">
-
-        <input type="hidden" name="Id" value="@Model.Id"/>
-        <input type="hidden" name="Name" value="@Model.Name"/>
-        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
-        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
+    <form asp-controller="Item" asp-action="FilterItems" method="get">
+        <!-- 
+        <input type="hidden" name="Id" value="Model.Id"/>
+        <input type="hidden" name="Name" value="Model.Name"/>
+        <input type="hidden" name="IsRoot" value="Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="Model.RootCategory"/>
+        -->
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemSportParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"
+                            @(ViewBag.SportSearchModel != null && ViewBag.SportSearchModel.Brands.Contains(brand) ? "checked" : "") />
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -33,7 +35,8 @@
             @foreach (var activity in ItemSportParameters.Activities)
             {
                 <div class="form-check" name="activity_container">
-                    <input class="form-check-inline" name="Activities" type="checkbox" value="@activity" id="@activity"/>
+                    <input class="form-check-inline" name="Activities" type="checkbox" value="@activity" id="@activity"
+                           @(ViewBag.SportSearchModel != null && ViewBag.SportSearchModel.Activities.Contains(activity) ? "checked" : "") />
                     <label class="form-check-label" for="@activity">
                         @activity
                     </label>
@@ -48,16 +51,18 @@
             <div class="priceValueBox">
 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"
+                           @((ViewBag.SportSearchModel != null) ? ViewBag.SportSearchModel.MinPrice : "") />
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"
+                           @((ViewBag.SportSearchModel != null) ? ViewBag.SportSearchModel.MaxPrice : "") />
                 </div>
 
             </div>
 
-            <input type="text" class="js-range-slider" name="my_range" value=""/>
+            <input type="text" class="js-range-slider" />
 
             <button type="submit">Submit</button>
 
@@ -67,9 +72,9 @@
             $(".js-range-slider").ionRangeSlider({
                 type: "double",
                 min: 0,
-                max: 1000,
+                max: 500,
                 from: 0,
-                to: 1000,
+                to: 500,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

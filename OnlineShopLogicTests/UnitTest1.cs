@@ -36,7 +36,7 @@ public class Tests
         ItemElectronicsSearchModel item = new ItemElectronicsSearchModel()
         {
             Brands = new List<string>(){ ItemElectronicsParameters.HPBrand, ItemElectronicsParameters.AsusBrand}, 
-            MinPrice = 3, MaxPrice = 10, Name = "Something", 
+            MinPrice = 3, MaxPrice = 10000, Name = "Something", 
             CpuModels = new List<string>(){ItemElectronicsParameters.AMDCpuModel, ItemElectronicsParameters.IntelCpuModel},
             MemoryCapacities = new List<string>(){ ItemElectronicsParameters.Memory64, ItemElectronicsParameters.Memory512 }
         };
@@ -44,9 +44,11 @@ public class Tests
         BrandHandler br = new BrandHandler();
         CpuModelHandler cpu = new CpuModelHandler();
         MemoryCapacityHandler mem = new MemoryCapacityHandler();
+        PriceHandler price = new PriceHandler();
 
         br.Successor = cpu;
         cpu.Successor = mem;
+        mem.Successor = price;
 
         foreach (var i in br.HandleRequest(itemService, item, itemService.GetItemsMock()))
         {

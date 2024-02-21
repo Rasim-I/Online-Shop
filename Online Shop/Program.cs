@@ -52,7 +52,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddControllersWithViews(options =>
 {
-   options.ModelBinderProviders.Insert(0, new ItemSearchModelBinderProvider());
+   //options.ModelBinderProviders.Insert(0, new ItemSearchModelBinderProvider());
 });
 
 

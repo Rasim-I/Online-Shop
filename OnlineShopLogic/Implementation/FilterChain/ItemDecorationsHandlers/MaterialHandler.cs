@@ -9,7 +9,8 @@ public class MaterialHandler : QueryHandler
 {
     public override List<Item> HandleRequest(IItemService itemService, ItemSearchModel itemSearchModel, List<Item> items)
     {
-        if (itemSearchModel is ItemDecorationsSearchModel decorationsSearchModel)
+        if (itemSearchModel is ItemDecorationsSearchModel decorationsSearchModel &&
+            decorationsSearchModel.Materials.Count != 0)
         {
             List<ItemDecorations> allItems = itemService.MapToItemDecorations(items);
             List<ItemDecorations> filteredItems = new List<ItemDecorations>();

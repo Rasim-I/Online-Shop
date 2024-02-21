@@ -9,6 +9,11 @@ public class BrandHandler : QueryHandler
     public override List<Item> HandleRequest(IItemService itemService, ItemSearchModel itemSearchModel,
         List<Item> items)
     {
+        if (itemSearchModel.Brands.Count == 0)
+        {
+            return Successor?.HandleRequest(itemService, itemSearchModel, items) ?? items;
+        }
+        
         List<Item> allItems = items; //itemService.GetItems();
         List<Item> filteredItems = new List<Item>();
         

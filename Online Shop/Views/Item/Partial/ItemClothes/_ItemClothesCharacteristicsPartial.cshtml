@@ -8,19 +8,21 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-controller="Item" asp-action="FilterItems" method="post">
-
-        <input type="hidden" name="Id" value="@Model.Id"/>
-        <input type="hidden" name="Name" value="@Model.Name"/>
-        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
-        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
+    <form asp-controller="Item" asp-action="FilterItems" method="get">
+        <!-- 
+        <input type="hidden" name="Id" value="Model.Id"/>
+        <input type="hidden" name="Name" value="Model.Name"/>
+        <input type="hidden" name="IsRoot" value="Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="Model.RootCategory"/>
+        -->
         
-        <div class="brandBox propertyBox">
+    <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemClothesParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="Brands" type="checkbox" value="@brand" id="@brand"
+                           @(ViewBag.ClothesSearchModel != null && ViewBag.ClothesSearchModel.Brands.Contains(brand) ? "checked" : "") />
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -33,7 +35,8 @@
             @foreach (var gender in ItemClothesParameters.Genders)
             {
                 <div class="form-check" name="gender_container">
-                    <input class="form-check-inline" name="Gender" type="radio" value="@gender" id="@gender"/>
+                    <input class="form-check-inline" name="Gender" type="radio" value="@gender" id="@gender"
+                           @(ViewBag.ClothesSearchModel != null && ViewBag.ClothesSearchModel.Genders.Contains(gender) ? "checked" : "") />
                     <label class="form-check-label" for="@gender">
                         @gender
                     </label>
@@ -46,7 +49,8 @@
             @foreach (var size in ItemClothesParameters.Sizes)
             {
                 <div class="form-check" name="size_container">
-                    <input class="form-check-inline" name="Sizes" type="checkbox" value="@size" id="@size"/>
+                    <input class="form-check-inline" name="Sizes" type="checkbox" value="@size" id="@size"
+                           @(ViewBag.ClothesSearchModel != null && ViewBag.ClothesSearchModel.Sizes.Contains(size) ? "checked" : "") />
                     <label class="form-check-label" for="@size">
                         @size
                     </label>
@@ -61,16 +65,18 @@
             <div class="priceValueBox">
 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="priceLowerValue"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"
+                            @((ViewBag.ClothesSearchModel != null) ? ViewBag.ClothesSearchModel.MinPrice : "") />
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="priceHigherValue"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"
+                            @((ViewBag.ClothesSearchModel != null) ? ViewBag.ClothesSearchModel.MinPrice : "") />
                 </div>
 
             </div>
 
-            <input type="text" class="js-range-slider" name="my_range" value=""/>
+            <input type="text" class="js-range-slider"/>
 
             <button type="submit">Submit</button>
 
@@ -80,9 +86,9 @@
             $(".js-range-slider").ionRangeSlider({
                 type: "double",
                 min: 0,
-                max: 1000,
+                max: 2000,
                 from: 0,
-                to: 1000,
+                to: 2000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    

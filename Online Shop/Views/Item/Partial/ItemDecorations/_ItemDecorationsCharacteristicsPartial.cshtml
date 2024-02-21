@@ -8,19 +8,22 @@
 
 <div id="containerItemCharacteristics" class="gridItemItemCategory">
 
-    <form asp-controller="Item" asp-action="FilterItems" method="post">
+    <form asp-controller="Item" asp-action="FilterItems" method="get">
 
-        <input type="hidden" name="Id" value="@Model.Id"/>
-        <input type="hidden" name="Name" value="@Model.Name"/>
-        <input type="hidden" name="IsRoot" value="@Model.IsRoot"/>
-        <input type="hidden" name="RootCategory" value="@Model.RootCategory"/>
+        <!-- 
+        <input type="hidden" name="Id" value="Model.Id"/>
+        <input type="hidden" name="Name" value="Model.Name"/>
+        <input type="hidden" name="IsRoot" value="Model.IsRoot"/>
+        <input type="hidden" name="RootCategory" value="Model.RootCategory"/>
+        -->
 
         <div class="brandBox propertyBox">
             <h4>Brand:</h4>
             @foreach (var brand in ItemDecorationsParameters.Brands)
             {
                 <div class="form-check" name="brand_container">
-                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand"/>
+                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand"
+                           @(ViewBag.DecorationsSearchModel != null && ViewBag.DecorationsSearchModel.Brands.Contains(brand) ? "checked" : "") />
                     <label class="form-check-label" for="@brand">
                         @brand
                     </label>
@@ -33,7 +36,8 @@
             @foreach (var material in ItemDecorationsParameters.Materials)
             {
                 <div class="form-check" name="material_container">
-                    <input class="form-check-inline" name="materials" type="checkbox" value="@material" id="@material"/>
+                    <input class="form-check-inline" name="materials" type="checkbox" value="@material" id="@material"
+                           @(ViewBag.DecorationsSearchModel != null && ViewBag.DecorationsSearchModel.Materials.Contains(material) ? "checked" : "") />
                     <label class="form-check-label" for="@material">
                         @material
                     </label>
@@ -42,11 +46,12 @@
         </div>
 
         <div class="colorBox propertyBox">
-            <h4>Size:</h4>
+            <h4>Color:</h4>
             @foreach (var color in ItemDecorationsParameters.Colors)
             {
                 <div class="form-check" name="color_container">
-                    <input class="form-check-inline" name="colors" type="checkbox" value="@color" id="@color"/>
+                    <input class="form-check-inline" name="colors" type="checkbox" value="@color" id="@color"
+                           @(ViewBag.ClothesSearchModel != null && ViewBag.ClothesSearchModel.Colors.Contains(color) ? "checked" : "") />
                     <label class="form-check-label" for="@color">
                         @color
                     </label>
@@ -61,16 +66,18 @@
             <div class="priceValueBox">
 
                 <div class="priceLowerValueBox">
-                    <input type="number" class="priceLowerValue priceValue" name="minPrice"/>
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"
+                            @((ViewBag.DecorationsSearchModel != null) ? ViewBag.DecorationsSearchModel.MinPrice : "") />
                 </div>
 
                 <div class="priceHigherValueBox">
-                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"/>
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"
+                            @((ViewBag.DecorationsSearchModel != null) ? ViewBag.DecorationsSearchModel .MinPrice : "") />
                 </div>
 
             </div>
 
-            <input type="text" class="js-range-slider" name="my_range" value=""/>
+            <input type="text" class="js-range-slider"/>
 
             <button type="submit">Submit</button>
 
@@ -80,9 +87,9 @@
             $(".js-range-slider").ionRangeSlider({
                 type: "double",
                 min: 0,
-                max: 1000,
+                max: 5000,
                 from: 0,
-                to: 1000,
+                to: 5000,
                 grid: true,
                 onChange: function (data){
                     $(".priceLowerValue").val(data.from);    
