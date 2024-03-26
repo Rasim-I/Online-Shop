@@ -5,5 +5,6 @@ public enum CategoryName
     Electronics,
     Sport,
     Decorations,
-    Clothes
+    Clothes,
+    Unknown
 }

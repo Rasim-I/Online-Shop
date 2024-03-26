@@ -24,4 +24,5 @@ public interface IItemService
     public List<ItemClothes> MapToItemClothes(List<Item> items);
     public List<ItemDecorations> MapToItemDecorations(List<Item> items);
     public List<Item> GetItemsMock();
+    public List<Item> SearchByKeywords(List<string> keywords);
 }

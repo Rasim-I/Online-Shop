@@ -5,13 +5,22 @@
 
 @{
     ViewData["Title"] = "";
-    Category category = ViewBag.Category; 
+    Category category = ViewBag.Category == null? new Category() {Name = CategoryName.Unknown} : ViewBag.Category; 
 }
 
 <div id="containerItemCategory">
 
     <div id="categoryPath" class="gridItemItemCategory">
-        <h2>@ViewBag.Category.Name</h2> <!-- it must be Category object. Also it is the last of SubCategories chain -->
+        @if (ViewBag.Category != null)
+        {
+            <h2>@ViewBag.Category.Name</h2> <!-- it must be Category object. Also it is the last of SubCategories chain -->
+        }
+        else
+        {
+            <h2>Search</h2>
+        }
+        
+        
         <div id="CategoryPathLinks">
             <!-- display generalized category. category -> category.SubCategory -> category.Subcategory.Subcategory  -->
             <a href="">Category</a>
@@ -34,7 +43,9 @@
         case CategoryName.Decorations:
             @(await Html.PartialAsync("Partial/ItemDecorations/_ItemDecorationsCharacteristicsPartial", category))
             break;
-
+        default:
+            @(await Html.PartialAsync("Partial/ItemGeneral/_ItemGeneralCharacteristicsPartial")) 
+            break;
     }
     
  

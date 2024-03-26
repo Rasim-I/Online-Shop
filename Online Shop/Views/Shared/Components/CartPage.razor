@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using OnlineShop.Models
+@using OnlineShopModels.Models
+@using OnlineShopModels.Models.ItemTypes
+@inject IJSRuntime JSRuntime
+
+@{
+    ItemElectronics itemElectronics = new ItemElectronics { Id = Guid.NewGuid(), 
+        Description = "This is a test item, used to test how it items will be displayed in cart",
+        Price = 344, Name = "Cart test Item", Photos = new List<Photo>()
+        {
+            new Photo("Cart test", "/Item_Images/Blue.png") {Id = Guid.NewGuid(), IsMain = true}
+        }
+    };
+    //List<ItemElectronics> itemsInCart = new List<ItemElectronics> { itemElectronics };
+    
+    CartItem cartItem = new CartItem() {Item = itemElectronics, Quantity = _cartItemQuantity };
+    Cart cart = new Cart() { Id = Guid.NewGuid(), Items = new List<CartItem>(){cartItem}};
+}
+
+<div id="cartMenu" class="cartMenu">
+    <button id="closeCartButton" class="closeCartButton">
+        <img src="/Icons/closeCartIcon.png" alt="close"/>
+    </button>
+
+    <div class="cartItems">
+
+        @if (cart.Items.Any())
+        {
+            @foreach (var item in cart.Items)
+            {
+                <div class="cartItem">
+                    <img class="cartItemImage" src=@item.Item.Photos.Where(p => p.IsMain).FirstOrDefault().Link alt="item"/>
+            
+                    <h3 class="cartItemName">@item.Item.Name</h3>
+            
+                    <button class="quantityLess" onclick="@LessQuantity">
+                        <img src="/Icons/arrowLess.png" alt="less"/>
+                    </button>
+            
+                    <label class="cartItemQuantity">@item.Quantity</label>
+                    
+                    <button class="quantityMore">
+                        <img src="/Icons/arrowMore.png" onclick="@(() => MoreQuantity(item))" alt="more"/>
+                    </button>
+            
+                    <button class="cartRemoveItem">
+                        <img src="/Icons/removeItem.png" alt="remove"/>
+                    </button>
+                </div>
+            }
+            
+        }
+
+        <button class="cartConfirmOrder btn btn-success">Confirm Order</button>
+    </div>
+
+</div>
+
+<div id="overlay" class="overlay"></div>
+
+
+
+@code {
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            JSRuntime.InvokeVoidAsync("attachCartEventHandlers");
+            //Console.WriteLine("---------------------------- attached");
+            
+        }
+    }
+
+    private int _cartItemQuantity = 1;
+    
+    private void LessQuantity()
+    {
+        _cartItemQuantity--;
+    }
+
+    private void MoreQuantity(CartItem item)
+    {
+        //_cartItemQuantity++;
+        item.Quantity++;
+    }
+    
+}
+

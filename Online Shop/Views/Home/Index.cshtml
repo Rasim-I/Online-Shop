@@ -1,4 +1,5 @@
 ﻿@using OnlineShopModels.Models
+@using Cart = Online_Shop.Views.Shared.Components.CartPage
 @model List<ItemWebModel>
 @{
     ViewData["Title"] = "Home Page";
@@ -43,6 +44,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
     
 
     @await Html.PartialAsync("Partial/_CatalogPartial", (List<Category>)ViewBag.Categories)

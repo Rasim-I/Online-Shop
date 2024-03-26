@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "keurrYW0JSkLzqzaRwQxi5hrQKgeB2pPuXvEmELaWvQ9aqfgSv3q7RuICFbVggJPtmBkMe9yGgtpLEezPkKbjg==",
+  "dgSpecHash": "cZtwwMlS3vcdUV8RgCR5i/RWWSulkDFWrytAFe9/2r/z16g3/tiLRqLV2mg58m3AORZsvivTXPTibiMv6BhsSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

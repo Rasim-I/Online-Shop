@@ -14,6 +14,7 @@ using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopLogic.Implementation.Mappers.ManualMappers;
 using OnlineShopLogic.Implementation.Services;
 using OnlineShopLogic.Models;
+using OnlineShopModels.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();  //
 //builder.Services.AddControllersWithViews();
 
 
@@ -93,6 +95,7 @@ builder.Services.AddTransient<IMapper<ReviewEntity, Review>, ReviewMapper>();
 
 builder.Services.AddTransient<ItemWebModelMapper>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -115,9 +118,13 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+//app.UseAntiforgery();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapBlazorHub(); //
 app.MapRazorPages();
 
 app.Run();

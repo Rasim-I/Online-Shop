@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "loldW/ZVoPJOdMpXTyqBHSTLzc1QUkVez4XjAqAB2fOlVxp4FpRC3H0zPmGX+bmloyeMU8RJG3+wvrT5e8gumA==",
+  "dgSpecHash": "K+UtMQ6UmUDBL6A44rcA55ex8Edexz/90eFDb56k/ofrbaDRAiJk5+a3aSgfMdrFVXDhKI8pzL9G+zFRHUQW/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogicTests\\OnlineShopLogicTests.csproj",
   "expectedPackageFiles": [
@@ -99,10 +99,7 @@
     "C:\\Users\\rasim\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\rasim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
+    "C:\\Users\\rasim\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
   "logs": []
 }

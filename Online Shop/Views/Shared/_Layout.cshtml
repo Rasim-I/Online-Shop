@@ -1,4 +1,6 @@
-﻿@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+﻿@using Online_Shop.Views.Shared
+@using Online_Shop.Views.Shared.Components
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
 @{
     ViewData["CatalogIcon"] = "~/Icons/2976215.png";
 }
@@ -49,113 +51,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     
+    <script src="~/js/CartScripts.js"></script>
+    
+    <base href="~/" />
+    <script src="_framework/blazor.server.js"></script>
+
 
 </head>
 <body>
 
 <div class="pageContainer" style="width: 100%">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OnlineShop</a>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav ulNavContainer">
-
-                        <!-- 
-                        <li class="nav-item liNavHome navFlex-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        
-                        <li class="nav-item liNavPrivacy navFlex-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        -->
-
-                        <div class="btn-group divNavDropdown navFlex-item">
-                            <button type="button" class="btn catalog-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">
-                                <label class="catalog-label">Catalog</label>
-                                <img class="catalogIcon" src="~/@Configuration["Images:CatalogIconPath"]" alt="Catalog Icon"/>
-                            </button>
-                            
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another Action</a>
-                                <a class="dropdown-item" href="#">Another Action</a>
-                                <a class="dropdown-item" href="#">Another Action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
-
-                        <!--class offset-2 col-md-md-5 justify-content-center align-items-center/end/start -->
-
-
-                    </ul>
-
-                    <ul class="navbar-nav ulNavContainerSearch">
-
-                        <li class="nav-item liNavSearch navFlex-item">
-                            <form class="form-inline searchForm">
-                                <div class="input-group divFormSearch">
-                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
-
-                    </ul>
-
-                    <ul class="ulNavCart">
-                        <button id="openCartButton">
-                            <img src="~/Icons/shopping-cart.png" alt="cart"/>
-                        </button>
-                    </ul>
-
-                    <partial name="_LoginPartial"/>
-
-                </div>
-            </div>
-        </nav>
-    </header>
+    @await Html.PartialAsync("_HeaderPartial")
 
     <main role="main" class="pb-3">
         @{
-            await Html.RenderPartialAsync("_CartPartial");
+            //await Html.RenderPartialAsync("_CartPartial");
+            //await Html.RenderComponentAsync<Cart>(RenderMode.Server);
+            @(await Html.RenderComponentAsync<CartPage>(RenderMode.ServerPrerendered))
         }
         @RenderBody()
     </main>
+    
+    
 
-    <script>
-        const cartMenu = document.getElementById('cartMenu');
-        const openCartButton = document.getElementById('openCartButton');
-        const overlay = document.getElementById('overlay');
-        const closeCartButton = document.getElementById('closeCartButton');
-        
-        openCartButton.addEventListener('click', () => {
-            cartMenu.style.display = 'block';
-            overlay.style.display = 'block';
-        } );
-        
-        overlay.addEventListener('click', () => {
-            cartMenu.style.display = 'none';
-            overlay.style.display = 'none';
-        } );
-        
-        closeCartButton.addEventListener('click', () => {
-           cartMenu.style.display = 'none';
-           overlay.style.display = 'none';
-        });
-    </script>
 
     <footer class="border-top footer text-muted">
         @if (IsSectionDefined("Footer"))
         {
-            @RenderSection("Footer")
-            ;
+            @RenderSectionAsync("Footer")
+            
         }
         else
         {

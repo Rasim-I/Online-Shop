@@ -8,6 +8,7 @@ using OnlineShopLogic.Abstraction.IServices;
 using OnlineShopLogic.Implementation.Mappers;
 using OnlineShopModels.Models;
 using System.Linq;
+using OnlineShopLogic.Implementation.FilterChain;
 using OnlineShopLogic.ItemParameters;
 using OnlineShopModels.Models.ItemTypes;
 
@@ -16,9 +17,10 @@ namespace OnlineShopLogic.Implementation.Services;
 public class ItemService : IItemService
 {
     private IUnitOfWork _unitOfWork;
+
     //private IMapper<ItemEntity, Item> _itemMapper;
     private IMapper _mapper;
-    
+
     public ItemService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
@@ -73,7 +75,8 @@ public class ItemService : IItemService
         if (Enum.TryParse(categoryName, out categoryNameEnum))
         {
             Category? category = _mapper
-                .Map<Category>(_unitOfWork.Categories.GetCategoryByName(categoryNameEnum).FirstOrDefault());  //TODO optimization needed
+                .Map<Category>(_unitOfWork.Categories.GetCategoryByName(categoryNameEnum)
+                    .FirstOrDefault()); //TODO optimization needed
             return category;
         }
         else
@@ -87,8 +90,9 @@ public class ItemService : IItemService
         return category;
     }
 
-    
-    public List<Item> GetItemsByCategory(string categoryName)  //TODO optimization needed. Maybe merge with GetItemsByCategoryName()
+
+    public List<Item>
+        GetItemsByCategory(string categoryName) //TODO optimization needed. Maybe merge with GetItemsByCategoryName()
     {
         List<Item> items = new List<Item>();
         var category = GetCategoryByName(categoryName);
@@ -172,6 +176,7 @@ public class ItemService : IItemService
                 mappedItems.Add(itemSport);
             }
         }
+
         return mappedItems;
     }
 
@@ -185,6 +190,7 @@ public class ItemService : IItemService
                 mappedItems.Add(itemClothes);
             }
         }
+
         return mappedItems;
     }
 
@@ -198,27 +204,29 @@ public class ItemService : IItemService
                 mappedItems.Add(itemDecorations);
             }
         }
+
         return mappedItems;
     }
-    
-    
+
+
     public List<Item> GetItemsByCategoryName(OnlineShopModels.Models.Enums.CategoryName category)
     {
         try
         {
-            CategoryName categoryEntity = (CategoryName)category; //(CategoryName)Enum.Parse(typeof(CategoryEntity), category.ToString());
-            
+            CategoryName
+                categoryEntity =
+                    (CategoryName)category; //(CategoryName)Enum.Parse(typeof(CategoryEntity), category.ToString());
+
             Guid categoryId = _unitOfWork.Categories.Find(c => c.Name == categoryEntity).FirstOrDefault().Id;
             return _unitOfWork.Items.GetByCategory(categoryId).ToList().ConvertAll(_mapper.Map<ItemEntity, Item>);
         }
         catch (Exception e)
         {
-            Console.WriteLine("Problem with database");
+            Console.WriteLine("Problem with database or category does not exist");
             return new List<Item>();
         }
-
     }
-    
+
     public List<Item> GetItemsMock()
     {
         List<Item> items = new List<Item>();
@@ -226,19 +234,19 @@ public class ItemService : IItemService
             { Id = Guid.NewGuid(), Name = OnlineShopModels.Models.Enums.CategoryName.Electronics, IsRoot = true };
         items.Add(new ItemElectronics()
         {
-            Brand = ItemElectronicsParameters.HPBrand, Category = category, 
-            CpuModel = ItemElectronicsParameters.AMDCpuModel, Description = "description", Id = Guid.NewGuid(), 
+            Brand = ItemElectronicsParameters.HPBrand, Category = category,
+            CpuModel = ItemElectronicsParameters.AMDCpuModel, Description = "description", Id = Guid.NewGuid(),
             MemoryCapacity = ItemElectronicsParameters.Memory64, Name = "Laptop test model", Price = 222, Quantity = 23
         });
-        
+
         items.Add(new ItemElectronics()
         {
-            Brand = ItemElectronicsParameters.AsusBrand, Category = category, 
-            CpuModel = ItemElectronicsParameters.IntelCpuModel, Description = "other description", Id = Guid.NewGuid(), 
-            MemoryCapacity = ItemElectronicsParameters.Memory512, Name = "Laptop test model 2", Price = 212, Quantity = 23
+            Brand = ItemElectronicsParameters.AsusBrand, Category = category,
+            CpuModel = ItemElectronicsParameters.IntelCpuModel, Description = "other description", Id = Guid.NewGuid(),
+            MemoryCapacity = ItemElectronicsParameters.Memory512, Name = "Laptop test model 2", Price = 212,
+            Quantity = 23
         });
         return items;
-
 
 
         Category categoryClothes = new Category()
@@ -259,6 +267,24 @@ public class ItemService : IItemService
         });
         return itemClothes;
     }
-    
 
+
+    public List<Item> SearchByKeywords(List<string> keywords)
+    {
+        List<Item> allItems = GetItems();
+        List<Item> filteredItems = new List<Item>();
+        
+        foreach (var item in allItems)
+        {
+            List<string> itemParameters = new List<string>()
+                { item.Name.ToLower(), item.Category.Name.ToString().ToLower(), item.Description.ToLower(), item.Brand.ToLower() };
+            string concatenatedItemParameters = string.Join(" ", itemParameters);
+
+            bool allContained = keywords.All(word => concatenatedItemParameters.Contains(word.ToLower()));
+            if (allContained)
+                filteredItems.Add(item);
+        }
+
+        return filteredItems;
+    }
 }

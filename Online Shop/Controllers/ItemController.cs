@@ -36,71 +36,17 @@ public class ItemController : Controller
         _itemWebModelMapper = itemWebModelMapper;
     }
 
-    [HttpGet]
+    [HttpGet("/fillDatabase")]
     public bool FillDatabase()
     {
         return _itemService.FillDatabase();
     }
 
+    /*
     [HttpGet("{category}")]
     public IActionResult ItemCategory(string category)
     {
-        //return category;
-        /*
-        Guid categoryId = Guid.NewGuid();
-        List<ItemWebModel> items = new List<ItemWebModel>
-        {
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "Some product", Description = "some product description",
-                CategoryId = categoryId
-            },
-            new ItemWebModel()
-            {
-                Id = Guid.NewGuid(), Name = "other product", Description = "description for other product",
-                CategoryId = categoryId
-            }
-        };
-        ViewBag.Category = category;
-        */
-
-        //Category category = _itemService.GetItemsByCategory(category)
-
+       
         ItemWebModelMapper itemWebModelMapper = new ItemWebModelMapper();
         List<ItemWebModel> items =
             _itemService.GetItemsByCategory(category)
@@ -124,26 +70,15 @@ public class ItemController : Controller
 
         return View(items);
     }
-
+*/
+    
     public IActionResult ItemPage([FromQuery] string itemId)
     {
-        /*
-        ItemWebModel itemTest = new ItemWebModel()
-        {
-            Id = Guid.NewGuid(), Name = "product product", Description =
-                "Description description description description," +
-                "description dddddd dddd dddd ddd d ddddddd d ddd. DDdddd ddd d dddd.",
-            CategoryId = Guid.NewGuid(), Price = 2321
-        };
-        */
-
-        //ItemWebModel itemWebModel = _itemWebModelMapper.ToWebModel(_itemService.GetItem(Guid.Parse(itemId)));
         Item item = _itemService.GetItem(Guid.Parse(itemId));
-
-
         return View(item);
     }
 
+    
     /*
     [HttpPost]
     public IActionResult FilterItems([FromForm] ItemSearchModel itemSearchModel, [FromForm]Category category)
@@ -346,4 +281,24 @@ public class ItemController : Controller
 
         //Category? categoryModel = _itemService.GetCategoryByName(category);
     }
+
+    
+    [HttpGet("/search")]
+    public IActionResult Search(string request)
+    {
+        List<string> requestKeywords = request.Split(" ").ToList();
+
+        List<Item> filteredItems = _itemService.SearchByKeywords(requestKeywords);
+
+        StringBuilder result = new StringBuilder();
+        foreach (var item in filteredItems)
+        {
+            result.Append($"{item.Name} - {item.Brand} - {item.Price} \n");
+        }
+        //return result.ToString();
+
+        return View("ItemCategory", filteredItems.ConvertAll(_itemWebModelMapper.ToWebModel));
+    }
+    
+    
 }

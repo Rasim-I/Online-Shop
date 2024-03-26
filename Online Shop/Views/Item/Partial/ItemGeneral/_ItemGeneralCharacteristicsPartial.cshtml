@@ -1,0 +1,127 @@
+﻿@using OnlineShopLogic.ItemParameters
+
+@{
+    //Layout = null;
+}
+
+
+<div id="containerItemCharacteristics" class="gridItemItemCategory">
+
+    <form asp-controller="Item" asp-action="FilterItems" method="get">
+
+        <div class="brandBox propertyBox">
+            <h4>Brand:</h4>
+            @foreach (var brand in ItemElectronicsParameters.Brands) //all available item's brands
+            {
+                <div class="form-check" name="brand_container">
+                    <input class="form-check-inline" name="brands" type="checkbox" value="@brand" id="@brand" 
+                           @(ViewBag.ElectronicsSearchModel != null && ViewBag.ElectronicsSearchModel.Brands.Contains(brand) ? "checked" : "") />
+                    <label class="form-check-label" for="@brand">
+                        @brand
+                    </label>
+                </div>
+            }
+        </div>
+
+       
+        <div class="priceBox propertyBox">
+            <h4>Price:</h4>
+
+            <div class="priceValueBox">
+
+                <div class="priceLowerValueBox">
+                    <input type="number" class="priceLowerValue priceValue" name="minPrice"
+                           value="@((ViewBag.ElectronicsSearchModel != null) ? ViewBag.ElectronicsSearchModel.MinPrice : "")" />
+                </div>
+
+                <div class="priceHigherValueBox">
+                    <input type="number" class="priceHigherValue priceValue" name="maxPrice"
+                           value="@((ViewBag.ElectronicsSearchModel != null) ? ViewBag.ElectronicsSearchModel.MaxPrice : null)" />
+                </div>
+
+            </div>
+
+            <input type="text" class="js-range-slider"/>
+
+            <button type="submit">Submit</button>
+
+        </div>
+
+        <script>
+            $(".js-range-slider").ionRangeSlider({
+                type: "double",
+                min: 0,
+                max: 5000,
+                from: 0,
+                to: 5000,
+                grid: true,
+                onChange: function (data){
+                    $(".priceLowerValue").val(data.from);    
+                    $(".priceHigherValue").val(data.to);
+                }
+            });        
+            
+            //$(".priceLowerValue, .priceHigherValue").on("change", validatePrices);
+            
+            function validatePrices(){
+                let lowerValue = $(".priceLowerValue");
+                let higherValue = $(".priceHigherValue");
+                
+                if (isNaN(lowerValue) || isNaN(higherValue) || lowerValue < 0 || lowerValue > higherValue){
+                    lowerValue.addClass("priceInvalid-input");
+                    higherValue.addClass("priceInvalid-input");
+                    
+                    console.log(lowerValue + " wrong input. Lower value is: " + lowerValue + ". Higher value is: " + higherValue);
+                    return false;
+                }
+                lowerValue.removeClass("priceInvalid-input");
+                higherValue.removeClass("priceInvalid-input");
+                
+                console.log(lowerValue + " correct input")
+                return true
+            }
+            
+    </script>
+
+    </form>
+
+</div>
+
+
+<style>
+   
+.irs--flat .irs-line{
+    background-color: #ced4da;
+    height: 5px;
+}
+.irs--flat .irs-bar{
+    background-color: #bfe2e9;
+    height: 5px;
+}
+.irs--flat .irs-handle{
+    width: 16px;
+    height: 16px;
+    border: 4px solid #1b6ec2;
+    background-color: white;
+    border-radius: 50%;
+    top: 19px;
+}
+
+    .irs--flat .irs-handle>i:first-child{
+        display: none;
+    }
+    .irs-with-grid .irs-grid, .irs-min, .irs-max{
+        display: none;
+    }
+    
+    .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
+        display: none;
+        color: white;
+        font-size: 10px;
+        line-height: 1.333;
+        text-shadow: none;
+        padding: 1px 5px;
+        background-color: #ed5565;
+        border-radius: 4px;
+    } 
+</style>

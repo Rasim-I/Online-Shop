@@ -5,7 +5,7 @@ using OnlineShop.Models;
 using OnlineShop.Models.Enums;
 using OnlineShopLogic.Abstraction.IServices;
 
-namespace OnlineShop.Controllers;
+namespace Online_Shop.Controllers;
 
 public class HomeController : Controller
 {
@@ -22,6 +22,8 @@ public class HomeController : Controller
     {
         
         Guid categoryId = Guid.NewGuid();
+        
+        
         List<ItemWebModel> items = new List<ItemWebModel>
         {
             new ItemWebModel()

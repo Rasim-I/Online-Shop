@@ -344,9 +344,14 @@ C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\scopedcss\
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\scopedcss\bundle\Online Shop.styles.css
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\scopedcss\projectbundle\Online Shop.bundle.scp.css
-C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.csproj.CopyComplete
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\refint\Online Shop.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.pdb
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online Shop.genruntimeconfig.cache
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\ref\Online Shop.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\Online S.29613416.Up2Date
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
