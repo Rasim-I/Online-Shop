@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Online_Shop;
 using Online_Shop.Areas.Identity.Data;
+using Online_Shop.Controllers;
 using Online_Shop.Infrastructure;
 using OnlineShop.Data;
 using OnlineShop.Models.WebMappers;
@@ -72,6 +73,8 @@ builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IItemService, ItemService>();
 builder.Services.AddTransient<IHomeService, HomeService>();
+//builder.Services.AddTransient<ICartService, CartService>();
+builder.Services.AddTransient<CartController>();
 
 //builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();
 builder.Services.AddAutoMapper(typeof(ItemMappingProfile));
@@ -111,7 +114,7 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); //allows to use static files from wwwroot
 
 app.UseRouting();
 
@@ -126,5 +129,7 @@ app.MapControllerRoute(
 
 app.MapBlazorHub(); //
 app.MapRazorPages();
+//app.MapFallbackToPage("/_Host");
+
 
 app.Run();

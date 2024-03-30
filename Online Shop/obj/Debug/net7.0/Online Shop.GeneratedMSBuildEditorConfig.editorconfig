@@ -18,13 +18,13 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rasim\RiderProjects\Online Shop\Online Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Components/CartPage.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFBhZ2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Components/CartPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gt112hbo9p
 
 [C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=

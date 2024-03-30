@@ -192,7 +192,7 @@ public class ItemController : Controller
                     ViewBag.Category = categoryModel;
                     ViewBag.ElectronicsSearchModel = electronicsSearchModel;
                     return View("ItemCategory",
-                        filteredElectronicsItems.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
+                        filteredElectronicsItems);//.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
                 
                 case CategoryName.Sport:
                 {
@@ -212,7 +212,7 @@ public class ItemController : Controller
                     ViewBag.Category = categoryModel;
                     ViewBag.SportSearchModel = sportSearchModel;
                     return View("ItemCategory",
-                        filteredSportItems.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
+                        filteredSportItems); //.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
 
                 }
 
@@ -236,7 +236,7 @@ public class ItemController : Controller
                     ViewBag.Category = categoryModel;
                     ViewBag.ClothesSearchModel = clothesSearchModel;
                     return View("ItemCategory",
-                        filteredClothesItems.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
+                        filteredClothesItems); //.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
                 }
 
                 case CategoryName.Decorations:
@@ -260,13 +260,14 @@ public class ItemController : Controller
                     ViewBag.Category = categoryModel;
                     ViewBag.DecorationsSearchModel = decorationsSearchModel;
                     return View("ItemCategory",
-                        filteredDecorationsItems.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
+                        filteredDecorationsItems); //.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
                 }
 
                 default:
                 {
                     ViewBag.Category = categoryModel;
-                    return View("ItemCategory", _itemService.GetItems().ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
+                    return View("ItemCategory",
+                        _itemService.GetItems()); //.ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
                 }
             }
         }
@@ -275,7 +276,8 @@ public class ItemController : Controller
             //return View("ItemCategory",
             //    _itemService.GetItems().ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
             Console.WriteLine(e); //TODO redirect to error page
-            throw;
+            //throw;
+            return null;
         }
         
 
@@ -297,7 +299,7 @@ public class ItemController : Controller
         }
         //return result.ToString();
 
-        return View("ItemCategory", filteredItems.ConvertAll(_itemWebModelMapper.ToWebModel));
+        return View("ItemCategory", filteredItems); //.ConvertAll(_itemWebModelMapper.ToWebModel));
     }
     
     

@@ -355,3 +355,4 @@ C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\rasim\RiderProjects\Online Shop\Online Shop\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\rasim\RiderProjects\Online Shop\Online Shop\obj\Debug\net7.0\scopedcss\Views\Shared\Components\CartPage.razor.rz.scp.css

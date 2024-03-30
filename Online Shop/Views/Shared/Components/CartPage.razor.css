@@ -1,4 +1,6 @@
-﻿.cartMenu{
+﻿/* scooped css just for CartPage */
+
+.cartMenu{
     position: fixed;
     top: 50%;
     left: 50%;
