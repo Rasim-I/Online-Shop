@@ -14,7 +14,7 @@ public class OrderMappingProfile : Profile
             .ForMember(dest => dest.Customer,
                 opt => opt.MapFrom(src => src.Customer))
             .ForMember(dest => dest.Items,
-                opt => opt.MapFrom(src => src.Items))
+                opt => opt.MapFrom(src => src.Cart))
             .ForMember(dest => dest.Status,
                 opt => opt.MapFrom(src => (Status)src.Status));
 
@@ -22,7 +22,7 @@ public class OrderMappingProfile : Profile
         CreateMap<Order, OrderEntity>()
             .ForMember(dest => dest.Customer,
                 opt => opt.MapFrom(src => src.Customer))
-            .ForMember(dest => dest.Items,
+            .ForMember(dest => dest.Cart,
                 opt => opt.MapFrom(src => src.Items))
             .ForMember(dest => dest.Status,
                 opt => opt.MapFrom(src => (OnlineShopDAL.Entities.Enums.Status)src.Status));

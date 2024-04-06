@@ -42,6 +42,12 @@ public class ItemController : Controller
         return _itemService.FillDatabase();
     }
 
+    [HttpGet("/addCartItems")]
+    public bool AddCartItems()
+    {
+        return _itemService.AddCartItems();
+    }
+    
     /*
     [HttpGet("{category}")]
     public IActionResult ItemCategory(string category)
@@ -275,9 +281,9 @@ public class ItemController : Controller
         {
             //return View("ItemCategory",
             //    _itemService.GetItems().ConvertAll(model => _itemWebModelMapper.ToWebModel(model)));
-            Console.WriteLine(e); //TODO redirect to error page
+            Console.WriteLine(e + "\n" + "------------------------------"); //TODO redirect to error page
             //throw;
-            return null;
+            return Ok(null);
         }
         
 

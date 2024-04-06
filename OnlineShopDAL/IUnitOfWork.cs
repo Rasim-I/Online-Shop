@@ -18,6 +18,8 @@ public interface IUnitOfWork
     
     IReviewRepository Reviews { get; }
 
+    ICartItemRepository CartItems { get; }
+    
     int Save();
 
 }

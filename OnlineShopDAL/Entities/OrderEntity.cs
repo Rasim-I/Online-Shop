@@ -12,8 +12,8 @@ public class OrderEntity
     [ForeignKey(nameof(CustomerEntity))]
     public CustomerEntity Customer { get; set; }
     
-    [ForeignKey(nameof(CartItemEntity))]
-    public List<CartItemEntity> Items { get; set; }
+    [ForeignKey(nameof(CartEntity))]
+    public CartEntity Cart { get; set; }
     
     public DateTime OrderDate { get; set; }
     

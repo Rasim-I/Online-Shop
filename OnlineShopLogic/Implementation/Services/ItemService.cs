@@ -32,7 +32,7 @@ public class ItemService : IItemService
     {
         try
         {
-            InitData initData = new InitData(_unitOfWork);
+            InitData initData = new InitData(_unitOfWork, _mapper);
             initData.FillDatabase();
             return true;
         }
@@ -43,6 +43,21 @@ public class ItemService : IItemService
         }
     }
 
+    public bool AddCartItems()
+    {
+        try
+        {
+            InitData initData = new InitData(_unitOfWork, _mapper);
+            initData.AddCartItems();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.StackTrace);
+            return false;
+        }
+    }
+    
     public List<Item> GetItems()
     {
         List<Item> itemsResult = new List<Item>();

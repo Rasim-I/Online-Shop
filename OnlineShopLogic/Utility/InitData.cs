@@ -4,18 +4,86 @@ using OnlineShopDAL.Entities.Enums;
 using OnlineShopDAL.Entities.ItemTypes;
 using OnlineShopLogic.ItemParameters;
 using OnlineShopModels.Models;
+using OnlineShopModels.Models.ItemTypes;
+using System.Linq;
+using AutoMapper;
+using Gender = OnlineShopModels.Models.Enums.Gender;
 
 namespace OnlineShopLogic.Utility;
 
 public class InitData
 {
     private IUnitOfWork _unitOfWork;
+    private IMapper _mapper;
 
-    public InitData(IUnitOfWork unitOfWork)
+    public InitData(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
+        _mapper = mapper;
     }
 
+    public void AddCartItems()
+    {
+        
+        ItemElectronicsEntity itemElectronics = new ItemElectronicsEntity()
+        {
+            Id = Guid.Parse("c703c545-2c99-4476-947f-095c835aad6d"), Price = 23, Brand = ItemElectronicsParameters.HPBrand, Description = "description 111",
+            Name = "Hp laptop0", CpuModel = ItemElectronicsParameters.IntelCpuModel,
+            MemoryCapacity = ItemElectronicsParameters.Memory128,
+            Photos = new List<PhotoEntity>() { new PhotoEntity() {Name = "hp test", Link = "/Item_Images/Blue.png", IsMain = true} },
+            Category = (_unitOfWork.Categories.Find(category => category.Name == CategoryName.Electronics).FirstOrDefault())
+        };
+        ItemSportEntity itemSport = new ItemSportEntity()
+        {
+            Id = Guid.Parse("b0ce4e94-e71d-4787-9320-b12853eb9d9c"), Price = 10, Brand = ItemSportParameters.DonicBrand, Description = "description 2312",
+            Name = "Racket Donic43", Activity = ItemSportParameters.TableTennisActivity,
+            Photos = new List<PhotoEntity>() { new PhotoEntity() {Name = "Racket Photo", Link = "/Item_Images/Green.png", IsMain = true} },
+            Category = (_unitOfWork.Categories.Find(category => category.Name == CategoryName.Sport).FirstOrDefault())
+        };
+        
+        //_unitOfWork.Items.Create(itemElectronics);
+        //_unitOfWork.Items.Create(itemSport);
+        //_unitOfWork.Save();
+
+        
+        Guid cartId = Guid.NewGuid();
+        Guid customerId = Guid.Parse("55047486-7466-4d64-b568-674c7db20ffd");
+
+        CustomerEntity customer = new CustomerEntity()
+        {
+            Id = customerId, Name = "Test", Surname = "Customer", SecondName = "1",
+            Gender = OnlineShopDAL.Entities.Enums.Gender.Other, BirthDate = DateTime.Now,
+            RegistrationDate = DateTime.Now,
+            ApplicationUserId = customerId
+        };
+        //_unitOfWork.Customers.Create(customer);
+        //_unitOfWork.Save();
+
+        
+        
+        CartItemEntity cartItem1 = new CartItemEntity() { Id = Guid.Parse("f3ceb6c0-61c4-4e14-9b38-357b8edfc88b"), 
+            Item = _unitOfWork.Items.Find(x => x.Id.Equals(Guid.Parse("B0CE4E94-E71D-4787-9320-B12853EB9D9C"))).FirstOrDefault(), Quantity = 2};
+        CartItemEntity cartItem2 = new CartItemEntity() { Id = Guid.Parse("9afd55c4-0f8d-4c5a-92a3-c62451b85a11"), 
+            Item = _unitOfWork.Items.Find(x => x.Id.Equals(Guid.Parse("C703C545-2C99-4476-947F-095C835AAD6D"))).FirstOrDefault(), Quantity = 1};
+        
+        //_unitOfWork.CartItems.Create(cartItem1);
+        //_unitOfWork.CartItems.Create(cartItem2);
+        //_unitOfWork.Save();
+
+        
+        CartItemEntity cartItem1ToAdd =
+            _unitOfWork.CartItems.Find(x => x.Id.Equals(Guid.Parse("f3ceb6c0-61c4-4e14-9b38-357b8edfc88b"))).FirstOrDefault();
+        CartItemEntity cartItem2ToAdd =
+            _unitOfWork.CartItems.Find(x => x.Id.Equals(Guid.Parse("9afd55c4-0f8d-4c5a-92a3-c62451b85a11")))
+                .FirstOrDefault();
+        
+        CartEntity cart = new CartEntity() { Id = cartId, Price = 342, Items = new List<CartItemEntity>(){cartItem1ToAdd, cartItem2ToAdd}};
+           //Customer = _unitOfWork.Customers.Find(c =>c.Id.Equals(customer.Id) ).FirstOrDefault()};
+        _unitOfWork.Carts.Create(cart);
+        _unitOfWork.Save();
+        
+    }
+    
     public void FillDatabase()
     {
         #region comments

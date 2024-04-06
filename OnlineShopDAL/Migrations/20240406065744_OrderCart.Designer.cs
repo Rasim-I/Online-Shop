@@ -12,8 +12,8 @@ using OnlineShopDAL;
 namespace OnlineShopDAL.Migrations
 {
     [DbContext(typeof(OnlineShopContext))]
-    [Migration("20231205175740_MainPhoto")]
-    partial class MainPhoto
+    [Migration("20240406065744_OrderCart")]
+    partial class OrderCart
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,15 +31,10 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CustomerEntity")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerEntity");
 
                     b.ToTable("Carts");
                 });
@@ -135,6 +130,10 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("CategoryEntity")
                         .HasColumnType("uniqueidentifier");
 
@@ -152,17 +151,28 @@ namespace OnlineShopDAL.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryEntity");
 
                     b.ToTable("Items");
+
+                    b.HasDiscriminator<string>("discriminator").HasValue("BaseItem");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CartEntity")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CustomerEntity")
@@ -175,6 +185,8 @@ namespace OnlineShopDAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartEntity");
 
                     b.HasIndex("CustomerEntity");
 
@@ -190,7 +202,7 @@ namespace OnlineShopDAL.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("ItemEntityId")
+                    b.Property<Guid?>("ItemId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Link")
@@ -201,17 +213,17 @@ namespace OnlineShopDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PhotoEntity")
+                    b.Property<Guid?>("PhotoEntity")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ReviewEntityId")
+                    b.Property<Guid?>("ReviewId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemEntityId");
+                    b.HasIndex("ItemId");
 
-                    b.HasIndex("ReviewEntityId");
+                    b.HasIndex("ReviewId");
 
                     b.ToTable("Photos");
                 });
@@ -247,24 +259,73 @@ namespace OnlineShopDAL.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("OnlineShopDAL.Entities.CartEntity", b =>
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemClothesEntity", b =>
                 {
-                    b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerEntity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
 
-                    b.Navigation("Customer");
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Clothes");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemDecorationsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Material")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Decorations");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemElectronicsEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("CpuModel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MemoryCapacity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Electronics");
+                });
+
+            modelBuilder.Entity("OnlineShopDAL.Entities.ItemTypes.ItemSportEntity", b =>
+                {
+                    b.HasBaseType("OnlineShopDAL.Entities.ItemEntity");
+
+                    b.Property<string>("Activity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Items");
+
+                    b.HasDiscriminator().HasValue("Sport");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.CartItemEntity", b =>
                 {
                     b.HasOne("OnlineShopDAL.Entities.CartEntity", null)
-                        .WithMany("Items")
-                        .HasForeignKey("CartItemEntity");
-
-                    b.HasOne("OnlineShopDAL.Entities.OrderEntity", null)
                         .WithMany("Items")
                         .HasForeignKey("CartItemEntity");
 
@@ -290,11 +351,19 @@ namespace OnlineShopDAL.Migrations
 
             modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
                 {
+                    b.HasOne("OnlineShopDAL.Entities.CartEntity", "Cart")
+                        .WithMany()
+                        .HasForeignKey("CartEntity")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerEntity")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cart");
 
                     b.Navigation("Customer");
                 });
@@ -303,14 +372,12 @@ namespace OnlineShopDAL.Migrations
                 {
                     b.HasOne("OnlineShopDAL.Entities.ItemEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ItemEntityId");
+                        .HasForeignKey("ItemId");
 
-                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", "Review")
+                    b.HasOne("OnlineShopDAL.Entities.ReviewEntity", null)
                         .WithMany("Photos")
-                        .HasForeignKey("ReviewEntityId")
+                        .HasForeignKey("ReviewId")
                         .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.ReviewEntity", b =>
@@ -340,11 +407,6 @@ namespace OnlineShopDAL.Migrations
             modelBuilder.Entity("OnlineShopDAL.Entities.ItemEntity", b =>
                 {
                     b.Navigation("Photos");
-                });
-
-            modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
-                {
-                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.ReviewEntity", b =>

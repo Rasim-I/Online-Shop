@@ -25,7 +25,8 @@ public class OrderMapper : IMapper<OrderEntity, Order>
             Customer = _customerMapper.ToEntity(model.Customer),
             OrderDate = model.OrderDate,
             Status = (Status)model.Status,
-            Items = new List<CartItemEntity>(model.Items.ConvertAll(i => _cartItemMapper.ToEntity(i)))
+            //Items = new List<CartItemEntity>(model.Items.ConvertAll(i => _cartItemMapper.ToEntity(i)))
+            //Cart = 
         };
     }
 
@@ -37,7 +38,7 @@ public class OrderMapper : IMapper<OrderEntity, Order>
             Customer = _customerMapper.ToModel(entity.Customer),
             OrderDate = entity.OrderDate,
             Status = (OnlineShopModels.Models.Enums.Status)entity.Status,
-            Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))
+            //Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))
         };
     }
 

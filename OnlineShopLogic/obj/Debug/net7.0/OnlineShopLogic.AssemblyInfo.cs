@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineShopLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaa4d12f1e72cd71b371245eba8db215b1270df2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e736f9d02929a0988348bee2cb4ce0e0cfe0224")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineShopLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineShopLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,7 +8,7 @@ namespace OnlineShopLogic.Abstraction.IServices;
 public interface IItemService
 {
     public bool FillDatabase();
-    
+    public bool AddCartItems();
     
     public List<Item> GetItems();
     public Item GetItem(Guid itemId);

@@ -28,15 +28,10 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CustomerEntity")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerEntity");
 
                     b.ToTable("Carts");
                 });
@@ -174,6 +169,9 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CartEntity")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("CustomerEntity")
                         .HasColumnType("uniqueidentifier");
 
@@ -184,6 +182,8 @@ namespace OnlineShopDAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartEntity");
 
                     b.HasIndex("CustomerEntity");
 
@@ -320,24 +320,9 @@ namespace OnlineShopDAL.Migrations
                     b.HasDiscriminator().HasValue("Sport");
                 });
 
-            modelBuilder.Entity("OnlineShopDAL.Entities.CartEntity", b =>
-                {
-                    b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerEntity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
             modelBuilder.Entity("OnlineShopDAL.Entities.CartItemEntity", b =>
                 {
                     b.HasOne("OnlineShopDAL.Entities.CartEntity", null)
-                        .WithMany("Items")
-                        .HasForeignKey("CartItemEntity");
-
-                    b.HasOne("OnlineShopDAL.Entities.OrderEntity", null)
                         .WithMany("Items")
                         .HasForeignKey("CartItemEntity");
 
@@ -363,11 +348,19 @@ namespace OnlineShopDAL.Migrations
 
             modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
                 {
+                    b.HasOne("OnlineShopDAL.Entities.CartEntity", "Cart")
+                        .WithMany()
+                        .HasForeignKey("CartEntity")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerEntity")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cart");
 
                     b.Navigation("Customer");
                 });
@@ -411,11 +404,6 @@ namespace OnlineShopDAL.Migrations
             modelBuilder.Entity("OnlineShopDAL.Entities.ItemEntity", b =>
                 {
                     b.Navigation("Photos");
-                });
-
-            modelBuilder.Entity("OnlineShopDAL.Entities.OrderEntity", b =>
-                {
-                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.ReviewEntity", b =>

@@ -29,17 +29,18 @@
     //Cart cart = cartController.GetTestCart();
 
     private Cart _cart;
-    
+
     private Cart cart
     {
-        get => _cart == null? GetCart() : _cart;
+        get => _cart == null ? GetCart() : _cart;
         set => _cart = value;
     }
-    
+
     private Cart GetCart()
     {
         return cartController.GetTestCart();
     }
+
 }
 
 
@@ -56,25 +57,24 @@
             {
                 <div class="cartItem">
                     <img class="cartItemImage" src=@cartItem.Item.Photos.Where(p => p.IsMain).FirstOrDefault().Link alt="item"/>
-            
+
                     <h3 class="cartItemName">@cartItem.Item.Name</h3>
-            
+
                     <button class="quantityLess" onclick="@(() => LessQuantity(cartItem.Id))">
                         <img src="/Icons/arrowLess.png" alt="less"/>
                     </button>
-            
+
                     <label class="cartItemQuantity">@cartItem.Quantity</label>
-                    
+
                     <button class="quantityMore">
-                        <img src="/Icons/arrowMore.png" onclick="@(() =>{ MoreQuantity(cartItem.Id); })" alt="more"/>
+                        <img src="/Icons/arrowMore.png" onclick="@(() => { MoreQuantity(cartItem.Id); })" alt="more"/>
                     </button>
-            
+
                     <button class="cartRemoveItem">
-                        <img src="/Icons/removeItem.png" alt="remove"/>
+                        <img src="/Icons/removeItem.png" onclick="@(() => { RemoveItem(cartItem.Id); })" alt="remove"/>
                     </button>
                 </div>
             }
-            
         }
 
         <button class="cartConfirmOrder btn btn-success">Confirm Order</button>
@@ -85,7 +85,6 @@
 <div id="overlay" class="overlay"></div>
 
 
-
 @code {
 
     protected override void OnAfterRender(bool firstRender)
@@ -93,13 +92,12 @@
         if (firstRender)
         {
             JSRuntime.InvokeVoidAsync("attachCartEventHandlers");
-            //Console.WriteLine("---------------------------- attached");
-            
+    //Console.WriteLine("---------------------------- attached");
         }
     }
 
     private int _cartItemQuantity = 1;
-    
+
     private void LessQuantity()
     {
         _cartItemQuantity--;
@@ -107,29 +105,22 @@
 
     private void MoreQuantity(Guid cartItemId)
     {
-        Cart cartToUpdate = cart;
-        cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity ++;
-        cart = cartToUpdate;
+        cart = cartController.MoreQuantity(cart, cartItemId);
         StateHasChanged();
 
-        Console.WriteLine("More quantity ++++++++++++++++++++++++");
+        //Console.WriteLine("More quantity ++++++++++++++++++++++++");
     }
 
     private void LessQuantity(Guid cartItemId)
     {
-        Cart cartToUpdate = cart;
-        //int quantity = cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity;
-
-        //if(cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity < 0);
-        {
-            cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity--;
-        }
-
-        cart = cartToUpdate;
+        cart = cartController.LessQuantity(cart, cartItemId);
         StateHasChanged();
-        
     }
-    
+
+    private void RemoveItem(Guid cartItemId)
+    {
+        cart = cartController.RemoveItem(cart, cartItemId, null);
+        StateHasChanged();
+    }
+
 }
-
-

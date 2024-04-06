@@ -22,6 +22,8 @@ public class UnitOfWork : IUnitOfWork
     
     public IReviewRepository Reviews { get; private set; }
 
+    public ICartItemRepository CartItems { get; private set; }
+
     public UnitOfWork(OnlineShopContext context)
     {
         _context = context;
@@ -32,7 +34,7 @@ public class UnitOfWork : IUnitOfWork
         Orders = new OrderRepository(context);
         Photos = new PhotoRepository(context);
         Reviews = new ReviewRepository(context);
-
+        CartItems = new CartItemRepository(context);
     }
     
     public int Save()
