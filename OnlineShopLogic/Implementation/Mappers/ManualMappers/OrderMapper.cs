@@ -22,7 +22,7 @@ public class OrderMapper : IMapper<OrderEntity, Order>
         return new OrderEntity()
         {
             Id = model.Id,
-            Customer = _customerMapper.ToEntity(model.Customer),
+            //Customer = _customerMapper.ToEntity(model.Customer),
             OrderDate = model.OrderDate,
             Status = (Status)model.Status,
             //Items = new List<CartItemEntity>(model.Items.ConvertAll(i => _cartItemMapper.ToEntity(i)))
@@ -35,7 +35,7 @@ public class OrderMapper : IMapper<OrderEntity, Order>
         return new Order()
         {
             Id = entity.Id,
-            Customer = _customerMapper.ToModel(entity.Customer),
+            //Customer = _customerMapper.ToModel(entity.Customer),
             OrderDate = entity.OrderDate,
             Status = (OnlineShopModels.Models.Enums.Status)entity.Status,
             //Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))

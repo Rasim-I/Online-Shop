@@ -37,7 +37,7 @@ public class ItemMapper : IMapper<ItemEntity, Item>
             Name = entity.Name,
             Description = entity.Description,
             Price = entity.Price,
-            Quantity = entity.Quantity,
+            Quantity = entity.Quantity ?? 0,
             Photos = new List<Photo>(entity.Photos.ConvertAll(p => _photoMapper.ToModel(p))),
             Category = _categoryMapper.ToModel(entity.Category)
         };

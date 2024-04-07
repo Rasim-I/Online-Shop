@@ -19,11 +19,11 @@ namespace OnlineShopModels.Models
             set => _id = value;
         }
 
-        public Customer Customer
-        {
-            get => _customer;
-            set => _customer = value;
-        }
+        //public Customer Customer
+        //{
+       //     get => _customer;
+        //    set => _customer = value;
+        //}
 
         public List<CartItem> Items
         {

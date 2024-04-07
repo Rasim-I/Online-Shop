@@ -20,9 +20,9 @@ public class CartItemMapper : IMapper<CartItemEntity, CartItem>
         return new CartItemEntity()
         {
             Id = model.Id,
-            CartId = model.CartId,
+            //CartId = model.CartId,
             Item = _itemMapper.Map<ItemEntity>(model.Item),
-            ItemId = model.Item.Id,
+            //ItemId = model.Item.Id,
             Quantity = model.Quantity
         };
     }
@@ -32,10 +32,10 @@ public class CartItemMapper : IMapper<CartItemEntity, CartItem>
         return new CartItem()
         {
             Id = entity.Id,
-            CartId = entity.CartId,
+            //CartId = entity.CartId,
             Item = _itemMapper.Map<Item>(entity.Item),
             //ItemId = entity.Item.Id,
-            Quantity = entity.Quantity
+            Quantity = entity.Quantity ?? 0
         };
     }
     

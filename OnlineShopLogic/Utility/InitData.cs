@@ -41,9 +41,9 @@ public class InitData
             Category = (_unitOfWork.Categories.Find(category => category.Name == CategoryName.Sport).FirstOrDefault())
         };
         
-        //_unitOfWork.Items.Create(itemElectronics);
-        //_unitOfWork.Items.Create(itemSport);
-        //_unitOfWork.Save();
+        _unitOfWork.Items.Create(itemElectronics);
+        _unitOfWork.Items.Create(itemSport);
+        _unitOfWork.Save();
 
         
         Guid cartId = Guid.NewGuid();
@@ -56,8 +56,8 @@ public class InitData
             RegistrationDate = DateTime.Now,
             ApplicationUserId = customerId
         };
-        //_unitOfWork.Customers.Create(customer);
-        //_unitOfWork.Save();
+        _unitOfWork.Customers.Create(customer);
+        _unitOfWork.Save();
 
         
         
@@ -66,9 +66,9 @@ public class InitData
         CartItemEntity cartItem2 = new CartItemEntity() { Id = Guid.Parse("9afd55c4-0f8d-4c5a-92a3-c62451b85a11"), 
             Item = _unitOfWork.Items.Find(x => x.Id.Equals(Guid.Parse("C703C545-2C99-4476-947F-095C835AAD6D"))).FirstOrDefault(), Quantity = 1};
         
-        //_unitOfWork.CartItems.Create(cartItem1);
-        //_unitOfWork.CartItems.Create(cartItem2);
-        //_unitOfWork.Save();
+        _unitOfWork.CartItems.Create(cartItem1);
+        _unitOfWork.CartItems.Create(cartItem2);
+        _unitOfWork.Save();
 
         
         CartItemEntity cartItem1ToAdd =
@@ -77,8 +77,8 @@ public class InitData
             _unitOfWork.CartItems.Find(x => x.Id.Equals(Guid.Parse("9afd55c4-0f8d-4c5a-92a3-c62451b85a11")))
                 .FirstOrDefault();
         
-        CartEntity cart = new CartEntity() { Id = cartId, Price = 342, Items = new List<CartItemEntity>(){cartItem1ToAdd, cartItem2ToAdd}};
-           //Customer = _unitOfWork.Customers.Find(c =>c.Id.Equals(customer.Id) ).FirstOrDefault()};
+        CartEntity cart = new CartEntity() { Id = cartId, Price = 342, CartItems = new List<CartItemEntity>(){cartItem1ToAdd, cartItem2ToAdd},
+           Customer = _unitOfWork.Customers.Find(c =>c.Id.Equals(customer.Id) ).FirstOrDefault()};
         _unitOfWork.Carts.Create(cart);
         _unitOfWork.Save();
         

@@ -23,7 +23,7 @@ public class ReviewEntity
     public DateTime ReviewDate { get; set; }
     
     [ForeignKey(nameof(PhotoEntity))]
-    public List<PhotoEntity> Photos { get; set; }
+    public List<PhotoEntity>? Photos { get; set; }
 
 
 

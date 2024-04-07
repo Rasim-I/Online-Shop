@@ -11,8 +11,8 @@ public class OrderMappingProfile : Profile
     public OrderMappingProfile()
     {
         CreateMap<OrderEntity, Order>()
-            .ForMember(dest => dest.Customer,
-                opt => opt.MapFrom(src => src.Customer))
+            //.ForMember(dest => dest.Customer,
+             //   opt => opt.MapFrom(src => src.Customer))
             .ForMember(dest => dest.Items,
                 opt => opt.MapFrom(src => src.Cart))
             .ForMember(dest => dest.Status,
@@ -20,8 +20,8 @@ public class OrderMappingProfile : Profile
 
 
         CreateMap<Order, OrderEntity>()
-            .ForMember(dest => dest.Customer,
-                opt => opt.MapFrom(src => src.Customer))
+            //.ForMember(dest => dest.Customer,
+            //    opt => opt.MapFrom(src => src.Customer))
             .ForMember(dest => dest.Cart,
                 opt => opt.MapFrom(src => src.Items))
             .ForMember(dest => dest.Status,

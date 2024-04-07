@@ -32,7 +32,7 @@ public class CartController : Controller
             
             CartItem cartItem1 = new CartItem() { Id = Guid.Parse("f3ceb6c0-61c4-4e14-9b38-357b8edfc88b"), Item = itemElectronics, Quantity = 2, ItemId = itemElectronics.Id };
             CartItem cartItem2 = new CartItem() { Id = Guid.Parse("9afd55c4-0f8d-4c5a-92a3-c62451b85a11"), Item = itemSport, Quantity = 1, ItemId = itemSport.Id };
-            Cart cart = new Cart() { Id = Guid.NewGuid(), Price = 342, Items = new List<CartItem>(){cartItem1, cartItem2}};
+            Cart cart = new Cart() { Id = Guid.NewGuid(), Price = 342, CartItems = new List<CartItem>(){cartItem1, cartItem2}};
 
             return cart;
     }
@@ -41,7 +41,7 @@ public class CartController : Controller
     public Cart MoreQuantity(Cart cart, Guid cartItemId)
     {
         Cart cartToUpdate = cart;
-        cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity++;
+        cartToUpdate.CartItems.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault().Quantity++;
         return cartToUpdate;
 
     }
@@ -50,7 +50,7 @@ public class CartController : Controller
     {
         Cart cartToUpdate = cart;
 
-        CartItem cartItemToChange = cartToUpdate.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault();
+        CartItem cartItemToChange = cartToUpdate.CartItems.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault();
         
         if (cartItemToChange.Quantity == 1)
         {
@@ -70,12 +70,12 @@ public class CartController : Controller
     {
         if (cartItem != null)
         {
-            cart.Items.Remove(cartItem);
+            cart.CartItems.Remove(cartItem);
         }
         else
         {
-            cartItem = cart.Items.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault();
-            cart.Items.Remove(cartItem);
+            cartItem = cart.CartItems.Where(cartItem => cartItem.Id.Equals(cartItemId)).FirstOrDefault();
+            cart.CartItems.Remove(cartItem);
         }
 
         return cart;

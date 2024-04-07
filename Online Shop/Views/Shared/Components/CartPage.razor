@@ -51,9 +51,9 @@
 
     <div class="cartItems">
 
-        @if (cart.Items.Any())
+        @if (cart.CartItems.Any())
         {
-            @foreach (var cartItem in cart.Items) //cart.Items.Select((value, index) => new {Item = value, Index = index})
+            @foreach (var cartItem in cart.CartItems) //cart.Items.Select((value, index) => new {Item = value, Index = index})
             {
                 <div class="cartItem">
                     <img class="cartItemImage" src=@cartItem.Item.Photos.Where(p => p.IsMain).FirstOrDefault().Link alt="item"/>

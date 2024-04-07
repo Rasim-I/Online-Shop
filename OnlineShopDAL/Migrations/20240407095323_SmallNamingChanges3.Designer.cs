@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineShopDAL;
 
@@ -11,9 +12,11 @@ using OnlineShopDAL;
 namespace OnlineShopDAL.Migrations
 {
     [DbContext(typeof(OnlineShopContext))]
-    partial class OnlineShopContextModelSnapshot : ModelSnapshot
+    [Migration("20240407095323_SmallNamingChanges3")]
+    partial class SmallNamingChanges3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,15 +31,10 @@ namespace OnlineShopDAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CustomerEntity")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int?>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerEntity");
 
                     b.ToTable("Carts");
                 });
@@ -171,6 +169,9 @@ namespace OnlineShopDAL.Migrations
                     b.Property<Guid>("CartEntity")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CustomerEntity")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
@@ -180,6 +181,8 @@ namespace OnlineShopDAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CartEntity");
+
+                    b.HasIndex("CustomerEntity");
 
                     b.ToTable("Orders");
                 });
@@ -314,17 +317,6 @@ namespace OnlineShopDAL.Migrations
                     b.HasDiscriminator().HasValue("Sport");
                 });
 
-            modelBuilder.Entity("OnlineShopDAL.Entities.CartEntity", b =>
-                {
-                    b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerEntity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
             modelBuilder.Entity("OnlineShopDAL.Entities.CartItemEntity", b =>
                 {
                     b.HasOne("OnlineShopDAL.Entities.CartEntity", "Cart")
@@ -361,7 +353,15 @@ namespace OnlineShopDAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OnlineShopDAL.Entities.CustomerEntity", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerEntity")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cart");
+
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("OnlineShopDAL.Entities.PhotoEntity", b =>

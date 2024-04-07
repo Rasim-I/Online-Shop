@@ -25,7 +25,7 @@ namespace OnlineShopModels.Models
             set => _customer = value;
         }
 
-        public List<CartItem> Items
+        public List<CartItem> CartItems
         {
             get => _items;
             set => _items = value;
@@ -85,7 +85,7 @@ namespace OnlineShopModels.Models
         
         public bool RemoveItem(Item item, int quantity)
         {
-            foreach (var cartItem in Items)
+            foreach (var cartItem in CartItems)
             {
                 if (cartItem.Item.Equals(item))
                 {

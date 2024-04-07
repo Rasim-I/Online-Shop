@@ -22,7 +22,7 @@ public class CartMapper : IMapper<CartEntity, Cart>
             Id = model.Id,
             //Customer = _customerMapper.ToEntity(model.Customer),
             Price = model.Price,
-            Items = new List<CartItemEntity>(model.Items.ConvertAll(i => _cartItemMapper.ToEntity(i)))
+            CartItems = new List<CartItemEntity>(model.CartItems.ConvertAll(i => _cartItemMapper.ToEntity(i)))
         };
     }
 
@@ -32,8 +32,8 @@ public class CartMapper : IMapper<CartEntity, Cart>
         {
             Id = entity.Id,
             //Customer = _customerMapper.ToModel(entity.Customer),
-            Price = entity.Price,
-            Items = new List<CartItem>(entity.Items.ConvertAll(i => _cartItemMapper.ToModel(i)))
+            Price = entity.Price ?? 0,
+            CartItems = new List<CartItem>(entity.CartItems.ConvertAll(i => _cartItemMapper.ToModel(i)))
         };
     }
     
