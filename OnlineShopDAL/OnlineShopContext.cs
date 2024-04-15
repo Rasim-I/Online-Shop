@@ -25,9 +25,11 @@ public class OnlineShopContext : DbContext
     public virtual DbSet<PhotoEntity> Photos { get; set; }
     
     public virtual DbSet<ReviewEntity> Reviews { get; set; }
-
-
     
+    public virtual DbSet<CartItemEntity> CartItems { get; set; }
+
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         

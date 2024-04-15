@@ -73,7 +73,9 @@ builder.Services.AddTransient<AuthDbContext>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IItemService, ItemService>();
 builder.Services.AddTransient<IHomeService, HomeService>();
+builder.Services.AddTransient<ICartService, CartService>();
 //builder.Services.AddTransient<ICartService, CartService>();
+
 builder.Services.AddTransient<CartController>();
 
 //builder.Services.AddTransient<IMapper<ItemEntity, Item>, ItemMapper>();

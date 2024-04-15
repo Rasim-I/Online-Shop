@@ -28,6 +28,7 @@
 
     //Cart cart = cartController.GetTestCart();
 
+    /*
     private Cart _cart;
 
     private Cart cart
@@ -35,10 +36,11 @@
         get => _cart == null ? GetCart() : _cart;
         set => _cart = value;
     }
-
+*/
+    
     private Cart GetCart()
     {
-        return cartController.GetTestCart();
+        return cartController.Cart;
     }
 
 }
@@ -51,9 +53,9 @@
 
     <div class="cartItems">
 
-        @if (cart.CartItems.Any())
+        @if (GetCart().CartItems.Any())
         {
-            @foreach (var cartItem in cart.CartItems) //cart.Items.Select((value, index) => new {Item = value, Index = index})
+            @foreach (var cartItem in GetCart().CartItems) //cart.Items.Select((value, index) => new {Item = value, Index = index})
             {
                 <div class="cartItem">
                     <img class="cartItemImage" src=@cartItem.Item.Photos.Where(p => p.IsMain).FirstOrDefault().Link alt="item"/>
@@ -105,7 +107,8 @@
 
     private void MoreQuantity(Guid cartItemId)
     {
-        cart = cartController.MoreQuantity(cart, cartItemId);
+        //cart = cartController.MoreQuantity(cart, cartItemId);
+        cartController.MoreQuantity(cartItemId);
         StateHasChanged();
 
         //Console.WriteLine("More quantity ++++++++++++++++++++++++");
@@ -113,13 +116,15 @@
 
     private void LessQuantity(Guid cartItemId)
     {
-        cart = cartController.LessQuantity(cart, cartItemId);
+        //cart = cartController.LessQuantity(cart, cartItemId);
+        cartController.LessQuantity(cartItemId);
         StateHasChanged();
     }
 
     private void RemoveItem(Guid cartItemId)
     {
-        cart = cartController.RemoveItem(cart, cartItemId, null);
+        //cart = cartController.RemoveItem(cart, cartItemId, null);
+        cartController.RemoveItem( cartItemId, null);
         StateHasChanged();
     }
 
