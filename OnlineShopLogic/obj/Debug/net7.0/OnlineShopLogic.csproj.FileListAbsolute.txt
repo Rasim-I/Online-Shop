@@ -16,3 +16,20 @@ C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\refint
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.pdb
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\ref\OnlineShopLogic.dll
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineSh.D475D370.Up2Date
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopLogic.deps.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopLogic.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopLogic.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopDAL.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopModels.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopDAL.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\bin\Debug\net7.0\OnlineShopModels.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.csproj.AssemblyReference.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.AssemblyInfoInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.AssemblyInfo.cs
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.csproj.CoreCompileInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.csproj.CopyComplete
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\refint\OnlineShopLogic.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\OnlineShopLogic.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopLogic\obj\Debug\net7.0\ref\OnlineShopLogic.dll

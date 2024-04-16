@@ -12799,11 +12799,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
+      "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
       "projectName": "Online Shop",
-      "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
+      "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
       "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\obj\\",
+      "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12820,14 +12820,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
-              "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj"
+            "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj": {
+              "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj"
             },
-            "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj": {
-              "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj"
+            "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopLogic\\OnlineShopLogic.csproj": {
+              "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopLogic\\OnlineShopLogic.csproj"
             },
-            "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj": {
-              "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopModels\\OnlineShopModels.csproj"
+            "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopModels\\OnlineShopModels.csproj": {
+              "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopModels\\OnlineShopModels.csproj"
             }
           }
         }
@@ -12836,11 +12836,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -12909,7 +12904,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

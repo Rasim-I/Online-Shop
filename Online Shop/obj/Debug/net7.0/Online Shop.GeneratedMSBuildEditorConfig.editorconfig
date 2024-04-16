@@ -9,151 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Online_Shop
 build_property.RootNamespace = Online_Shop
-build_property.ProjectDir = C:\Users\rasim\RiderProjects\Online Shop\Online Shop\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rasim\RiderProjects\Online Shop\Online Shop
+build_property.MSBuildProjectDirectory = C:\Users\rasim\Documents\GitHub\Online-Shop\Online Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Components/_Imports.razor]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Components/CartPage.razor]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/Components/CartPage.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-gt112hbo9p
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/Index.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/Partial/_CatalogPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/Partial/_CatalogPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsXF9DYXRhbG9nUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/Partial/_RecentItemsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/Partial/_RecentItemsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsXF9SZWNlbnRJdGVtc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/Partial/_RecommendationItemPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/Partial/_RecommendationItemPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWFsXF9SZWNvbW1lbmRhdGlvbkl0ZW1QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/Privacy.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/TestPaginationIndex.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/TestPaginationIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0UGFnaW5hdGlvbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/ItemCategory.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/ItemCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJdGVtQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/ItemPage.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/ItemPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJdGVtUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesCharacteristicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesCharacteristicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1DbG90aGVzXF9JdGVtQ2xvdGhlc0NoYXJhY3RlcmlzdGljc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemClothes/_ItemClothesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1DbG90aGVzXF9JdGVtQ2xvdGhlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsCharacteristicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsCharacteristicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1EZWNvcmF0aW9uc1xfSXRlbURlY29yYXRpb25zQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemDecorations/_ItemDecorationsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1EZWNvcmF0aW9uc1xfSXRlbURlY29yYXRpb25zUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsCharacteristicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsCharacteristicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1FbGVjdHJvbmljc1xfSXRlbUVsZWN0cm9uaWNzQ2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemElectronics/_ItemElectronicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1FbGVjdHJvbmljc1xfSXRlbUVsZWN0cm9uaWNzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemGeneral/_ItemGeneralCharacteristicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemGeneral/_ItemGeneralCharacteristicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1HZW5lcmFsXF9JdGVtR2VuZXJhbENoYXJhY3RlcmlzdGljc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportCharacteristicsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportCharacteristicsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1TcG9ydFxfSXRlbVNwb3J0Q2hhcmFjdGVyaXN0aWNzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/ItemSport/_ItemSportPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXEl0ZW1TcG9ydFxfSXRlbVNwb3J0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Item/Partial/_ItemBasePartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Item/Partial/_ItemBasePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxQYXJ0aWFsXF9JdGVtQmFzZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/Error.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/_CartPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/_CartPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/_HeaderPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/_HeaderPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/_ViewImports.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/_ViewStart.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Home/TestCss.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Home/TestCss.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0Q3NzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-7d4j3a8wpu
 
-[C:/Users/rasim/RiderProjects/Online Shop/Online Shop/Views/Shared/_Layout.cshtml]
+[C:/Users/rasim/Documents/GitHub/Online-Shop/Online Shop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8r82mhp3xb

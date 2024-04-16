@@ -10,3 +10,14 @@ C:\Users\rasim\RiderProjects\Online Shop\OnlineShopModels\obj\Debug\net7.0\Onlin
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopModels\obj\Debug\net7.0\refint\OnlineShopModels.dll
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.pdb
 C:\Users\rasim\RiderProjects\Online Shop\OnlineShopModels\obj\Debug\net7.0\ref\OnlineShopModels.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\bin\Debug\net7.0\OnlineShopModels.deps.json
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\bin\Debug\net7.0\OnlineShopModels.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\bin\Debug\net7.0\OnlineShopModels.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.AssemblyInfoInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.AssemblyInfo.cs
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.csproj.CoreCompileInputs.cache
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\refint\OnlineShopModels.dll
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\OnlineShopModels.pdb
+C:\Users\rasim\Documents\GitHub\Online-Shop\OnlineShopModels\obj\Debug\net7.0\ref\OnlineShopModels.dll

@@ -21,7 +21,15 @@ public class CartController : Controller
             if (_cart == null)
             {
                 Guid testUserId = Guid.Parse("55047486-7466-4d64-b568-674c7db20ffd");
-                _cart = _cartService.GetCart(testUserId);
+                try
+                {
+                    _cart = _cartService.GetCart(testUserId);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
             }
 
             return _cart;
