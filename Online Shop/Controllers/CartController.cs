@@ -117,4 +117,10 @@ public class CartController : Controller
 
         return Cart;
     }
+
+    public Cart AddToCart(Guid itemId)
+    {
+        _cartService.AddCartItem(itemId, Cart);
+        return Cart;
+    }
 }
