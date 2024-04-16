@@ -11,4 +11,6 @@ public interface ICartService
     public bool UpdateCartItemQuantity(CartItem cartItem);
 
     public bool RemoveCartItem(Guid cartItemId);
+
+    public bool AddCartItem(Guid itemId, Cart cart);
 }

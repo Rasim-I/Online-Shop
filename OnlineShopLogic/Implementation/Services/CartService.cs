@@ -82,4 +82,23 @@ public class CartService : ICartService
         }
     }
 
+
+    public bool AddCartItem(Guid itemId, Cart cart)
+    {
+        try
+        {
+            ItemEntity itemToAdd = _unitOfWork.Items.Find(i => i.Id.Equals(itemId)).FirstOrDefault();
+            CartItem cartItem = new CartItem()
+                { Id = Guid.NewGuid(), CartId = cart.Id, Item = _mapper.Map<Item>(itemToAdd), Quantity = 1 };
+            cart.CartItems.Add(cartItem);
+            _unitOfWork.CartItems.Create(_mapper.Map<CartItemEntity>(cartItem)); //Continue
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
+    }
+    
 }

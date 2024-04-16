@@ -47,7 +47,8 @@
         <h2 class="itemPrice">@Model.Price</h2>
         <!--h3 class="itemDescription">@Model.Description</h3-->
         <h3 class="itemDescription" style="display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2">@Model.Description</h3>
-        <form class="buyItemForm" method="post">
+        <form class="buyItemForm" method="post" asp-controller="Cart" asp-action="AddToCart">
+            <input type="hidden" name="itemId" value="@Model.Id"/>
             <button type="button" class="buyItemBtn btn btn-success btn-lg">Buy <img class="buyItemIcon" src="~/Icons/shopping-cart.png"/></button>
         </form>
     </div>
