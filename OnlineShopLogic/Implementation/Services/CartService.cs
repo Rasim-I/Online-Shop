@@ -87,17 +87,19 @@ public class CartService : ICartService
     {
         try
         {
-            ItemEntity itemToAdd = _unitOfWork.Items.Find(i => i.Id.Equals(itemId)).FirstOrDefault();
+            //ItemEntity itemToAdd = _unitOfWork.Items.Find(i => i.Id.Equals(itemId)).FirstOrDefault();
             CartItem cartItem = new CartItem()
-                { Id = Guid.NewGuid(), CartId = cart.Id, Item = _mapper.Map<Item>(itemToAdd), Quantity = 1 };
+                { Id = Guid.NewGuid(), ItemId = itemId, CartId = cart.Id, Quantity = 1 };
             cart.CartItems.Add(cartItem);
             _unitOfWork.CartItems.Create(_mapper.Map<CartItemEntity>(cartItem)); //Continue
+            _unitOfWork.Save(); //problem with Item id. Maybe it needs and actual Item. in that case, move this logic to CartItemRepository and detach Item before adding.
             return true;
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
-            return false;
+            //return false;
+            throw;
         }
     }
     

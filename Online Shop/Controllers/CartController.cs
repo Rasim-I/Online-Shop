@@ -118,9 +118,12 @@ public class CartController : Controller
         return Cart;
     }
 
-    public Cart AddToCart(Guid itemId)
+    [HttpPost]
+    public IActionResult AddToCart(Guid itemId)
     {
         _cartService.AddCartItem(itemId, Cart);
-        return Cart;
+        return RedirectToAction("ItemPage", "Item", itemId = itemId);
     }
+
+    
 }
