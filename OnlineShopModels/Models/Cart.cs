@@ -77,7 +77,7 @@ namespace OnlineShopModels.Models
             if (item.Quantity < quantity)
                 return false;
             
-            _items.Add(new CartItem(_id, item, quantity));
+            _items.Add(new CartItem(_id, item, this, quantity));  //this -----
             _price += item.Price * quantity;
             return true;
         }

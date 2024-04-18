@@ -12,17 +12,21 @@ public class CartItemMappingProfile : Profile
             //.ForMember(dest => dest.CartId,
             //    opt => opt.MapFrom(src => src.CartId))
             //.ForMember(dest => dest.ItemId,
-             //   opt => opt.MapFrom(src => src.ItemId))
+            //   opt => opt.MapFrom(src => src.ItemId))
             .ForMember(dest => dest.Item,
-                opt => opt.MapFrom(src => src.Item));
+                opt => opt.MapFrom(src => src.Item))
+            .ForMember(dest => dest.Cart,
+                opt => opt.MapFrom(src => src.Cart));
 
         CreateMap<CartItem, CartItemEntity>()
             //.ForMember(dest => dest.CartId,
             //    opt => opt.MapFrom(src => src.CartId))
             //.ForMember(dest => dest.ItemId,
-           //     opt => opt.MapFrom(src => src.ItemId))
+            //     opt => opt.MapFrom(src => src.ItemId))
             .ForMember(dest => dest.Item,
-                opt => opt.MapFrom(src => src.Item));
+                opt => opt.MapFrom(src => src.Item))
+            .ForMember(dest => dest.Cart,
+                opt => opt.MapFrom(src => src.Cart));
 
     }
     

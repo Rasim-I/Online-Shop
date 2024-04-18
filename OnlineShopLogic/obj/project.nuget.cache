@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c1QSL90pAm9k8FYHkJEjwTuDcfkLAqtjuulwJwEP750JJiPRq8HUS1QionT/HIumgBvuJHYZRf43sHqTcdF7Ig==",
+  "dgSpecHash": "NjVToSKxEfzC44caWVsdqq1GCQPU/OUz0mJzdVSsal4Lcdaa1cgZHEfK06aw5FHUYetgXpPIpTnIkT5AQce1Mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopLogic\\OnlineShopLogic.csproj",
+  "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopLogic\\OnlineShopLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rasim\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9j3X4HjXhHoLk2eCm8qODBRXizY+lzK6ZgXAAO9+lycG4IIKwcyGD9iTAQlKRYm0s6eiil2HPS9nNI/ZciOPjA==",
+  "dgSpecHash": "4ipUUNFVm70Oa42xHg+F+1YxbD3G6fw9eEKvawLy40osUn9S0L+d3gVkdgmA0akLKWi8ln2CULx3+At+Fe/nkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\Online Shop\\Online Shop.csproj",
+  "projectFilePath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\Online Shop\\Online Shop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rasim\\.nuget\\packages\\angularjs\\1.8.2\\angularjs.1.8.2.nupkg.sha512",
     "C:\\Users\\rasim\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",

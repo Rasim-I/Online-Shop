@@ -2894,11 +2894,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+      "projectUniqueName": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
       "projectName": "OnlineShopDAL",
-      "projectPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
+      "projectPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\OnlineShopDAL.csproj",
       "packagesPath": "C:\\Users\\rasim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rasim\\Documents\\GitHub\\Online-Shop\\OnlineShopDAL\\obj\\",
+      "outputPath": "C:\\Users\\rasim\\RiderProjects\\Online Shop\\OnlineShopDAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rasim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2921,6 +2921,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2976,7 +2981,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

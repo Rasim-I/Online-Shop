@@ -7,6 +7,7 @@ public class CartItem : INotifyPropertyChanged
 {
     private Guid _id;
     private Guid _cartId;
+    private Cart _cart;
     private Guid _itemId;
     private Item _item;
     private int _quantity;
@@ -21,6 +22,13 @@ public class CartItem : INotifyPropertyChanged
     {
         get => _cartId;
         set => _cartId = value;
+    }
+
+    public Cart Cart
+    {
+        get => _cart;
+        set => _cart = value;
+
     }
 
     public Guid ItemId
@@ -49,11 +57,12 @@ public class CartItem : INotifyPropertyChanged
         } 
     }
     
-    public CartItem(Guid cartId, Item item, int quantity)
+    public CartItem(Guid cartId, Item item, Cart cart, int quantity)
     {
         Id = Guid.NewGuid();
         CartId = cartId;
         Item = item;
+        Cart = cart;   //------
         Quantity = quantity;
     }
     
